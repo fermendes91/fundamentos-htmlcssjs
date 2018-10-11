@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- Doctype informa ao agente de usuario a versão do html que deve ser renderizada -->
+<html>
+    <head>
+        <title>pagine de exemplo estrutura basica</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mendes91">
+        <meta name="description" content="Descrição da Página">
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style>
+
+            /*
+                PADDING -> espaçamento interno dentro do componente: 
+                MARGIN -> espaçamento externo do componente
+            */
+            body {
+                background-color: aqua
+            }
+
+            h1 {
+                /*Tenta inserir Arial, Se não, Helvetica, se não, sans-serif; */
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 40px;
+                font-style: italic;
+                font-variant: small-caps; /* As fontes pequenas ficam um pouco maiores */
+                color: blue;
+                background-color: #f00; /*Somente funciona quando todos o RGB é duplicado #ff0000 */
+                background-color: violet !important;
+                margin-left: 0;
+                margin-top: 50px;
+                padding-left: 25px;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                padding-right: 25px;
+                margin-bottom: 50px;
+                width: 300px;
+                height: 200px;
+            }
+
+            h2 {
+                text-transform: uppercase;
+                font-family: arial;
+                color: #12de5a;
+                background-color: #f5da1b;
+                border-color: tomato;
+                border-bottom-color: teal;
+                border-style: dotted;
+                border-width: 5px;
+                padding: 25px;
+            }
+
+            p {
+                font-variant: normal;
+                text-align: left;
+                text-decoration: underline;
+                text-indent: 75px; /* espaçamento do primeira linha */
+                margin-bottom: 25px;
+                /* ABREVIAÇÔES CSS                
+                    margin: 50px; === margin: 50px 50px 50px 50px;
+                    margin: 50px 40px === margin: 50px 40px 50px 40px; duplica top para bottom e direita para esquerda e vice-versa.
+                    margin: 50px 40px 25px === margin: 50px 40px 25x 40px 
+                */
+                border : double 7px rosybrown; /* estilo, tamanho e cor (sempre obrigatorios) */
+            }
+
+            .destaque {
+                color: red;
+                background-color: peru;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Estrutura Básica</h1>
+        <h2>Subtitulo da Página</h2>
+
+        <p>
+            Mussum Ipsum, cacilds vidis litro abertis. A ordem dos tratores não altera o pão duris. Suco de cevadiss deixa as pessoas mais interessantis. Sapien in monti palavris qui num significa nadis i pareci latim. Viva Forevis aptent taciti sociosqu ad litora torquent.
+        </p>
+        <p id="destaque">
+            Manduma pindureta quium dia nois paga. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio. Interagi no mé, cursus quis, vehicula ac nisi.
+        </p>
+        <p class="destaque">
+            Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Per aumento de cachacis, eu reclamis. Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis.
+        </p>
+
+    </body>
+</html>

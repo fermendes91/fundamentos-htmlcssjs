@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Doctype informa ao agente de usuario a versão do html que deve ser renderizada -->
+<html>
+    <head>
+        <title>pagine de exemplo estrutura basica</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Mendes91">
+        <meta name="description" content="Descrição da Página">
+        <meta name="keywords" content="html5, tecnologia">
+    
+        <style>
+            p, li { /* forma de utilizar mesmo CSS para varios elementos, ou podemos utilizar um componente mais externo conforme linha 16*/
+                font-family: sans-serif;
+            }
+
+            body {
+                font-family: sans-serif;
+                color: orangered
+            }
+
+            /*
+                PSEUDO-CLASSES, são classes para utilizar CSS's diferentes para cada tipo de iteração sobre algum componente
+                    -> é seguido de <nometag>:<ação> SEMPRE JUNTOS, não pode ter espaçamentos nessa declaração
+            */
+
+            a{ /*atribui o css para todos os comportamentos */
+                color: cornflowerblue;
+            }
+
+            a:hover { /* css ao deixar ponteiro do mouse em cima do link */
+                color: yellowgreen !important;
+                background-color: slategray;
+            }
+
+            a:visited { /* CSS para quando o link foi visitado */
+                color: mediumturquoise;
+            }
+
+            a:link { /* atribui o comportamento para o padrão sem o clique ou mouse por cima */
+                color:maroon;
+            }
+
+
+            ul li{
+                list-style-type: square;
+            }
+
+            ol li{
+                list-style-type: georgian;
+                list-style-position: inside; /* fica dentro da lista */
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <a href="05_inicioCSS.html">Veja o arquivo 05_inicioCSS.html</a> |
+        <a href="_base.html">Veja o arquivo Base.html</a>
+    
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+            <li>item 3</li>
+        </ul>
+
+        <ol>
+            <li>item 4</li>
+            <li>item 5</li>
+            <li>item 6</li>
+        </ol>
+    
+
+        <p>Paragrafo 1</p>
+    </body>
+</html>
