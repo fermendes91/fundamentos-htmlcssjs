@@ -1,0 +1,95 @@
+body{
+    font-family: arial, sans-serif;
+    background-color: lightgray;
+    margin: 0; /* por padrão o body já possui pequenas margins, por isso zeramos */
+}
+
+.banner {
+    height: 500px;
+    background-image: url(imagens/bg-3.jpg);
+    background-position: right center; /* alinha na direita e centraliza na vertical */
+    background-size: cover; /* cobre a area inteira */
+    border-top: 1px solid transparent;
+}
+
+.banner nav ul {
+    text-align: right; /* alinhamento para direita */
+}
+
+.banner nav li {
+    display: inline-block;
+    list-style: none;
+    margin: 0px 10px 0px 0px;
+}
+
+.banner nav a{
+    display: block; /* transforma em block para o css model-box funcionar no elemento que por padrão é tipo linha */
+    background-color: rgba(0, 0, 0, 0.3); /* cor porem com transparencia */
+    padding: 10px 10px;
+    margin: 5px 5px 0px 0px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    float: right;
+    letter-spacing: 1px;
+}
+
+.banner nav a:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 3px 3px black
+}
+
+
+
+.banner-content {
+    text-align: center;
+    color: white;
+    margin-top: 100px;
+}
+
+.banner-content h1 { /* formata todo h1 que esta dentro do banner-content (h1 é descendente de banner-content) */
+    text-transform: uppercase;
+    font-size: 36px;
+    text-shadow: 3px 4px 5px rgb(58, 53, 53);
+    /* TEXT SHADOW 
+        3px de deslocamento no eixo x
+        4px de deslocamento no eixo y 
+        5px de blur (esfumaçamento)
+        cor do sombreamento
+    */
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+main section h2 {
+    margin-top: 0;
+    background-color: rgb(231, 231, 231);
+    border-bottom: 2px solid darkgray;
+    padding: 10px 10px;
+}
+
+footer {
+    margin-top: 20px;
+    height: 50px;
+    background-color: gray;
+    opacity: 0.6;
+    text-align: center;
+    line-height: 50px; /* Quando se tem apenas 1 linha, colocar o valor do line-height com o mesmo valor do height também centraliza */
+}
+
+footer p {
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+
+.content-section {
+    margin-top: 15px;
+    background-color: white;
+    padding: 15px;
+}
+
