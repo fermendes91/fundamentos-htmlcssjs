@@ -1,0 +1,57 @@
+body {
+    color: white;
+    margin: auto;
+    width: 79%;
+}
+
+.principal {
+    margin-top: 50px;
+    background-color: lightblue;
+    height: 1000px;
+}
+
+.fashion-header {
+    height: 500px;
+    width: 100%;
+    background-image: url(../imagens/topo.jpg);
+    background-position: right top;
+    background-size: top;
+    background-repeat: no-repeat;
+}
+
+.fashion-div-icon {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(23, 23, 46);
+    float: left;
+    text-align: center;
+}
+
+.logo-icon {
+    margin-top: 7px;
+    background-repeat: no-repeat;
+}
+
+.nav-content {
+    width:50%;
+    height: 100%;
+    background-color: rgb(23, 23, 46);
+    float: left;
+}
+
+.nav-bar {
+    top: 0;
+    height: 50px;
+    background-color: pink;
+    display: block;
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: rgba((46, 46, 46, 0.8);
+    text-align: center;
+}

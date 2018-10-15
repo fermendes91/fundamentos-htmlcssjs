@@ -41,8 +41,6 @@ body{
     box-shadow: 3px 3px 3px black
 }
 
-
-
 .banner-content {
     text-align: center;
     color: white;
@@ -59,6 +57,14 @@ body{
         5px de blur (esfumaçamento)
         cor do sombreamento
     */
+}
+
+.banner-content p {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block; /* vai somente utilizar a area do conteudo, e não a linha inteira */
+    padding: 10px;
+    border-bottom: 2px solid white;
+
 }
 
 main {
@@ -81,15 +87,40 @@ footer {
     text-align: center;
     line-height: 50px; /* Quando se tem apenas 1 linha, colocar o valor do line-height com o mesmo valor do height também centraliza */
 }
+.content-section {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    padding: 10px;
+    overflow: auto; /* se adequa ao tamanho dos cards, devido ao uso do float no .card */
+}
+
+.card {
+    width: 32%;
+    float: left;
+    box-sizing: border-box; /* o border em si soma o seu valor ao valor do width, com border-box isso não acontece */
+
+     /*display: inline-block; coloca os elementos como se fossem texto, não é a melhor alternativa, a melhor é usar float*/
+}
+
+.card img {
+    width: 100%;
+    display: block; /* para não criar espaçamentos remova e veja o comportamento */
+}
+
+.card-1, .card-2 {
+    margin-right: 2%;
+}
+
+.card p {
+    background-color: rgb(80, 79, 79, 0.875);
+    color: white;
+    margin: 0;
+    padding: 15px;
+}
 
 footer p {
     color: white;
     text-shadow: 3px 3px 3px black;
 }
-
-.content-section {
-    margin-top: 15px;
-    background-color: white;
-    padding: 15px;
-}
-

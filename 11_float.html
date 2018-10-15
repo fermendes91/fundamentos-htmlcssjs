@@ -1,5 +1,11 @@
+
 <!doctype html> 
 <html>
+
+    <!-- 
+        FLOAT nos tempos atuais já ESTA EM DESUSO para se alterar paginas, passagem de conhecimento somente
+        para se encontrar casos futuros com este tipo de layout de estruturação para saber como funciona.
+     -->
 
     <head>
        
@@ -8,9 +14,156 @@
         <meta name="author" content="Fernando"> 
         <meta name="description" content="lista de documentos"> 
         <meta name="keywords" content="html5, tecnologia"> 
+    
+
+        <style>
+
+            /**** CONTAINER 1 ****/
+            #container1 {
+                width: 80%;
+                padding: 15px;
+                background-color: #ccc;
+            }
+
+            #container1 div {
+                width: 150px;
+                height: 50px;
+                border: 2px solid red;
+                margin: 5px;
+            }
+
+            #div2c1 {
+                float: left; /* foge do fluxo natural, e a div3 tenta subir e vira uma bagunça */;
+            }
+
+            #div3c1 {
+                background-color: yellow;
+                clear: left; /* correção da div2c1 para não virar bagunça. */
+            }
+
+             /**** CONTAINER 2 ****/
+
+            #container2 {
+                width: 80%;
+                padding: 15px;
+                background-color: #ccc;
+            }
+
+            #container2 div {
+                width: 150px;
+                height: 50px;
+                border: 2px solid red;
+                margin: 5px;
+            }
+
+            #div2c2 {
+                float: right;
+            }
+
+            #div3c2 {
+                background-color: yellow;
+                clear: right; /* a div3 enxerga a mudança na div2, não tornando a tela uma bagunça, remova essa propriedade e façao o teste */
+                clear: both; /* enxerga as mudanças da div2 tanto left quanto right; */
+            }
+
+              /**** CONTAINER 3 ****/
+
+            #container3 {
+                width: 80%;
+                padding: 15px;
+                background-color: #ccc;
+            }
+
+            #container3 div {
+                width: 150px;
+                height: 50px;
+                border: 2px solid red;
+                margin: 5px;
+                overflow: auto; /* gambiarra para que o container passe a enxergar os floats das divs internas */
+            }
+
+            /* se todas as divs dentro do mesmo elemento contiverem a propriedade float, então os elementos se entenderão 
+                porem a div container não passará a enxergar estes dados, perceba que o padding de 15px fica deslocado*/
+            #div1c3 {
+                background-color: green;
+                float : left;
+            }
+
+            #div2c3 {
+                background-color: blue;
+                float: left; /* foge do fluxo natural, e a div3 tenta subir e vira uma bagunça */;
+            }
+
+            #div3c3 {
+                float: left;
+                background-color: yellow;
+            }
+
+
+
+            
+            hr {
+                margin: 75px;
+                border-color: aqua;
+            }
+
+            header {
+                background: #ccc;
+                height: 50px;
+            }
+
+            nav {
+                width: 25%;
+                height: 50px;
+                background-color: orange;
+                float: left;
+            }
+
+            main {
+                width: 70%;
+                height: 100px;
+                background-color: yellow;
+                float:right;
+            }
+
+            footer {
+                height: 50px;
+                background-color: blue;
+                clear: both; /* footer vai escutar os elementos com float right e float left; */
+            }
+        </style>
     </head>
 
     <body> 
+
+        <h1>Float Container 1</h1>
+        <div id="container1">
+            <div id="div1c1">div1</div>
+            <div id="div2c1">div2</div>
+            <div id="div3c1">div3</div>
+        </div>
+
+        <h1>Float Container 2</h1>
+        <div id="container2">
+            <div id="div1c2">div1</div>
+            <div id="div2c2">div2</div>
+            <div id="div3c2">div3</div>
+        </div>
+
+        <h1>Float Container 3</h1>
+        <div id="container2">
+            <div id="div1c3">div1</div>
+            <div id="div2c3">div2</div>
+            <div id="div3c3">div3</div>
+        </div>
+
+        <hr>
+
+        <!-- Lembrando que float não é a melhor maneira de se estruturar layout -->
+        <header>header</header>
+        <nav>navigator</nav>
+        <main>main</main>
+        <footer>footer</footer>
     </body>
 
 </html>
