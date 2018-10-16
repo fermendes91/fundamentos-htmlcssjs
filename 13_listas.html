@@ -1,0 +1,72 @@
+<!doctype html> 
+<html>
+
+    <head>
+        
+        <title>Página de exemplo estrutura basica</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos">
+        <meta name="keywords" content="html5, tecnologia">
+        <link para arquivos externos>
+
+        <style>
+            li ul {
+                height: 0;
+                overflow: hidden;
+                transition: height .5s;
+            }
+
+            li:hover {
+                background: #ccc;
+            }
+
+            li:hover ul {
+                height: 40px;
+                display: block;
+            }
+        </style>
+    </head>
+
+    <body> 
+
+        <ul>
+            <li>item 1</li>
+            <li>item 2
+                <ul>
+                    <li>item 2.1</li>
+                    <li>item 2.2</li>
+                </ul>
+            </li>
+            <li>item 3</li>
+        
+            <hr>
+
+            <dl>  <!-- definition list -->
+                <dt>HTML</dt> <!-- definition term -->
+                <dd>Linguagem de marcaçãõ de Hypertexto</dd> <!-- definition description-->
+           
+                <dt>CSS</dt>
+                <dd>Linguagem para criação de folhas de estilos</dd>
+            </dl>
+
+            <hr>
+
+            <dl>
+                <dt>www</dt>
+                <dt>internet</dt>
+                <dt>web</dt>
+                <dd>rede mundial de computadores</dd>
+            </dl>
+
+            <dt>Orientação a Objetos</dt>
+            <dd>JAVA</dd>
+            <dd>C#</dd>
+            <dd>PHP</dd>
+
+           
+        </ul>
+
+    </body>
+
+</html>
