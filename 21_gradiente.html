@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+
+    <head>
+       
+        <title>CSS Efeitos - Gradiente Linear</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos">
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+
+            html, body {
+                font-family: tahoma;
+                height: 100%;
+
+                /*
+                    linear-gradient:({direction(optional), {color-from}, {color-to});
+
+                    ao inves de {to right top} para definir a direção podemos também utilizar o valor em graus utilizando
+                    linear-gradient(60deg blue, green).
+
+                    podemos também colocar varias cores, e adicionar a quantidade de pixels para cada cor para começar o gradiente.
+                    linear-gradient(to top left, red 20%, blue 100px, green 30%, yellow 200px), 
+                */
+                background-image: linear-gradient(to right top ,rgba(198, 226, 42, 0.6), transparent), 
+                    linear-gradient(to right top, transparent, rgba(251, 6, 6, 0.4)),
+                    url(imagens/bg.jpg); /* A imagem esta no funodo */
+                background-repeat: no-repeat;
+                background-size: cover; /* {auto}, {cover}  auto para o gradiente e cover para a imagem */ 
+                background-position: bottom right;
+
+                background-color: aqua /* Por boas praticas é importante colocar um background que fique adequado a pagina, caso o linear gradiente não seja renderizado */
+            }
+
+            #radius {
+                background: WHITE;
+                width: 125px;
+                height: 125px;
+                margin: 50px auto;
+                border-radius: 50px 100px / 100px 50px;
+
+                box-shadow: 
+                    -15px -13px 10px -5px yellow, 
+                     13px -15px 10px -5px red,
+                    -15px 13px 10px -5px blue, 
+                    15px 15px 10px -5px green; 
+            }
+
+            h1 {
+                font-size: 50px;
+                text-align: center;
+                
+               
+                text-shadow: 
+                    -1px -1px 2px #5d5d5d,
+                    -2px -2px 2px #727272, 
+                    -3px -3px 2px #868686,
+                    -4px -4px 2px #a3a3a3;
+                    ;
+            }
+        </style>
+    </head>
+
+    <body> 
+       <h1>CSS Efeitos - Gradiente Linear</h1>
+
+       <div id="radius"></div>
+    </body>
+
+</html>

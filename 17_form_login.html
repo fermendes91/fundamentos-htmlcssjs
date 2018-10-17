@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Login Form</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+            .form-login {
+                width: 250px;
+                margin: 50px auto 10px;
+                font-family: sans-serif;
+            }
+
+            .form-login label{
+                display: block; /* elemento label é inline, para o margin funcionar devemos tranforma-lo em block */
+                margin-top: 20px;
+            }   
+
+            .form-login fieldset {
+                background-color: lightblue;
+                border-radius: 8px;
+            }
+
+            .form-login legend {
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                background-color: white;
+            }
+
+            .btn-submit {
+                margin-top: 15px;
+            }
+
+            .btn-submit:hover {
+                background-color: dodgerblue;
+                color: white;
+                text-shadow: 2px 2px black;
+                text-transform: capitalize;
+                cursor: pointer;
+                
+            }
+
+            #user, #pass, .btn-submit {
+                display:block;
+                width: 100%;
+                box-sizing: border-box; /* o valor do padding do input #user, #pass somam ao tamanho final do width com border-box essa soma ao valor final não acontece. */
+                padding: 12px;
+                font-size: 18px;
+                border: none;
+                border-radius: 10px;
+            }
+
+            #user:focus, #pass:focus {
+                background: lightslategray;
+                border-color: red;
+                outline: none !important; /* retira o azul claro em volta do input quando selecionado */
+                outline-offset: -10; 
+                border: 2px solid mediumaquamarine;
+                border-radius: 10px;
+                margin: -2px; /* mantem o tamanho estatico ao selecionar o input */
+            }
+
+            #user {
+                margin-bottom: 10px;
+            }
+
+
+        </style>
+
+    </head>
+
+    <body> 
+        <h1>Exemplo Formulario</h1>
+        <form action="#" method="POST" class="form-login">
+            <fieldset> 
+                <legend>Login</legend>
+            
+                <label for="user">Informe o seu usuario: </label>
+                <input type="text" name="login" id="user" autocomplete="off" autofocus="true">
+
+                <label for="pass">Informe a senha:</label>
+                <input type="password" name="pass" id="pass">
+            
+                <input type="submit" value="logar" class="btn-submit">
+            </fieldset>
+         
+        
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Font Faces</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+        <link para arquivos externos>
+
+
+
+        <style>
+            /* importação de fonte personalizada */
+            @font-face {
+                font-family: 'nadia'; /* nome dado a fonte */
+                src: url(fonts/nadia/nadia-serif.eot); /* internet explorer */
+                src: url(fonts/nadia/nadia-serif.woff) format('woff'),
+                     url(fonts/nadia/nadia-serif.ttf) format('truetype'),
+                     url(fonts/nadia/nadia-serif.svg) format('svg'); /* colocando compatibilidade com a maioria dos browsers */
+                
+            }
+
+            body {
+                font-family: nadia, Arial, helvetica;
+            }
+            
+            p {
+                font-weight: bold;
+            }
+
+            a:visited {
+                color: red;
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <h1>Font Family</h1>
+
+        <!-- Verificar direitos autorais das fontes disponibilizadas nos sites, para saber se pode ser usada ou não -->
+        <p>
+            Site para baixar fontes customizadas e poder aplicar no site (verificar direitos autorais): <br>
+            <a href="https://fontsquirrel.com/" target="_blank">Font Squirrel</a>
+        </p>
+
+        <ol>
+            <li>Fazer o download do arquivo OTF</li>
+            <li>Ir no menu da pagina Generator</li>
+            <li>Fazer o upload da fonte feita o upload</li>
+            <li>Fazer a diretiva pra importar a nova fonte a nossa pagian (@font-face, css)</li>
+            <li>Colocar o nome definido no font-face para o body da nossa pagina (css)</li>
+        </ol>
+
+        <p>
+            Site para pegar dicas e boas praticas de CSS: <br>
+            <a href="https://css-tricks.com/" target="_blank">CSS Tricks</a>
+        </p>
+
+        <ol>
+            <li>@Font-face: <a href="https://css-tricks.com/snippets/css/using-font-face/" target="_blank">CSS Tricks - @font-face</a></li>
+        </ol>
+       
+    </body>
+
+</html>
