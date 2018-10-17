@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+
+    <head>
+       
+        <title>CSS Efeitos - Box Shadow</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos">
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+            #radius {
+                background: WHITE;
+                width: 125px;
+                height: 125px;
+                margin: 50px auto;
+                border-radius: 50px 100px / 100px 50px;
+            
+                /* 
+                    box-shadow: {eixo-x} {eixo-y} {esfumaçamento} {aumento/diminui sombra} {cor}
+
+                    OBS: valores negativos no eixo x, ESQUERDA, valores negativos no eixo y, vai para CIMA 
+                         podemos colocar mais de uma sombra no mesmo elemento (colocando virgula).
+                */
+                box-shadow: 
+                    -15px -13px 10px -5px yellow, /* CIMA, ESQUERDA */
+                    13px -15px 10px -5px red, /* CIMA, DIREITA */
+                    -15px 13px 10px -5px blue, /* BAIXO, DIREITA */
+                    15px 15px 10px -5px green; /* BAIXO, ESQUERDA */
+            }
+        </style>
+    </head>
+
+    <body> 
+       <h1>CSS Efeitos - Box Shadow</h1>
+
+       <div id="radius"></div>
+    </body>
+
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+
+    <head>
+       
+        <title>CSS Efeitos - Border Radius</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos">
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+            #radius {
+                background: orange;
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                border-radius: 50% /* Curvatura nas bordas da div, 50% transforma em uma bola */
+            }
+
+            #radius2 {
+                background: blue;
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                border-radius: 15px 10px 55px 10px; /* Extremidades:  Cima Esquerda, Cima Direita, Baixo Direita, Baixo Esquerda*/
+            }
+
+            #radius2:hover {
+                background-color: aqua;
+                border:2px solid black;
+                cursor: pointer;
+            }
+
+            #radius3 { /* Podemos criar formas diferentes e não somente circulos perfeitos */
+                background: yellowgreen;
+                width: 200px;
+                height: 200px;
+                margin: 50px auto;
+                border-radius: 50px 100px 
+                    / 55px 105px; /* a partir do barra conta o border-radius para a horizontal  y/x */
+                
+            }
+
+        </style>
+    </head>
+
+    <body> 
+       <h1>CSS Efeitos - Border Radius</h1>
+
+       <div id="radius"></div>
+       <div id="radius2"></div>
+       <div id="radius3"></div>
+    </body>
+
+</html>

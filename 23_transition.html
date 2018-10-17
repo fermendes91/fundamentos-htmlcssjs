@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Transição</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+        <link para arquivos externos>
+
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            div {
+                width: 125px;
+                height: 100px;
+                background-color: orange;
+
+                transition-property: width, height; /* Propriedade que será animada --> all (anima qualquer tipo) */
+
+                transition-duration: 0.5s, 0.8s; /* Duração da transição (1s, 500ms, .5s ) --> 0.5s de largura e 0.7 de altura */
+               
+                transition-delay: 0.1s, 0.3s; /* atrasa o começo da animação */
+                
+                /* O transition-timing-function são "funções" para efeitos de transição */
+                transition-timing-function: linear ; /* começa na mesma velocidade que termina (ainda assim fica robotica ) */
+                transition-timing-function: ease ; /* acelera um pouco mais */
+                transition-timing-function: ease-in; /* acelera devagar e termina rapidamente */
+                transition-timing-function: ease-out ; /* acelera rapido e termina */
+                transition-timing-function: ease-in-out ; /* acelera devagar, vai rapido, e termina devagar */
+
+                transition-timing-function: cubic-bezier(.67,-0.38,.5, 1.5) !important;
+                
+            }
+
+            div:hover {
+                width: 250px;
+                height: 400px;
+            }
+        </style>
+    </head>
+
+    <body> 
+        <div></div>
+
+        <p>
+            Para melhor entendimento do transition-timing-function utiliza o site: <br>
+            <a href="http://cubic-bezier.com" target="_blank">CUBIC-BEZIER</a>
+        </p>
+    </body>
+
+</html>

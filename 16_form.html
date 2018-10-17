@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>Página de exemplo estrutura basica</title>
+        <title>Introdução FORM</title>
         <meta charset="utf-8">
         <meta name="author" content="Fernando"> 
         <meta name="description" content="lista de documentos"> 
@@ -15,8 +15,23 @@
         <h1>Exemplo Formulario</h1>
 
         <form action="http://google.com/search" method="GET" taget="_blank">
-            <input type="text" name="q">
+            <label for="txtbusca">Faça uma busca</label> <!-- txtbusca somente para semantica, deixa mais legivel o codigo -->
+            <input type="text" name="q" id="txtbusca">
             <input type="submit" value="OK">
+        </form>
+
+        <form action="pagina.php" method="POST" >
+
+            <fieldset> <!-- Organiza campos que contenham o mesmo escopo -->
+                <legend>Login</legend>
+            
+                <label for="log">User: </label>
+                <input type="text" name="login" id="log">
+                <label for="pass">Password:</label>
+                <input type="password" name="pass" id="pass">
+            </fieldset>
+            <input type="submit" value="Login">
+        
         </form>
     </body>
 

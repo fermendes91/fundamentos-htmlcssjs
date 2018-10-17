@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Form Elementos</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+            input {
+                margin: 5px;
+            }
+
+            select {
+                margin: 10px;
+            }
+
+            .btn-enviar {
+                box-sizing: border-box;
+                margin: 0;
+            }
+
+            textarea {
+                width: 100%;
+                resize: none;
+            }
+
+            textarea[readonly] {
+                background-color: lightgray;
+            }
+        </style>
+
+    </head>
+
+    <body> 
+        <h1>Exemplo Formulario</h1>
+
+        <form action="#" method="GET">
+            
+            <fieldset>
+                <legend>Dados pessoais</legend>
+    
+                <label>E-mail</label>
+                <input type="email" name="email" maxlength="10" required placeholder="Informe seu e-mail valido"> <!-- fica mais semantico, se usado em celulares aparece o @ no painel de digitação por exemplo-->
+                
+                <br> <!-- Nunca usar em formularios, estamos usando somente para efeito de visualização-->
+                <label>Número de filhos</label>
+                <input type="number" min="0" max="100" name="numFilhos">
+
+                <br>
+                <label>Altura</label>
+                <input type="number" min="0.5" max="3" step="0.01" name="altura">m
+                
+                <br>
+                <label>Data Nascimento</label>
+                <input type="date" min="2018-01-15" max="20138-01-15" name="dataNasc">
+                
+                <br>
+                <p>Sexo:</p>
+                <label > <!-- É bom envolver, para quando clicar no texto o botão ser selecionado, ajuda pessoas com problemas motores, deixando uma area maior para seleção -->
+                    <input type="radio" name="sexo" value="M" checked>
+                    Masculino
+                </label>
+                <label >
+                    <input type="radio" name="sexo" value="F">
+                    Feminino
+                </label>
+
+                <br>
+                <label>Estado Civil</label>
+                <select name="estadoCivil">
+                    <option value="">Selecione</option>
+                    <option value="0">Solteiro</option>
+                    <option value="1">Casado</option>
+                    <option value="2">Divorciado</option>
+                    <option value="3">Viuvo</option>
+                </select>
+
+                <br>
+                <label>Quais Veiculos Possui</label>
+                <select name="veiculos" multiple size="2"> <!--size trabalha em conjunto com o multiple, podendo selecionar no max 2 opções-->
+                    <option value="">Selecione</option>
+                    <option value="0">Carro</option>
+                    <option value="1">Barco</option>
+                    <option value="2">Avião</option>
+                    <option value="3">Moto</option>
+                </select>
+
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>Área de Interesse</legend>
+
+                <label>
+                    <input type="checkbox" name="html" value="html">
+                    HTML
+                </label>
+
+                <label>
+                    <input type="checkbox" name="css" value="css">
+                    CSS
+                </label>
+
+                <label>
+                    <input type="checkbox" name="js" value="js">
+                    JavaScript
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Mensagem</legend>
+
+                <textarea name="msg" cols="40" rows="8" ></textarea>
+
+                <textarea name="contrato" cols="40" rows="8" readonly>Aqui entra o texto do contrato que precisa ser aceito</textarea>
+                <label>
+                    <input type="checkbox" checked>
+                     Li e Aceito os Termos e Condições
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Peso e Cor da Pele</legend>
+            
+                <label>Peso</label>
+                <input type="range" name="Peso" min="30" max="200" step="0.5">
+
+                <label>Cor da Pele</label>
+                <input type="color" name="corPele">
+            </fieldset>
+            
+            <br><br>
+            <input type="submit" value="enviar" class="btn-enviar">
+            <input type="button" value="botao">
+            <input type="reset" value="reset">
+        </form>
+    </body>
+
+</html>
