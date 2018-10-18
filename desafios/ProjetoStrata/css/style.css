@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+header {
+    width: 35%;
+    height: 100%;
+    position: fixed;
+    overflow: none;
+    background-image: 
+        linear-gradient(to top, rgba(0,0,0, 0.2), rgba(0,0,0, 0.5)),
+        url(../imagens/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+    padding: 150px 60px 0 0;
+    box-sizing: border-box; /* O padding soma ao valor total, com o box-sizing essa soma não acontece. */
+    text-align: right;
+    clear:both;
+}
+
+header img.avatar {
+    width: 90px;
+    border-radius: 50%;
+    display: block;
+    float: right;
+}
+
+header p {
+    color: #C6BDB0;
+    margin-right: 7px;
+    font-size: 19px;
+    line-height: 1.5;
+    cursor: default;
+    display: block;
+    float:right;
+}
+
+header p strong {
+    color: white;
+    font-weight: bold;
+}
+
+main {
+    color: rgb(156, 154, 151);
+    float:right;
+    width: 65%;
+    height: 1000px;
+    overflow: auto;
+    clear: both;
+    padding: 175px 60px 0 50px;
+    box-sizing: border-box;
+}
+
+main h1#maintext {
+    color: #A4A3A6;
+    margin-bottom: 45px;
+    font-size: 26px;
+}
+
+main p {
+    line-height: 1.8;
+}
+
+hr.break-content {
+    color: rgba(170, 170, 170, 0.2);
+    margin: 70px 0 60px;
+}
+
+/* classes */
+
+.subtitle {
+    font-size: 20px;
+    color: rgb(116, 115, 115);
+    margin-bottom: 20px;
+}
+
+.btn-info {
+    padding: 12px 30px;
+    color: #A4A3A6;
+    background-color: white;
+    border: 2px solid gray;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    transition-property: color, border;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in;
+    box-sizing: border-box;
+}
+
+.btn-info:hover {
+    color: rgb(83, 187, 228);
+    border: 2px solid rgb(83, 187, 228);
+}
+
+.recent-work-imgs {
+    display: flex;
+    width: 48.6%;
+    float: left;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
