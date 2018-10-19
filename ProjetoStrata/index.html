@@ -18,16 +18,16 @@
 
 <body>
     <header class="main-header">
-        <a href="index.html" class="main-header-link">
+        <a href="index.html" class="main-header-link img-link">
             <img src="imagens/avatar.jpg" alt="texto interessante num projeto oficial">
         </a>
 
         <h1 class="main-header-title">
             Trabalhos e groselhas de <br>
             <strong>Fernando Mendes Jr</strong>,<br>
-            um zé ninguem qualquer <br>
-            Retirado de <a href="http://html5up.net" class="main-header-link">html5up.net</a>
+            um zé ninguem qualquer
         </h1>
+        <p>Retirado de <a href="http://html5up.net" class="main-header-link">html5up.net</a></p>
     </header>
 
     <main class="main-content">
@@ -43,43 +43,60 @@
                 Courtyard.
             </p>
 
-            <a href="#" title="" class="btn-default">load more</a>
+            <a href="#" title="" class="btn-default btn-default-stroke">veja mais</a>
         </section>
 
         <section class="main-content-section">
-            <article class="recent-works-card">
-                <a href="imagens/fulls/01.jpg">
-                    <img src="imagens/thumbs/01.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title">The first one will come out</p>
-                <p>For instance, SWTOR has over 200,000 lines of spoken dialogue</p>
-                <a href="imagens/fulls/02.jpg">
-                    <img src="imagens/thumbs/02.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title">Alliance casualties will be</p>
-                <p>People who raise and make Pokemon</p>
-                <a href="imagens/fulls/03.jpg">
-                    <img src="imagens/thumbs/03.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title">As the Horde offensive progresses</p>
-                <p>on. I don't often come here, but I will</p>
-                <a href="imagens/fulls/04.jpg">
-                    <img src="imagens/thumbs/04.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title"> E/W, then South, then the</p>
-                <p> I'll use my frying pan as a drying pan! Meowth</p>
-                <a href="imagens/fulls/05.jpg">
-                    <img src="imagens/thumbs/05.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title">A wild Squirtle appeared! </p>
-                <p>I feel so sorry for him, I have to marry him! </p>
-                <a href="imagens/fulls/06.jpg">
-                    <img src="imagens/thumbs/06.jpg" title="Carro em movimento numa rua">
-                </a>
-                <p class="recent-works-card-title">Pokemon fight are called </p>
-                <p> No stealing of Pokemon from other trainers! </p>
-            </article>
 
+            <h3>Recent Works</h3>
+            <div class="row ">
+                <div class="col-2">
+                     <article class="recent-works-card">
+                        <a href="imagens/fulls/01.jpg" class="img-link">
+                            <img src="imagens/thumbs/01.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title">The first one will come out</p>
+                        <p class ="recent-works-card-description">For instance, SWTOR has over 200,000 lines of spoken dialogue</p>
+                    </article>
+                    <article class="recent-works-card">
+                        <a href="imagens/fulls/02.jpg" class="img-link">
+                            <img src="imagens/thumbs/02.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title">Alliance casualties will be</p>
+                        <p class ="recent-works-card-description">People who raise and make Pokemon</p>
+                    </article>
+                    <article class="recent-works-card">
+                        <a href="imagens/fulls/03.jpg" class="img-link">
+                            <img src="imagens/thumbs/03.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title">As the Horde offensive progresses</p>
+                        <p class ="recent-works-card-description">on. I don't often come here, but I will</p>
+                    </article>    
+                </div>
+                <div class="col-2">
+                    <article class="recent-works-card">
+                        <a href="imagens/fulls/04.jpg" class="img-link">
+                            <img src="imagens/thumbs/04.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title"> E/W, then South, then the</p>
+                        <p class ="recent-works-card-description"> I'll use my frying pan as a drying pan! Meowth</p>
+                    </article>    
+                    <article class="recent-works-card">
+                        <a href="imagens/fulls/05.jpg" class="img-link">
+                            <img src="imagens/thumbs/05.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title">A wild Squirtle appeared! </p>
+                        <p class ="recent-works-card-description">I feel so sorry for him, I have to marry him! </p>
+                    </article>
+                    <article class="recent-works-card">
+                        <a href="imagens/fulls/06.jpg" class="img-link">
+                            <img src="imagens/thumbs/06.jpg" alt="Carro em movimento numa rua">
+                        </a>
+                        <p class="recent-works-card-title">Pokemon fight are called </p>
+                        <p class ="recent-works-card-description"> No stealing of Pokemon from other trainers! </p>
+                    </article>
+                </div>
+            </div>
             <a href="#" title="Veja Portifolio Completo" class="btn-default">Veja Portifolio Completo</a>
         </section>
 
@@ -90,35 +107,47 @@
                 fight The early bird gets the worm, or in this case the Pokemon. You look like you're ready for bed,
                 not Pokemon training. I don't think you're going to train in your pajamas. </p>
 
-            <form action="#" method="POST">
-                <label for="name">Nome</label>
-                <input type="text" name="name" id="name">
 
-                <label for="email">E-mail</label>
-                <input type="text" name="email" id="email">
-
-                <label for="message">Mensagem</label>
-                <textarea name="mensagem" id="mensagem"></textarea>
-
-                <input type="submit" value="enviar" class="btn-default">
-            </form>
-
-            <address>
-                <p>
-                    <span>Endereço</span>
-                    1234 Somewhere Rd. Nashville, TN 0000 United States
-                </p>
-
-                <p>
-                    <span>Telefone</span>
-                    000-000-000
-                </p>
-
-                <p>
-                    <span>E-mail</span>
-                    email@server.com
-                </p>
-            </address>
+            <div class="row">
+                <div class="col-2-3">
+                    <form action="#" method="POST">
+                        <div class="row">
+                            <div class="col-2">
+                                <label for="name">Nome</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div class="col-2">
+                                <label for="email">E-mail</label>
+                                <input type="text" name="email" id="email">
+                            </div>
+                        </div>
+                    
+                        <label for="message">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem"></textarea>
+        
+                        <input type="submit" value="enviar" class="btn-default btn-default-stroke btn-default-big">
+                    </form>
+                </div>
+                <div class="col-1-3">
+                    <address>
+                        <p>
+                            <span>Endereço</span>
+                            1234 Somewhere Rd. Nashville, TN 0000 United States
+                        </p>
+        
+                        <p>
+                            <span>Telefone</span>
+                            000-000-000
+                        </p>
+        
+                        <p>
+                            <span>E-mail</span>
+                            email@server.com
+                        </p>
+                    </address>
+                </div>
+            </div>
+        
         </section>
 
         <section class="main-content-section">
@@ -138,9 +167,9 @@
             <h5>titulo h5</h5>
             <h6>titulo h6</h6>
 
-            <blockquote cite="http://developer.mozilla.org">
-                <!-- Citação mais curta -->
-                Esta é uma citação tirada de Mozilla Developer Center.
+            <blockquote cite="http://developer.mozilla.org"> <!-- Citação mais longa -->
+                <p>Esta é uma citação tirada de Mozilla Developer Center.</p>
+                <p>Outros paragrafos</p>
             </blockquote>
 
             <q cite="https://www.mozilla.org/en-US/about/history/details/">
@@ -148,83 +177,90 @@
                 Firefox 1.0 was released in 2004 and became a big success.</q></p>
 
             <h4>Preformatado</h4>
-            <pre> <!-- leva em conta quebra de linha, e todo o espaçamento que tivermos dentro da tag -->
-                       
+            <pre><code> <!-- leva em conta quebra de linha, e todo o espaçamento que tivermos dentro da tag -->
                             tag pre 
                     com texto
                 formatado...        bem legal
-
-                    <code> <!--  bom para usar com a tag code, para colocar trechos de codigo--> 
+                <!--  bom para usar com a tag code, para colocar trechos de codigo--> 
                         &lt;script&gt;
                             alert('ola mundo');
                         &lt;/script&gt;
-                    </code>
-            </pre>
+                    </code></pre>
 
             <h4>Listas</h4>
 
-            <h5>Não ordenada</h5>
-            <ul>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-            </ul>
+            <div class="row">
+                <div class="col-2">                
+                    <h5>Não ordenada</h5>
+                    <ul>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ul>
+        
+                    <h5>Ordernada</h5>
+                    <ol>
+                        <li>item</li>
+                        <li>item</li>
+                        <li>item</li>
+                    </ol>
+                </div>
 
-            <h5>Ordernada</h5>
-            <ol>
-                <li>item</li>
-                <li>item</li>
-                <li>item</li>
-            </ol>
-
-            <h5>Alternate</h5>
-            <ul class="ul-alternate">
-                <li>item 1</li>
-                <li>item 2</li>
-                <li>item 3</li>
-            </ul>
-
-            <h5>Icones</h5>
-            <ul>
-                <li><i class="fab fa-github"></i></li>
-                <li><i class="fab fa-twitter"></i></li>
-                <li><i class="fab fa-facebook-f"></i></li>
-                <li><i class="fab fa-instagram"></i></li>
-                <li><i class="fab fa-linkedin-in"></i></li>
-            </ul>
+                <div class="col-2">
+                    <h5>Alternate</h5>
+                    <ul class="ul-alternate">
+                        <li>item 1</li>
+                        <li>item 2</li>
+                        <li>item 3</li>
+                    </ul>
+        
+                    <h5>Icones</h5>
+                    <ul class="ul-icons">
+                        <li><span class="hidden">Github</span><i class="fab fa-github"></i></li>
+                        <li><span class="hidden">Twitter</span><i class="fab fa-twitter"></i></li>
+                        <li><span class="hidden">Facebook</span><i class="fab fa-facebook-f"></i></li>
+                        <li><span class="hidden">Instagram</span><i class="fab fa-instagram"></i></li>
+                        <li><span class="hidden">Linked-in</span><i class="fab fa-linkedin-in"></i></li>
+                    </ul>
+                </div>
+            </div>
 
             <h5>Actions</h5>
 
-            <p>
-                <a href="#" class="btn-default">Default</a>
-                <a href="#" class="btn-default btn-default-stroke">Default</a>
-            </p>
-
-            <p>
-                <a href="#" class="btn-default btn-default-small">Default</a>
-                <a href="#" class="btn-default btn-default-small btn-default-stroke">Default</a>
-            </p>
-
-            <p>
-                <a href="#" class="btn-default btn-default-full">Default</a>
-                <a href="#" class="btn-default btn-default-full btn-default-stroke">Default</a>
-            </p>
-
-            <p>
-                <a href="#" class="btn-default btn-default-full btn-default-small">Default</a>
-                <a href="#" class="btn-default btn-default-full btn-default-small btn-default-stroke">Default</a>
-            </p>
-
+            <div class="row">
+                <div class="col-2">
+                    <p>
+                        <a href="#" class="btn-default">Default</a>
+                        <a href="#" class="btn-default btn-default-stroke">Default</a>
+                    </p>
+        
+                    <p>
+                        <a href="#" class="btn-default btn-default-small">Default</a>
+                        <a href="#" class="btn-default btn-default-small btn-default-stroke">Default</a>
+                    </p>
+                </div>
+                <div class="col-2">
+                    <p>
+                        <a href="#" class="btn-default btn-default-full">Default</a>
+                        <a href="#" class="btn-default btn-default-full btn-default-stroke">Default</a>
+                    </p>
+        
+                    <p>
+                        <a href="#" class="btn-default btn-default-full btn-default-small">Default</a>
+                        <a href="#" class="btn-default btn-default-full btn-default-small btn-default-stroke">Default</a>
+                    </p>
+                </div>
+            </div>
 
             <h4>Table</h4>
             <h5>Default</h5>
             <table class="table">
                 <thead>
-                    <th>
-                    <td>Name</td>
-                    <td>Description</td>
-                    <td>Price</td>
-                    </th>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr>
@@ -259,46 +295,45 @@
             </table>
 
             <h5>Alternate</h5>
-            <table class="table">
-                <thead>
-                    <th>
-                    <td>Name</td>
-                    <td>Description</td>
-                    <td>Price</td>
-                    </th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Item One</td>
-                        <td>A wild Squirtle appeared! </td>
-                        <td>99.99</td>
-                    </tr>
-                    <tr>
-                        <td>Item Two</td>
-                        <td>A wild Charmander appeared!</td>
-                        <td>39.99</td>
-
-                    </tr>
-                    <tr>
-                        <td>Item Three</td>
-                        <td>A wild Bulbasaur appeared! </td>
-                        <td>59.99</td>
-
-                    </tr>
-                    <tr>
-                        <td>Item Four</td>
-                        <td>A wild Pikachu appeared! </td>
-                        <td>139.99</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="2"></td>
-                        <td>399.99</td>
-                    </tr>
-                </tfoot>
-            </table>
-
+            <table class="table table-alternate">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Item One</td>
+                            <td>A wild Squirtle appeared! </td>
+                            <td>99.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Two</td>
+                            <td>A wild Charmander appeared!</td>
+                            <td>39.99</td>
+    
+                        </tr>
+                        <tr>
+                            <td>Item Three</td>
+                            <td>A wild Bulbasaur appeared! </td>
+                            <td>59.99</td>
+    
+                        </tr>
+                        <tr>
+                            <td>Item Four</td>
+                            <td>A wild Pikachu appeared! </td>
+                            <td>139.99</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>399.99</td>
+                        </tr>
+                    </tfoot>
+                </table>
 
             <h5>Buttons</h5>
 
@@ -324,35 +359,37 @@
 
             <h5>Forms</h5>
 
-            <label for="name">Nome</label>
-            <input type="text" name="name" id="name">
-
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email">
-
-            <select>
-                <option value="0">Selecione...</option>
-                <option value="1">Charmander!</option>
-                <option value="2">Pikachu!</option>
-                <option value="3">Dratini!</option>
-                <option value="4">Meowth!</option>
-            </select>
-
-            <label>
-                <input type="radio" value="baixa" name="prioridade"> Baixa Prioridade</label>
-            <input type="radio" value="media" name="prioridade"> Media Prioridade</label>
-            <input type="radio" value="alta" name="prioridade"> Alta Prioridade</label>
-            </label>
-
-            <label>
-                <input type="checkbox" name="copy" value="1" checked>Envie-me uma cópia
-                <input type="checkbox" name="human" value="1">Sou humano
-            </label>
-
-            <label for="msg"></label>
-            <textarea name="msg" placeholder="Digite uma mensagem" id="msg"></textarea>
-            <input type="submit" value="enviar" class="btn-default">
-            <input type="reset" value="resetar" class="btn-default btn-default-stroke">
+            <form action="#" method="POST">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name">
+    
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+    
+                <select>
+                    <option value="0">Selecione...</option>
+                    <option value="1">Charmander!</option>
+                    <option value="2">Pikachu!</option>
+                    <option value="3">Dratini!</option>
+                    <option value="4">Meowth!</option>
+                </select>
+    
+                <label>
+                    <input type="radio" value="baixa" name="prioridade"> Baixa Prioridade</label>
+                <input type="radio" value="media" name="prioridade"> Media Prioridade</label>
+                <input type="radio" value="alta" name="prioridade"> Alta Prioridade</label>
+                </label>
+    
+                <label>
+                    <input type="checkbox" name="copy" value="1" checked>Envie-me uma cópia
+                    <input type="checkbox" name="human" value="1">Sou humano
+                </label>
+    
+                <label for="msg"></label>
+                <textarea name="msg" placeholder="Digite uma mensagem" id="msg"></textarea>
+                <input type="submit" value="enviar" class="btn-default btn-default-big">
+                <input type="reset" value="Limpar" class="btn-default btn-default-stroke btn-default-big">
+            </form>
 
         </section>
 
@@ -363,16 +400,16 @@
                 <img src="imagens/fulls/01.jpg" alt="">
             </div>
 
-            <div class="gallery-thumbs">
-                <img src="imagens/thumb/01.jpg" alt="">
-                <img src="imagens/thumb/02.jpg" alt="">
-                <img src="imagens/thumb/03.jpg" alt="">
-                <img src="imagens/thumb/04.jpg" alt="">
-                <img src="imagens/thumb/05.jpg" alt="">
-                <img src="imagens/thumb/06.jpg" alt="">
-                <img src="imagens/thumb/07.jpg" alt="">
-                <img src="imagens/thumb/08.jpg" alt="">
-                <img src="imagens/thumb/09.jpg" alt="">
+            <div class="gallery-thumb row">
+                <img class="col-1-3" src="imagens/thumbs/01.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/02.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/03.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/04.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/05.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/06.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/03.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/02.jpg" alt="">
+                <img class="col-1-3" src="imagens/thumbs/01.jpg" alt="">
             </div>
 
             <h4>Left &amp; right</h4>
@@ -399,7 +436,19 @@
     </main>
 
 
-    <footer class="main-footer"></footer>
+    <footer class="main-footer">
+
+        <ul class="ul-icons">
+            <li href="#" class="icon-link"><span class="hidden">Twitter</span><i class="fab fa-twitter"></i></li>
+            <li href="#" class="icon-link"><span class="hidden">Facebook</span><i class="fab fa-facebook-square"></i></li>
+            <li href="#" class="icon-link"><span class="hidden">Instagram</span><i class="fab fa-instagram"></i></li>
+            <li href="#" class="icon-link"><span class="hidden">Linked-in</span><i class="fab fa-linkedin-in"></i></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; Untitled</li>
+            <li>Design <a href="http://html4up.net">HTML5 UP</a></li>
+        </ul>
+    </footer>
 </body>
 
 </html>
