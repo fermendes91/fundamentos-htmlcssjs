@@ -30,6 +30,7 @@ header img.avatar {
 }
 
 header p {
+    width: 100%;
     color: #C6BDB0;
     margin-right: 7px;
     font-size: 19px;

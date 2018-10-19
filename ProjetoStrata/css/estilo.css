@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* FORMATA PRIMEIRO TAGS */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #666;
+    font-weight: normal;
+    line-height: 1.7;
+}
+
+a {
+    transition: color, border .2s linear;
+    text-decoration: none;
+    border-bottom: 1px dotted; /* sem definira cor, pega a cor da fonte */
+    color: #49bf9d;
+}
+
+a:hover {
+    border-bottom-color: transparent;
+}
+
+p {
+    margin: 0 0 2em ;
+}
+
+sub, sup {
+    font-size: 12px;
+}
+
+blockquote {
+    border-left: 5px solid #cecbcb;
+    margin: 2em 0;
+    padding: .5em 0 .5em 1.5em;
+}
+
+code {
+    background-color: #f7f7f7;
+    border-radius: .35em;
+    border: 2px solid #efefef;
+    font-size: 0.9em;
+    padding: 0.25em 0.65em;
+    font-family: 'Courier New';  /*Fonte de programação */
+}
+
+pre code {
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #787878;
+    font-weight: normal;
+    margin: 0 0 .5em; /* se o h1 (tamanho da fonte) tem 24px então a borda terá 24px ( o EM é relativo ao tamanho da fonte ) */
+}
+
+h1 {
+    font-size: 35px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 15px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+/* DEPOIS FORMATA AS CLASSES */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    padding: 125px 55px 70px;
+    box-sizing: border-box;
+    background-image: url(../imagens/overlay.png),
+        url(../imagens/bg.jpg);
+    background-position: center top;
+    box-sizing: auto cover;
+    text-align: right;
+}
+
+.main-header-title {
+    font-size: 25px;
+    line-height: 1.5;
+    color: rgba(255,255,255, .5);
+    font-weight: normal;
+}
+
+.main-header-title strong {
+    color: white;
+    font-weight: normal;
+}
+
+.main-header-link {
+    color: inherit; /* Herda do elemento pai GENIAL para manutenção */
+}
+
+.main-header-link:hover {
+    color: #49bf9d;
+}
+
+.main-content {
+    width: 65%;
+    margin-left: 35%;
+    padding: 125px 55px 70px;
+    box-sizing: border-box;   
+}
