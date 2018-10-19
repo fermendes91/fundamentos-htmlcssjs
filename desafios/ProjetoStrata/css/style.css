@@ -19,14 +19,12 @@ header {
     padding: 150px 60px 0 0;
     box-sizing: border-box; /* O padding soma ao valor total, com o box-sizing essa soma não acontece. */
     text-align: right;
-    clear:both;
+    float: right;
 }
 
 header img.avatar {
     width: 90px;
     border-radius: 50%;
-    display: block;
-    float: right;
 }
 
 header p {
@@ -36,8 +34,6 @@ header p {
     font-size: 19px;
     line-height: 1.5;
     cursor: default;
-    display: block;
-    float:right;
 }
 
 header p strong {
