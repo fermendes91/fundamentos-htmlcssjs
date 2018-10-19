@@ -9,6 +9,39 @@ body {
     line-height: 1.7;
 }
 
+input, label, textarea {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="radio"], input[type="checkbox"] { /* seleciona todos os inputs que são do tipo type="radio" e type="checkbox" */
+    width: auto;
+}
+
+input, textarea, select {
+    background-color: rgb(230, 225, 225);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+img {
+    max-width: 100%; /* Vai a 100% do tamanho maximo da imagem, então se a imagem tiver 100px vai até 100px */
+}
+
+textarea {
+    height: 7em;
+}
+
+input:focus, textarea:focus {
+    border: 2px solid #49bf9D;
+    outline: none;
+}
+
 a {
     transition: color, border .2s linear;
     text-decoration: none;
@@ -21,7 +54,7 @@ a:hover {
 }
 
 p {
-    margin: 0 0 2em ;
+    margin: 1em 0 2em ;
 }
 
 sub, sup {
@@ -32,6 +65,15 @@ blockquote {
     border-left: 5px solid #cecbcb;
     margin: 2em 0;
     padding: .5em 0 .5em 1.5em;
+}
+
+blockquote p {
+    margin: 0 0 .5em 0;
+    padding: 0;
+}
+
+blockquote p:last-child {
+    margin-bottom: 0;
 }
 
 code {
@@ -45,6 +87,17 @@ code {
 
 pre code {
     display: block;
+}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside; /* Correção dos bullets (sinais de marcação da lista) */
+    padding-left: 1.1em
+}
+
+li {
+    padding-left: .5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,8 +142,8 @@ h6 {
     box-sizing: border-box;
     background-image: url(../imagens/overlay.png),
         url(../imagens/bg.jpg);
-    background-position: center top;
-    box-sizing: auto cover;
+    background-position: bottom left;
+    box-sizing: cover;
     text-align: right;
 }
 
@@ -110,6 +163,10 @@ h6 {
     color: inherit; /* Herda do elemento pai GENIAL para manutenção */
 }
 
+.main-header-link img {
+    border-radius: 50%;
+}
+
 .main-header-link:hover {
     color: #49bf9d;
 }
@@ -120,3 +177,266 @@ h6 {
     padding: 125px 55px 70px;
     box-sizing: border-box;   
 }
+
+.row {
+    overflow: auto;
+}
+
+.col-2 {
+    width: 48.5%;
+    float: left;
+}
+
+.col-2:first-child {
+    margin-right: 1.5%;
+}
+
+.col-2:last-child {
+    margin-right: 1.5%;
+}
+
+.col-2-3 {
+    width: 66%;
+    float: left;
+
+}
+
+.col-1-3 {
+    width: 32%;
+    float: left;
+}
+
+.col-1-3:nth-child(2), .col-1-3:nth-child(5), .col-1-3:nth-child(8) { /* aplica o css nas imagens centrais (A MANEIRA ABAIXO É A MAIS CORRETA */
+    width: 32%;
+    float: left;
+}
+
+.col-1-3:nth-child(3n-2) { /*formata todos os numeros multiplos de 3 menos 1 */
+    margin-right: 2%;
+}
+
+.col-1-3:nth-child(3n) { 
+    margin-left: 2%;
+}
+
+.col-2-3 + .col-1-3 { /* Selecione o elemento col-1-3 LOGO APOS o col-1-3 */
+    margin-left: 2%;
+}
+
+.col-1-3 + .col-2-3 {
+    margin-left: 2%;
+}
+
+.ul-alternate {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-alternate li {
+    border-bottom: 2px solid #D7D7D7;
+}
+
+.ul-alternate li:last-child { /* Pega o ultima li de um elemento que contenha essa classe */
+    border:0;
+}
+
+.ul-icons {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ul-icons li{
+    display: inline-block;
+    font-size: 1.5em;
+    color: #49bf9d;
+}
+
+.btn-default {
+    background-color: #49bf9D;
+    border: 2px solid #49bf9D;
+    color: white;
+    padding: .75em 1.5em;
+    border-radius: 5px;
+    font-size: .8em;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    width: auto;
+    transition: all .8s; /* Faz a transição de qualquer propriedade alterada, por DEFAULT A TRANSIÇÃO É EASE */
+    cursor: pointer;
+}
+
+.btn-default:hover {
+    background-color: #5ddeb9;
+    border-color: transparent;
+}
+
+.btn-default-stroke {
+    background-color: white;
+    border-color: #efefef;
+    color: inherit; /* herda a cor do elemento ancestral */
+}
+
+.btn-default-stroke:hover {
+    background-color: white;
+    border: 2px solid #49bf9D;
+    color: #49bf9D;
+}
+
+.btn-default-small {
+    font-size: .8em;
+}
+
+.btn-default-big {
+    font-size: 1.0em;
+}
+
+.btn-default-full {
+    width: 100%;
+    display: block;
+}
+
+.img-link {
+    border: 0;
+}
+
+.img-left, .img-right {
+    width: 135px;
+    border-radius: 15px;
+}
+
+.img-left {
+    float:left;
+    margin: 0 0.5em 0 0;
+}
+
+.img-right {
+    float: right;
+    margin: 0 0 0 0.5em;
+}
+
+.recent-works-card {
+    height: 340px;
+    
+}
+
+.recent-works-card img {
+    border-radius: 10px;
+}
+
+.recent-works-card-title {
+    font-size: 1em !important;
+}
+
+.recent-works-card-description {
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+.recent-works-card p {
+    font-size: 0.8em;
+}
+
+.table {
+    width: 100%;
+    margin: 0 0 2em 0;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table td {
+    padding: .75em;
+}
+
+.table th {
+    padding: .75em;
+    background: #ccc;
+}
+
+.table tbody tr td {
+    border-bottom: 1px solid #666
+}
+
+.table tbody tr:first-child td{
+    border-top: 2px solid #666;
+}
+
+.table tbody tr:last-child td{
+    border-bottom: 2px solid #666;
+}
+
+.table tbody tr:nth-child(2) td {/* pega todas as td's que estão na segunda linha */
+    background: none; /* somente exemplo  */
+}
+
+.table tbody tr:nth-child(odd) td { /* pega o elemento numa posição impar */
+    background-color: rgb(172, 169, 169)
+}
+
+.table tbody tr:nth-child(even) td { /* pega o elemento numa posição par */
+    background-color: #ddd;
+}
+
+.table-alternate tbody td, .table-alternate tbody tr:first-child td,
+    .table-alternate tbody tr:last-child td{
+    border: 1px solid #ddd;
+}
+
+.gallery-img img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.gallery-thumb img, .gallery-img img{
+    margin-bottom: 2%;  /* relativo a largura do elemento pai */
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.main-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 35%;
+    padding: 125px 55px 75px 0;
+    box-sizing: border-box;
+    text-align: right;
+    color: #ccc;
+}
+
+.main-footer li, .main-footer a {
+    color: inherit;
+    list-style-type: none;
+}
+
+.main-footer .copyright li {
+    display: inline-block;
+    font-size: 0.8em;
+}
+
+.main-footer i {
+    cursor: pointer;
+    transition: all 650ms; 
+}
+
+.main-footer i:hover {
+    color: #49bf9d;
+}
+
+.main-footer a:hover {
+    color: #49bf9d;
+}
+
+.hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    display: block;
+}
+
+.overflow-none {
+    overflow: hidden;
+}
+
