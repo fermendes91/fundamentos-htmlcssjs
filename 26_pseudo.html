@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Pseudo-Classes e Pseudo-Elementos</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+            p.linkpseudo > a{
+                text-decoration: none; /* remove o sublinhado dos links */
+                font-size: 25px;
+                border-bottom: 2px solid red;
+            }
+
+            /* PSEUDO CLASSES MAIS UTILIZADAS: 
+
+                :checked            :last-child                :only-of-type 
+                :disabled           :last-type-of              :out-of-range
+                :empty              :link                      :read-only
+                :enabled            :not()                     :read-write
+                :first-child        :nth-child()               :required
+                :first-of-type      :nth-last-child()          :target
+                :focus              :nth-last-of-type()        :valid
+                :hover              :nth_of-type()             :visited
+                :invalid            :only-child()
+
+                checked -> quando a propriedade esta ticada
+                disabled -> quando a propriedade esta desabilitada
+                empty -> quando possui uma tag vazia (não possui conteudo dentro)
+                enabled -> quando o elemento esta habilitado
+                first-child -> primeiro filho de um elemento
+                first-of-type -> ??????????????????????????????????
+                focus -> quando a propriedade esta selecionada como num input
+                hover -> quando o cursor do mouse esta em cima da propriedade
+                invalid -> quando o usuario tenta colocar 11 num input que o maxlength é tipo 10 (exemplo), indicação que esta errado
+                last-child -> ultimo-filho da propriedade
+                last-of-type -> ??????????????????????????????????
+                link -> formatação de tags a
+                not -> faz a formatação exceto pra uma propriedade
+                nth-child -> selecione um elemento especifico em determina posição
+                nth-last-child -> ??????????????????????????????????
+                nth-last-of-type -> ??????????????????????????????????
+                nth-of-type -> ??????????????????????????????????
+                only-child -> uma propriedade que é filho unico
+                read-only -> quando o elemento esta setado com a propriedade de somente leitura
+                read-write -> quando o elememento esta setado com a propriedade somente leitura e escrita
+                required -> quando o elemento é obrigatorio para o formulario
+                target -> ??????????????????????????????????
+                valid -> ??????????????????????????????????
+                visited: quando um link já foi visitado
+
+            */
+
+            /* PSEUDO ELEMENTOS MAIS UTILIZADOS
+            
+            ::after
+            ::before
+            ::first-letter
+            ::first-line
+            ::selection
+            ::placeholder
+
+            after -> adiciona um conteudo apos a propriedade
+            before -> adiciona um conteudo antes da propriedade
+            first-letter -> utiliza a primeira letra de um elemento
+            first-line -> utiliza a primeira linha de um elemento
+            selection -> formatar a seleção do usuario. (quando selecionamos um texto para copiar por exemplo) 
+            placeholder -> altera o estilo do placeholder de uma propriedade que contenha o placeholder
+            */
+
+
+            
+            /* PSEUDO CLASSES */
+            input[type="checkbox"] {
+                width: 25px;
+                height: 25px;
+            }
+
+            input[type="checkbox"]:checked {
+                width: 18px;
+                height: 18px;
+            }
+
+            input[type="text"]:disabled {
+                text-transform: capitalize;
+                color:red;
+            }
+
+            input[type="text"]:read-only {
+                background: black;
+                color: aqua;
+            }
+
+            button:disabled {
+                background: red;
+            }
+
+            p{
+                color: red;
+            }
+
+            p:empty:before { /* Coloca um conteudo anterior a um p que esteja vazio conforme linha 120, espaçamento dentro não é considerado vazio conforme linha 119 */
+                content: "Paragrafo vazio, favor corrigir"
+            }
+
+            input[type="text"]:focus {
+                background-color: green;
+                color: yellow;
+            }
+
+            a:focus, a:hover, div:focus { /* focus no link acontece quando apertamos tab. sempre bom deixar com o mesmo padrão do hover */
+                background: aquamarine;
+            }
+
+
+            /* PSEUDO-ELEMENTOS */
+
+            input::first-letter {
+                text-transform: capitalize;
+            }
+
+            input::placeholder {
+                color: white;
+                font-weight: bold;
+                background: blue;
+            }
+        </style>
+    </head>
+
+    <body> 
+        <p class="linkpseudo">
+            <a href="https://developer.mozilla.org/pt-BR/docs/WEB/CSS/Pseudo-Classes" target="_blank" >LINK para conhecer mais pseudo-classes</a>
+            <a href="https://developer.mozilla.org/pt-BR/docs/WEB/CSS/Pseudo-Elementos" target="_blank">LINK para conhecer mais pseudo-elementos</a>
+        </p>
+
+        <hr>
+        
+        <label>
+            <input type="checkbox" value="sim">Aceito o contrato
+        </label>
+
+        <button>salvar</button>
+        <button disabled>deletar</button>
+
+        <p>paragrafo 1</p>
+        <p>paragrafo 2</p>
+        <p> </p>
+        <p></p>
+
+        <input type="text">
+        <input type="text" value="valor inicial">
+        <input type="text" value="valor inicial" readonly>
+        <input type="text" value="valor inicial" disabled>
+        <input type="text" placeholder="valor do placeholder" >
+
+        <ul>
+            <li> <a href="#">link vazio</a></li>
+            <li> <a href="#">link vazio</a></li>
+            <li> <a href="#">link vazio</a></li>
+            <li> <a href="#">link vazio</a></li>
+        </ul>
+
+        <div tabindex="1">div 1</div> <!-- TABINDEX -> força a div a ter focus, quando clicarmos em tab o focus é exibido -->
+        <div tabindex="2">div 2</div>
+        <div tabindex="3">div 3</div>
+
+
+    </body>
+
+</html>

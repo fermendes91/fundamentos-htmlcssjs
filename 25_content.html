@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>:AFTER, :BEFORE e CONTENT</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+            /* SEMPRE AO USARMOS :BEFORE e :AFTER temos que lembrar de utilizar também o CONTENT dentro da nossa estrutura */
+
+            div{
+                border: 3px solid red;
+                padding: 25px;
+                position: relative;
+            }
+
+            div:before { /* Adiciona um conteudo antes da div */
+                content: "BEFORE: ";
+            }
+
+            div:after { /* Adiciona um conteudo depois da div */
+                content: "";
+                background: blue;
+                width: 25px;
+                height: 25px;
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+
+        </style>
+    </head>
+
+    <body> 
+
+        <div>
+            Texto Principal da DIV
+        </div>
+
+    </body>
+
+</html>

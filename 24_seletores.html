@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Seletores Compostos</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style>
+            article:nth-child(1) a { /* Pega TODOS os "a" do primeiro article encontrado */
+                color: red;
+            }
+
+            article:nth-child(3) > p { /* Seleciona todo o paragrafo que é FILHO DIRETO SE o terceiro filho for um ARTICLE */
+                color: red;
+            }
+
+            article:nth-child(3) > a { /* Não vai funcionar porque o a não é filho direto de article*/
+                color: red;
+            }
+
+            article:nth-child(5) h3 + p { /* Seleciona o paragrafo que vem IMEDIATAMENTE LOGO APOS um h3 que esteja num article na posicao 5. */
+                margin-top: 35px;
+            }
+
+            article:nth-child(7) h3 ~ p { /* Seleciona todos os irmãos que vem logo após o h3 num article na posicao 7 */
+                color: yellow;
+            }
+
+            article:not(.destaque) { /* vai aplicar o css em todos os article exceto no que tem a classe destaque */
+                color: pink;
+            }
+
+            .destaque {
+                background: orange;
+                color: black;
+            }
+
+            a[href="#"] { /* Seleciona todo o "a" que contenha um atributo href="#" */
+                opacity: .2;
+            }
+
+            a[href^="http"] { /* Seleciona todo o "a" que contenha um atributo href QUE INICIA COM http (note o ^) logo apos o href */
+                color: red;
+            }
+
+            a[href$=".html"] { /* Seleciona todo o "a" que contenha um atributo href QUE TERMINE COM .html (note o $) logo apos o href */
+                color: yellowgreen;
+            }
+
+            a[title] { /* Seleciona todo o "a" que contenha um title como atributo */
+                margin-top: 25px;
+                display: block;
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <article>
+            <h3>
+                Titulo
+            </h3>
+
+            <p>
+                Paragrafro 1
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 2
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 3
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+        </article>
+
+        <hr>
+
+        <article>
+            <h3>
+                Titulo
+            </h3>
+
+            <p>
+                Paragrafro 1
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 2
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 3
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+        </article>
+
+        <hr>
+
+        <article>
+            <h3>
+                Titulo
+            </h3>
+
+            <p>
+                Paragrafro 1
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 2
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 3
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+        </article>
+
+        <hr>
+
+        <article class="destaque">
+            <h3>
+                Titulo
+            </h3>
+
+            <p>
+                Paragrafro 1
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 2
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+            <p>
+                Paragrafro 3
+                <a href="#">Apenas um link com <b>negrito</b></a>
+            </p>
+        </article>
+
+        <hr>
+
+        <ul>
+            <li><a href="#" >link falso</a></li>
+            <li><a href="#" >link falso</a></li>
+            <li><a href="http://serfrontend.com" target="_blank">link externo</a></li>
+            <li><a href="23_transition.html" >link interno</a></li>
+            <li><a href="01_teste.html" title="Veja o primeiro exercicio desenvolvido">primeira aula</a></li>
+        </ul>
+    </body>
+
+</html>
