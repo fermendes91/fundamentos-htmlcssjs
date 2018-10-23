@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Exercicio Pratico Aulas 23 - 30</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+
+            body {
+                font-family: sans-serif;
+            }
+
+            a[target="_blank"]:after { /* Insere um icone no final do link que contenha um atributo target="_blank" */
+                content: url(imagens/nwicon.png);
+                display: inline-block;
+                margin-left: 5px;
+                width: 0.5em;
+            }
+
+            a[href$='.pdf']:before {
+                content: url(imagens/pdficon.png);
+                display: inline-block;
+                margin-right: 5px;
+            }
+
+            .chk {
+                display: inline-block;
+                border-radius: 10px;
+                border: 2px solid #bbb;
+                background: #ddd;
+                width: 14px;
+                height: 14px;
+                margin-right: 10px;
+            }
+
+            label {
+                height: 12px;
+                display: inline-block;
+            }
+
+            input[type="checkbox"] { /* escondemos o checkbox de modo que o mesmo não suma para o leitor de tela, se utilizarmos o display:none o leitor de tela não irá identifica-lo */
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                visibility: hidden;
+                display: inline-block;
+                margin: 0;
+            }
+
+            input[type="checkbox"]:checked + label .chk{ /* Seleciona a classe .chk que esta dentro de uma label imediatamente logo apos o checkbox checado */
+                background: #555;
+                position: relative;
+            }
+
+            input[type="checkbox"]:checked + label .chk:before{ 
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0px;
+                bottom: 4px;
+                left: 4px;
+                right: 4px;
+                border: 2px solid white;
+                transform: rotate(45deg);
+                border-top-color: transparent;
+                border-left-color: transparent;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+
+    <body> 
+
+        <a href="http://serfrontend.com" target="_blank">Link Externo</a> <br>
+        <a href="naoExiste.pdf">Download do PDF</a>
+
+        <hr>
+
+        <input type="checkbox" name="myCheck" id="chk">
+        <label for="chk"><span class="chk"></span>Li e Aceito o Contrato</label>
+
+    </body>
+
+</html>

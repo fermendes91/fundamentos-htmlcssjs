@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Transforms</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+            /* A propriedade TRANSFORM  ajuda a mudar a posição do elemento, e outras coisas*/
+
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .div1{
+                width: 150px;
+                height: 50px;
+                background: red;
+                transform: translate(50%, 50%) /* passa valores no eixo x e y */
+            }
+
+            .div2{
+                width: 150px;
+                height: 50px;
+                background: blue;
+                position: relative;
+                left: 50%;
+            }
+
+            .div3 {
+                width: 50%;
+                overflow: hidden;
+                border: solid 2px black;
+            }
+
+            .div3-interna {
+                background: yellow;
+                transform: translate(80%, 25px);
+            }
+            
+            /* 
+                A diferença entre transform e o position relative, é quando trabalhamos com porcentagens o 100% no transform representa 
+                o quanto irá se mover tendo em vista o tamanho da largura e altura do elemento ou seja... na div1  se tivermos 100%, o element irá se deslocar
+                150px no eixo x, e no eixo y se tivermos 50% irá se deslocar 75px.
+
+                No position relative isso não acontece, quando colocamos top: 100% e left: 100% estamos deslocando referente ao elemento pai.
+            */
+
+            .div4 {
+                width: 50%;
+                overflow: hidden;
+                border: solid 2px black;
+            }
+
+            .div4-interna {
+                background: yellow;
+                transform: rotate(45deg); /* Recebe valores em graus, a propriedade rotaciona um elemento */
+            }
+
+            .div5 {
+                width: 50%;
+                overflow: hidden;
+                border: solid 2px black;
+            }
+
+            .div5-interna {
+                background: yellow;
+                transform: rotate(30deg); 
+                transform-origin: left top; /* Por padrão a rotação começa a partir da parte centra do elemento, caso queiramos mudar é possivel */
+            }
+
+            .div6 {
+                width: 50%;
+                overflow: hidden;
+                border: solid 2px black;
+            }
+
+            .div6-interna {
+                background: yellow;
+                transform: rotate(15deg) translate(30px); /* primeiro estamos rotacionando e depois movemos no eixo y */
+                transform-origin: left top;
+            }
+
+            .div7 {
+                width: 100px;
+                height: 100px;
+                background: orange;
+                transform: skew(-25deg, 25deg); /* Skew é a distorção do elemento, podemos utilizar tanto em px quanto em deg */
+            }
+
+            .div8 {
+                margin-left: 300px;
+                width: 100px;
+                height: 100px;
+                background: blue;
+                transform: scale(.5s, 1.7); /* 1.5x o valor original, estamos mudando a escala do elemento, passamos os parametros no eixo x e no eixo y */
+                transition: transform .5s;
+            }
+
+            .div8:hover {
+                transform: scale(2);
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <div class="div1">div1</div>
+        <div class="div2">div2</div>
+        <hr>
+        <div class="div3">
+            <div class="div3-interna">
+                conteudo qualquer
+            </div>
+            <p>
+                Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai
+                matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral
+                subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn!
+                danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
+            </p>
+        </div>
+
+        <div class="div4">
+            <div class="div4-interna">
+                conteudo qualquer
+            </div>
+            <p>
+                Eiiitaaa Mainhaaa!! Esse Lorem ipsum é só na sacanageeem!! E que abundância meu irmão viuu!! Assim você vai
+                matar o papai. Só digo uma coisa, Domingo ela não vai! Danadaa!! Vem minha odalisca, agora faz essa cobra coral
+                subir!!! Pau que nasce torto, Nunca se endireita. Tchannn!! Tchannn!! Tu du du pááá! Eu gostchu muitchu, heinn!
+                danadinha! Mainhaa! Agora use meu lorem ipsum ordinária!!! Olha o quibeee! rema, rema, ordinária!.
+            </p>
+        </div>
+
+        
+        <div class="div5">
+            <div class="div5-interna">
+                conteudo qualquer
+            </div>
+            <p>
+                Hodor hodor HODOR! Hodor HODOR hodor, hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor! Hodor hodor, hodor –
+                hodor, hodor. Hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor – hodor; hodor hodor hodor hodor, hodor, hodor
+                hodor. Hodor, hodor; hodor hodor… Hodor hodor hodor… Hodor hodor hodor?
+            </p>
+        </div>
+
+        <div class="div6">
+            <div class="div6-interna">
+                conteudo qualquer
+            </div>
+            <p>
+                Hodor hodor HODOR! Hodor HODOR hodor, hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor! Hodor hodor, hodor –
+                hodor, hodor. Hodor hodor?! Hodor, hodor. Hodor. Hodor, hodor – hodor; hodor hodor hodor hodor, hodor, hodor
+                hodor. Hodor, hodor; hodor hodor… Hodor hodor hodor… Hodor hodor hodor?
+            </p>
+        </div>
+
+        <hr>
+
+        <div class="div7">div7</div>
+        <div class="div8">div8</div>
+
+
+    </body>
+
+</html>

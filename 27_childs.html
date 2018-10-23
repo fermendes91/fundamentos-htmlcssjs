@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Childs</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+            /* NTH não funciona com .classes somente com tags, p, div, h1... dentre outras */
+
+
+            div p { /* pega todos os paragrafos dentro da div e coloca a cor vermelha */
+                color: red;
+            }
+
+            div p:nth-child(2) { /* pega o segundo paragrafo dentro da div e coloca a cor azul */
+                color: blue;
+            }
+
+            div p:nth-child(3) { /* Não vai pegar o terceiro paragrafo da div, e sim o terceiro elemento q no caso é um HR, este codigo não vai funcionar */
+                color: yellow;
+            }
+
+            div p:nth-of-type(3) { /* este realmente vai pegar o terceiro paragrafo dentro da div */
+                color: green;
+            }
+
+            .destaque {
+                background: #ddd;
+            }
+
+            .destaque:nth-of-type(1) { /* isto aqui não vai funcionar, vai pegar o primeiro elemento paragrafo que contenha a classe destaque*/
+                color: aqua;
+            }
+
+            .my-text:first-child { /* Ta pegando o primeiro filho que contenha a classe my-text, no caso o h1 tem então vai funcionar */
+                color: blue;
+            }
+
+            .my-text:last-child {  /* Ta pegando o ultimo filho que contenha a classe my-text, no caso o h1 tem então vai funcionar */
+                color: orange;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body> 
+        <div>
+            <h1 class="my-text">Hello World !</h1>
+            <p class="destaque">Meu Paragrafo</p>
+            <p>Meu Paragrafo</p>
+            <hr>
+            <h1 >Hello World !</h1>
+            <p class="destaque">Meu Paragrafo</p>
+            <p>Meu Paragrafo</p>
+            <hr>
+            <h1 >Hello World !</h1>
+            <p>Meu Paragrafo</p>
+            <p class="destaque">Meu Paragrafo</p>
+            <hr>
+            <h1 class="my-text">Hello World !</h1>
+            <p>Mdeu Paragrafo</p>
+            <p>Meu Paragrafo</p>
+            <hr>
+            <h1 class="my-text">Hello World !</h1>
+        </div>
+
+    </body>
+
+</html>
