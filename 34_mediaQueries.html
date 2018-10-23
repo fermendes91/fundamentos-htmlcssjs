@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Media Queries</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <meta name="viewport" content="width=device-width"> <!-- a largura da tela será igual a largura do device, USAMOS O VIEWPORT PARA RESPONSIVIDADE-->
+
+        <style>
+            body {
+                background: lightskyblue;
+            }
+
+            .container {
+                background: white;
+                padding: 15px;
+                font-size: 24px;
+            }
+
+            .container div {
+                background: #ccc;
+                margin: 1%;
+                height: 150px;
+                font-size: 22px;
+            }
+
+            .teste {
+                background: red;
+                width: 320px;
+                height: 50px;
+            }
+
+            .clearfix:after { /*  Limpa os elementos com float dentro dela, evitando o uso do overflow para o elemento se adequar aos outros elementos */
+                content: ' ';
+                display: block;
+                clear: both;
+            }
+
+            @media screen and (min-width: 600px) { /* se o tipo de media for tela e o o tamanho minimo de 600px entao mostra o background diferente */
+                body {
+                    background: lightcoral;
+                }
+
+                .container div {
+                    width: 48%;
+                    float: left;
+                    margin-bottom: 0;
+                    /* OUTRA FORMA DE AJEITAR AS DIVS*
+
+                    width: calc(50% - 20px); 20px Porque é 10 pra cada lado, margin: 10px conforme linha abaixo
+                    margin: 10px;
+                    */
+                }
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <h1>Exemplo de Media Queries</h1>
+
+        <p>Paragrafo qualquer</p>
+
+        <div class="teste"></div>
+
+        <div class="container clearfix">
+            <div> div 1 </div>
+            <div> div 2 </div>
+
+        </div>
+    </body>
+
+</html>

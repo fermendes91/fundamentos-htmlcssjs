@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Unidades de Medidas</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        html {
+            font-size: 32px;
+        }
+
+        body {
+            font: 16px sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            margin-bottom: 20px !important;
+        }
+
+        div.px-test {
+            border: 1px solid black;
+            padding: 16px;
+            width: 600px;
+            margin: auto;
+            font-size: 32px; /* Tamanho do padding não se altera ao tamanho da fonte se tornando desproporcional */
+        }
+
+        div.px-test p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+
+        /* Quando colocamos o em num font-size o mesmo vai pegar o tamanho definido no elemento pai. 
+            no caso se colocossemos nesta classe o font-size: 2em o mesmo estaria colocando um tamanho de 32px tendo em vista que
+            o elemento pai DIV, esta definido com o tamanho de 16px */
+        div.em-test {
+            border: 1px solid black;
+            padding: 1em; /* Com o em a variação do font-size refletira também no padding, 1em = 1x o tamanho da fonte (EM é relativo ao tamanho da fonte) */
+            width: 37.5em; /*  width: 600px;600 / 16 = valor relativo ao em para width */
+            margin: auto;
+            font-size: 26px; /* Tamanho do padding não se altera ao tamanho da fonte se tornando desproporcional */
+        }
+
+        div.em-test p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        div.px-test-2 {
+            font-size: 16px;
+            border: 1px solid black;
+            padding: 1em;
+            width: 37.5em;
+            margin: 6.25em auto;
+        }
+
+        div.px-test-2 p {
+            margin: 0;
+            line-height: 1.5;
+            font-size: 1.25em;
+            /* */
+        
+        }
+
+        /* Quando usar EM É IMPORTANTE VERIFICAR O CONTEXTO EM QUE ESTA INSERIDO. 1.5em no caso abaixo vai ser 1.5 x (20)...
+            20 porque o elemento p declarado na linha 63 agora representa um font-size 20px por causa do 1.25em que foi definido:
+            1.25 x (16) = 20px; o 16 vem do elemento pai div.px-test-2*/
+        div.px-test-2 a {
+            font-size: 1.5em; /* 1.5 x 16 = 24 px */
+        }
+
+
+
+        /* O FONT-SIZE REM significa que o tamanho será herdado do elemento root ou seja (HTML) conforme definido na linha 14 
+            e não vai herdar do elemento pai conforme a propriedade EM.*/
+        .rem-test {
+            font-size: 1.7rem !important; /* 1.7 x 32px = 54,4px */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Unidades de medidas</h1>
+    <div class="px-test">
+        <p>Pixel pushing programmatically, we need distributors to evangelize the new line to local markets. Quick win
+            clear blue water I have zero cycles for this best practices high performance keywords but prairie dogging.
+            Game-plan. Globalize. Drink the Kool-aid nobody's fault it could have been managed better and we need a
+            recap by eod, cob or whatever comes first, nor strategic high-level 30,000 ft view the last person we
+            talked to said this would be ready. Bleeding edge. Screw the pooch blue sky thinking. Waste of resources
+            going forward sea change this proposal is a win-win situation which will cause a stellar paradigm shift,
+            and produce a multi-fold increase in deliverables rock Star/Ninja, but can we align on lunch orders. We
+            need to build it so that it scales personal development the last person we talked to said this would be
+            ready hit the ground running, yet this is not the hill i want to die on cannibalize. Great plan! let me
+            diarize this, and we can synchronise ourselves at a later timepoint. <a href="#">Guerrilla marketing we 
+            need to have a Come to Jesus meeting with Phil about his attitude, yet pixel pushing, yet sacred cow, for 
+            on-brand but completeley fresh. </a> </p>
+    </div>
+
+    <div class="em-test">
+        <p>Pixel pushing programmatically, we need distributors to evangelize the new line to local markets. Quick win
+            clear blue water I have zero cycles for this best practices high performance keywords but prairie dogging.
+            Game-plan. Globalize. Drink the Kool-aid nobody's fault it could have been managed better and we need a
+            recap by eod, cob or whatever comes first, nor strategic high-level 30,000 ft view the last person we
+            talked to said this would be ready. Bleeding edge. Screw the pooch blue sky thinking. Waste of resources
+            going forward sea change this proposal is a win-win situation which will cause a stellar paradigm shift,
+            and produce a multi-fold increase in deliverables rock Star/Ninja, but can we align on lunch orders. We
+            need to build it so that it scales personal development the last person we talked to said this would be
+            ready hit the ground running, yet this is not the hill i want to die on cannibalize. Great plan! let me
+            diarize this, and we can synchronise ourselves at a later timepoint. Guerrilla marketing we need to have a
+            Come to Jesus meeting with Phil about his attitude, yet pixel pushing, yet sacred cow, for on-brand but
+            completeley fresh. </p>
+    </div>
+
+    <div class="px-test-2">
+        <p>Pixel pushing programmatically, we need distributors to evangelize the new line to local markets. Quick win
+            clear blue water I have zero cycles for this best practices high performance keywords but prairie dogging.
+            Game-plan. Globalize. Drink the Kool-aid nobody's fault it could have been managed better and we need a
+            recap by eod, cob or whatever comes first, nor strategic high-level 30,000 ft view the last person we
+            talked to said this would be ready. Bleeding edge. Screw the pooch blue sky thinking. Waste of resources
+            going forward sea change this proposal is a win-win situation which will cause a stellar paradigm shift,
+            and produce a multi-fold increase in deliverables rock Star/Ninja, but can we align on lunch orders. We
+            need to build it so that it scales personal development the last person we talked to said this would be
+            ready hit the ground running, yet this is not the hill i want to die on cannibalize. Great plan! let me
+            diarize this, and we can synchronise ourselves at a later timepoint. <a href="#">Guerrilla marketing we 
+            need to have a Come to Jesus meeting with Phil about his attitude, yet pixel pushing, yet sacred cow, for 
+            on-brand but completeley fresh. </a> </p>
+            <p class="rem-test">Pixel pushing programmatically, we need distributors to evangelize the new line to local markets. Quick win
+                clear blue water I have zero cycles for this best practices high performance keywords but prairie dogging.
+                Game-plan. Globalize. Drink the Kool-aid nobody's</p>
+    </div>
+</body>
+
+</html>

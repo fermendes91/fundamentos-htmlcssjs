@@ -1,0 +1,273 @@
+@charset "UTF-8"; /* aceita qualquer tipo de caracteres */
+
+html {
+    font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Oxygen"; /* Fonte importada do google */
+}
+
+.clearfix:after, .row:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.maxwidth {
+    max-width: 1124px auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: inline-block; 
+    padding: .9em 2.5em;
+    background: #58c4c4;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: background ease .5s;
+}
+
+.icon-play {
+    height: 5em;
+    display: none;
+}
+
+.icon-play img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button:hover {
+    background: #37A0A0;
+}
+
+.top-header {
+    text-align: center; /* Funciona porque imagem é um elemento de linha */
+}
+
+.top-header-logo {
+    margin: .5em;
+}
+
+.top-nav {
+    background: #612674;
+    text-align: center;
+}
+
+.top-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 0.7em 0;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 1em; /* por padrão um font-size é 16px, então neste caso o 1em será igual a 16px */
+    display: block;
+    transition: all ease 1s;
+}
+
+.top-nav a:hover {
+    background: #7c3792;
+}
+
+.top-content {
+    padding: 1em;
+    text-align: center;
+    background: #F6F6F6;
+}
+
+.top-content-title {
+    color: #612674;
+    font-size: 1.375em; /* 22px / 16px = 1.475, ou seja nosso font-size terá 22px */
+    margin: 1.375em;
+}
+
+.top-content-subtitle {
+    color: #A87BB7;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.middle-content {
+    padding: 2em;
+    background: #F6F6F6;
+    text-align: center;
+}
+
+.middle-content-title {
+    font-size: 1.25em;
+    color: #652E79;
+    text-transform: uppercase;
+}
+
+.middle-content p {
+    line-height: 1.5;
+    color: #222;
+}
+
+.middle-content span[class^='icon'] {
+    font-size: 3em;
+    color: #652E79;
+}
+
+.main-content {
+    padding: 2em;
+}
+
+.main-content {
+    line-height: 1.5;
+}
+
+.main-content-article {
+    margin-bottom: 3.5em;
+}
+
+.main-content-title {
+    color: #612674;
+    font-size: 1.25em; 
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.hidden {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: block;
+}
+
+.footer {
+    background: #25303E;
+    color: #83969F;
+    text-align: center;
+    padding-bottom: 2em;
+}
+
+.footer-menushare {
+    background: #303D4C;
+    padding: .5em;
+    clear: both;
+}
+
+.footer-menushare li {
+    display: inline-block;
+    margin: 0 1em;
+    box-sizing: border-box;
+}
+
+.footer-menushare a {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: white;
+    transition: color .6s ease; 
+}
+
+.footer-menushare a:hover {
+    color: rgb(30, 197, 197);
+}
+
+/* RESPONSIVIDADE DO SITE -> A VERSÃO ACIMA FOI DESENVOLVIDA PARA O MOBILE (MENOR RESOLUÇÃO)*/
+
+@media screen and (min-width: 48.75em) { /* 48.75 x 16 = 780px */
+
+    .top-header-logo {
+        float: left;
+    }
+
+    .icon-play {
+        display: block;
+    }
+
+    .top-nav {
+        background: transparent;
+        float: right;
+        margin-top: 25px;
+    }
+
+    .top-nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top-nav li {
+        display: inline-block;
+    }
+
+    .top-nav a {
+        color: #713A84;
+    }
+
+    .top-nav a:hover {
+        background: #E7D9FC;
+    }
+
+    .top-content {
+        background: #521A66;
+        color: white;
+    }
+
+    .top-content-title, .top-content-subtitle  {
+        color: white;
+    }
+
+    .col-1_4 {
+        width: 44%;
+        margin: 3%;
+        float: left;
+    }
+
+    .main-content-article .button {
+        float: right;
+    }
+
+    
+}
+
+@media screen and (min-width: 62.5em) {
+
+    .top-content {
+       /* background-color: #521A66;
+        background-image: url(../images/bg_topo_1198x670.jpg); */
+        background: #521A66 url(../images/bg_topo_1198x670.jpg);
+        background-position: center bottom;
+        height:30em;
+        padding-top: 10em;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (min-width: 75em) {
+
+    .top-content {
+        background: #521A66 url(../images/bg_topo_1600x1374.jpg);
+        padding: 8em 15em 10em;
+    }
+
+    .icon-play {
+        height: 7em;
+    }
+
+    .col-1_4 {
+        width: 23%;
+        margin: 1%;
+    }
+
+    .col-1_2 {
+        width: 48%;
+        margin: 1%;
+        float: left;
+    }
+
+    .main-content-article .button {
+        float: none;
+    }
+
+}

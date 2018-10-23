@@ -3,13 +3,61 @@
 
     <head>
        
-        <title>Childs</title>
+        <title>Desafio Checkbox - Resolução</title>
         <meta charset="utf-8"> 
         <meta name="author" content="Fernando">
         <meta name="description" content="lista de documentos"> 
         <meta name="keywords" content="html5, tecnologia">
 
-        <style> 
+        <style>     
+            body {
+                font-family: sans-serif;
+            }
+
+            input {
+                opacity: 0; /* no lugar do visibily: hidden para melhor a acessabilidade, com o hidden não podemos selecionar o check pelo teclado */
+                width: 0;
+                height: 0;
+                overflow: hidden;
+            }
+
+            label {
+                margin-right: 25px;
+            }
+
+            label span {
+                display: inline-block;
+                width: 60px;
+                height: 30px;
+                background: #ccc;
+                border-radius: 15px;
+            }
+
+            
+            label input:focus + span{ /* Ao navegar pelo teclado, melhora a visualização (acessibilidade) do elemento */
+                /* border: 0.15em solid rgb(78, 78, 78); /* Border desloca um pouco o content interno, podemos usar o box-shadow pra evitar isso */
+                box-shadow: 0 0 0 2px red; /* simulamos uma borda sem alterar o elemento */
+                box-sizing: border-box; /* não soma o tamanho da borda ao tamanho do span */
+            }
+
+            label span:before {
+                content: '';
+                display: block;
+                background: #eee;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                margin: 5px;
+                transition: ease-in-out all .4s ;
+            }
+
+            label input:checked + span:before {
+                transform: translateX(30px);
+                background: crimson;
+            }
+
+
+
 
         </style>
     </head>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+    <head>
+       
+        <title>Desafio CheckBox</title>
+        <meta charset="utf-8"> 
+        <meta name="author" content="Fernando">
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia">
+
+        <style> 
+            input[type="checkbox"] {
+                width: 0;
+                height: 0;
+                margin: 0;
+                visibility: hidden;
+            }
+
+            label input[type="checkbox"] + span{
+                width: 60px;
+                height: 30px;
+                border-radius: 20px;
+                background: #ddd;
+                margin-right: 5px;
+                display: inline-block;
+                position: relative;
+                cursor: pointer;
+            }
+            
+            label input[type="checkbox"] + span:before{
+                content: '';
+                width: 18px;
+                height: 18px;
+                border-radius: 20px;
+                background: rgb(161, 161, 161) ;
+                margin-right: 5px;
+                display: inline-block;
+                position: absolute;
+                margin: 6px;
+                transition: ease margin .5s;
+            }
+
+            label input[type="checkbox"]:checked + span:before{
+                float: left;
+                background: red;
+                margin-left: 35px;
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <label >
+            <input type="checkbox">
+            <span></span>
+            Esporte
+        </label>
+        <label  tabindex="2">
+            <input type="checkbox">
+            <span></span>
+            Politica
+        </label>
+        <label  tabindex="3">
+            <input type="checkbox">
+            <span></span>
+            Educação
+        </label>
+    </body>
+
+</html>
