@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Inserindo Picture</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Incorporando Picture</h1>
+
+    <picture>
+        <source media="(min-width: 480px)" sizes="33vw" srcset="imagens/pictures/1280.jpg 1280w, imagens/pictures/960.jpg 960w, imagens/pictures/480.jpg 480w">
+        <!-- se a tela for maior que 480px mostra esta imagem-->
+        <source sizes="100vw" srcset="images/822_mob.jpg 822w, imagens/pictures/640_mob.jpg 640w, imagens/pictures/320_mob.jpg 320w">
+        <img src="imagens/pictures/1280.jpg" alt="texto alternativo">
+    </picture>
+</body>
+
+</html>
