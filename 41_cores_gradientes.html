@@ -25,16 +25,127 @@
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: bottom right;
+                counter-reset: contador;
             }
 
             #grupo-cores div{
                 width: 80%;
                 height: 150px;
-                border: 10px solid rgba(255,255,255,.5);
+                border: 10px solid rgba(0,0,0,.5);
                 margin: 20px auto;
                 padding: 15px;
-               
+                counter-increment: contador;
             }
+
+            #grupo-cores div:before{
+                content:'[' counter(contador) ']';
+            }
+
+
+
+            #grupo-cores div:nth-child(2) {
+                background-color: blueviolet;
+                background-clip: border-box;
+            }
+
+            #grupo-cores div:nth-child(3) {
+                background-color: rgb(50%, 50%, 0%);
+                background-clip: padding-box;
+            }
+
+            #grupo-cores div:nth-child(4) {
+                background-color: rgb(50%, 50%, 0%, .5);
+                background-clip: content-box;
+            }
+
+            /* 
+                Pesquisar sobre hsl, bom para pegar tons mais diferentes de cores. 
+                tom -> 0deg = vermelho, vai de 0 a 360 graus formando um circulo de cores, conforme rotacionamos pegamos cores diferentes
+                saturação -> 0% =cinza, 100% => cor maxima da tonalidade. 
+                luminosidade -> 0%= preto, 100% = branco, 50%, cor maxima da tonalidade.
+            */
+            #grupo-cores div:nth-child(5) {
+                background-color: hsl(120deg, 50%, 70%); /* tom, saturação e luminosidade  */
+            }
+
+            #grupo-cores div:nth-child(6) {
+                background-color: hsla(120deg, 50%, 70%, .4); /* tom, saturação e luminosidade  */
+            }
+
+            #grupo-cores div:nth-child(7) {
+                background-color: hsl(0deg, 100%, 50%); /* tom, saturação e luminosidade  */
+            }
+
+            #grupo-cores div:nth-child(8) {
+                background-color: hsla(150deg, 45%, 60%, .8s); /* hsla a unica diferença é que possui transparencia */ 
+                background-clip: border-box;
+            }
+            
+            #grupo-cores div:nth-child(9) {
+                background-image: 
+                    linear-gradient(60deg, green, transparent),
+                    linear-gradient(to top, red, transparent);
+                background-clip: content-box, border-box;
+            }
+            
+            #grupo-cores div:nth-child(10) {
+                background-image: radial-gradient(yellow, black);
+            }
+            
+            #grupo-cores div:nth-child(11) {
+                background-image: radial-gradient(circle, yellow, black); /* circle ou ellipse */
+            }
+            
+            #grupo-cores div:nth-child(12) {
+                background-image: radial-gradient(ellipse, black, green, yellow, red);
+            }
+
+            #grupo-cores div:nth-child(13) {
+                background-image: radial-gradient(ellipse, black 5%, green 30%, yellow 35%, red);
+            }
+
+            #grupo-cores div:nth-child(14) {
+                background-image: radial-gradient(ellipse, black, rgba(50, 10, 200, .0), yellow, red);
+            }
+
+            #grupo-cores div:nth-child(15) {
+                background-image: radial-gradient(closest-side at 20% 50%, black, green, yellow, red); 
+                /* closest-side -> coloca o gradiente do lado mais proximo, o ponto inicial começa em 20% do width e na metade da altura */
+            }
+
+            #grupo-cores div:nth-child(16) {
+                background-image: radial-gradient(farthest-side at 20% 50%, black, green, yellow, red); /* farthest-side ->  */
+                /* Vai até o lado mais longe */
+            }
+            
+            #grupo-cores div:nth-child(17) {
+                background-image: radial-gradient(closest-corner at 20% 50%, black, green, yellow, red); 
+            }
+
+            #grupo-cores div:nth-child(18) {
+                /* Vai ate o corner mais distante */
+                background-image: radial-gradient(farthest-corner at 20% 50%, black, green, yellow, red); /* farthest-side ->  */
+            }
+
+            #grupo-cores div:nth-child(19) {
+                /* gradiente repetitivo */
+                background-image: repeating-linear-gradient(red 0%, yellow 10%, blue 50%);
+            }
+
+            #grupo-cores div:nth-child(20) {
+                /* gradiente repetitivo */
+                background-image: repeating-radial-gradient(red 0%, yellow 10%, blue 20%, transparent 10%);
+            }
+
+             #grupo-cores div:nth-child(21) {
+                /* gradiente repetitivo */
+                background-image: 
+                    repeating-radial-gradient(red 0%, transparent, yellow 33.33%),
+                    linear-gradient(rgba(100%, 0%, 0%, .5),
+                    green);
+                background-attachment: scroll, fixed; /* o scroll da tela, tem influencia sobre o gradiente. */
+            }
+            
             
             
         </style>
