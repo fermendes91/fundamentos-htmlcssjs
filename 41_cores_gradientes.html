@@ -143,8 +143,22 @@
                     repeating-radial-gradient(red 0%, transparent, yellow 33.33%),
                     linear-gradient(rgba(100%, 0%, 0%, .5),
                     green);
-                background-attachment: scroll, fixed; /* o scroll da tela, tem influencia sobre o gradiente. */
+                background-attachment: scroll, fixed; /* o scroll da tela, tem influencia sobre o gradiente.l */
             }
+
+            /* Gradiente somente na parte de cima da div
+             */
+             #grupo-cores div:nth-child(22) {
+                background-image: 
+                    radial-gradient(closest-corner at 50% 10%, black, transparent),
+                    url(imagens/bg.jpg);
+                background-size: cover;
+                background-position: center -10px, center bottom;
+                background-repeat: no-repeat;
+
+            }
+
+            
             
             
             
