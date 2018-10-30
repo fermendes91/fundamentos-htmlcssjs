@@ -24,14 +24,18 @@
             margin: 15px;
         }
 
-        .flexbox:nth-child(4) {
+        .flexbox:nth-child(5) {
             /* flex-direction: row;  padrão
             flex-wrap: wrap; se não couber dentro, quebra pra linha de baixo */
             flex-flow: row wrap; /* atalho para usar as 2 propriedades acima */
         }
 
-        .flexbox:nth-child(5){
-            justify-content: space-around; 
+        .flexbox:nth-child(5) {
+            flex-flow: column-reverse nowrap; /* atalho para usar as 2 propriedades acima */
+        }
+
+        .flexbox:nth-child(6){
+            justify-content: center; 
                 /* 
                     justify-content: flex-start: posiciona no começo do elemento 
                     justify-content: flex-end: posiciona no fim do elemento 
@@ -40,27 +44,58 @@
                         (considera o primeiro e ultimo elemento para aplicar a diferença)
                     space-between: pega o espaço sobrando e coloca entre os elementos de modo que o primeiro e 
                         ultimo conteudo se posicionem no começo e no fim do elemento respectivamente. 
-                        (NÃO considera o primeiro e ultimo elemento para aplicar a diferença)   
-                    
+                        (NÃO considera o primeiro e ultimo elemento para aplicar a diferença) ;
+                    center: centraliza os elementos sem dar espaçamento entre eles, deixando o margin padrão.
                 */
         }
 
-        .flexbox:nth-child(5) div{
+        .flexbox:nth-child(6) div{
             width: 30px;
         }
 
-        .flexbox:nth-child(6){
-            align-items: stretch /* padrão -> estica os elementos para que se adeque ao tamanho
-                align-itens: center;
+        .flexbox:nth-child(7){
+            align-items: center;
+            /* stretch (padrão) -> estica os elementos para que se adeque ao tamanho na horizontal.
+               center -> centraliza os items e o height não estica;
+               baseline -> coloca uma linha imaginaria na fonte e alinha por ele. 
             */
+
+            justify-content: center;
+        }
+
+        /* 
+            justify-content -> alinha no eixo horizontal;
+            align-items -> alinha no eixo vertical;
+        */
+        .flexbox:nth-child(8){
+            justify-content: center;
+            align-items: baseline;
+        }
+
+        .flexbox:nth-child(9){
+            justify-content: center;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            align-content: flex-end; /* Agrupa um grupo de elementos numa posição, para ele fazer sentido é importante que uma linha quebre, ou seja esteja com wrap*/
+        }
+
+        .flexbox:nth-child(9) div{
+            width: 100px;
         }
     </style>
 </head>
 
 <body>
+    <!--  
+        FLEXBOX -> feito para alinhar ou distribuir em linha reta ( unidirecional - main ou cross axis) 
+
+        GRID LAYOUT -> Estabelece áreas de layouts (bidirecional - x ou y axis)
+
+        ambos se complementam... nenhum é melhor que outro.
+    -->
     <h2>Display Flex</h2>
     <p>Acomodar ou distribuir elementos de modo fácil</p>
-    <p>Ajuda a centralizar na vertical</p>
+    <p>Ajuda a centralizar na vertical -> A CONFIGURAÇÃO COMO UM TODO É FEITO NO ELEMENTO PAI</p>
 
     <div class="flexbox">
         <div class="div1">1</div>
@@ -79,6 +114,20 @@
     <div class="flexbox">
         <div class="div1">1</div>
         <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2" style="font-size: 4em">2</div>
         <div class="div3">3</div>
         <div class="div4">4</div>
     </div>

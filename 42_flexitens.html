@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Flexitens</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .flexbox {
+            height: 250px;
+            border: 1px solid red;
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .flexbox div {
+            color: white;
+            background: darkslategray;
+            width: 300px;
+            margin: 15px;
+        }
+
+        .flexbox:nth-child(4) {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox:nth-child(4) div {
+            flex-basis: 100px;
+            /* a mesma coisa que o width */
+        }
+
+        .flexbox:nth-child(5) {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flexbox:nth-child(5) div {
+            flex-basis: 100px;
+            /* a mesma coisa que o width */
+        }
+
+        /* FLEX-GROW 3 porções de espaço na linha 48 utilizando 1 e na linha 52 utilizando mais 2... */
+        .flexbox:nth-child(5) div:nth-child(2) {
+            flex-grow: 1;
+            /* Pega o espaço de 1 porção sobrando e distribui no segundo elemento */
+        }
+
+        .flexbox:nth-child(5) div:nth-child(4) {
+            flex-grow: 2;
+            /* Pega o espaço de 2 porções sobrando e distribui no segundo elemento */
+        }
+
+
+        /* FLEX-SHRINK -> Distribui o espaço que excede. */
+        .flexbox:nth-child(6) div {
+            flex-basis: 200px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .flexbox:nth-child(6) div:nth-child(2) {
+            flex-shrink: 1;
+            /*  O numero 1 vai reduzir menos que o numero 2 */
+        }
+
+        .flexbox:nth-child(6) div:nth-child(4) {
+            flex-shrink: 2;
+            /*  O numero 2 vai reduzir mais do que o numero 1 */
+        }
+
+        /* PROPRIEDADE FLEX -> atalho para as propriedades grow shrink basis (respectivamente) (BASIS É O TAMANHO WIDTH DA DIV) */
+        .flexbox:nth-child(7) div {
+            flex-basis: 200px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .flexbox:nth-child(7) div:nth-child(1) {
+            flex: 1 2 100px;
+            /* 1 grow, 2 de shrink e 100px de basis (width)  */
+        }
+
+        .flexbox:nth-child(8) div {
+            flex-basis: 200px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        /* MUDANÇA DA ORDEM DE UMA DIV -> 0 é o padrão*/
+        .flexbox:nth-child(8) div:nth-child(2) {
+            order: -1;
+            /* Manda pro inicio */
+        }
+
+        .flexbox:nth-child(8) div:nth-child(4) {
+            order: 2;
+            /* Manda pro final */
+        }
+
+        /* ALINHAMENTO INDIVIDUAL DE ITENS */
+        .flexbox:nth-child(9) {
+            align-items: flex-start;
+        }
+
+        .flexbox:nth-child(9) div:nth-child(2) {
+            align-items: flex-start;
+            align-self: flex-end;
+        }
+        .flexbox:nth-child(9) div:nth-child(3) {
+            align-items: flex-start;
+            align-self: center;
+        }
+        .flexbox:nth-child(9) div:nth-child(1) {
+            align-items: flex-start;
+            align-self: stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Display Flex</h2>
+    <p>Acomodar ou distribuir elementos de modo fácil</p>
+    <p>Ajuda a centralizar na vertical -> PROPRIEDAS APLICADAS AOS FILHOS DO FLEXBOX CHAMADOS FLEXITENS</p>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+</body>
+
+</html>

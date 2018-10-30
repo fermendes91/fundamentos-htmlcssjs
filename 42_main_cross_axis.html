@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Main x Cross Axis</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+        .flexbox {
+            height: 250px;
+            border: 1px solid red;
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .flexbox div {
+            color: white;
+            background: darkslategray;
+            width: 300px;
+            margin: 15px;
+        }
+
+        .flexbox:nth-child(4) {
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column; /* Inverte os eixos... o main x (eixo x) vira cross axis (eixo y) e vice-versa */
+        }
+
+        .flexbox:nth-child(4) div {
+            flex-basis: 100px; 
+            /* O flex-basis altera, se for flex-direction (row) os px definidos serão de width se for (column) os px serão de height */
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Main x Cross Axis</h2>
+    <p>Acomodar ou distribuir elementos de modo fácil</p>
+    <p>Ajuda a centralizar na vertical </p>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+    <div class="flexbox">
+        <div class="div1">1</div>
+        <div class="div2">2</div>
+        <div class="div3">3</div>
+        <div class="div4">4</div>
+    </div>
+
+</body>
+
+</html>
