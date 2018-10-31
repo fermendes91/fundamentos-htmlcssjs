@@ -1,0 +1,155 @@
+
+<!doctype html>
+<!-- doctype informa ao agente de usuario a versão do html que deve ser renderizada-->
+<html lang="pt-br">
+    <head>
+        <title> pagina de exemplo estrutura basica </title>
+        <meta charset="utf-8">
+        <meta name="author" content="Daniel">
+        <meta name="description" content="descrição bacanuda">
+        <meta name="keywords" content="html5, tecnologia">
+        
+        <style>
+            .gridContainer, .gridContainer2, .gridContainer3, .gridContainer4{
+                width: 300px;
+                background: #ccc;
+            }
+
+            .gridItem{
+                background: #999;
+                font-size: 2em;
+                font-family: sans-serif;
+                padding: 10px 30px;
+            }
+            .gridItem:nth-child(even){ /* para indices impares */
+                background: #999;
+                color: white;
+            }
+            .gridItem:nth-child(odd){  /* para indices pares */
+                background: #eee;
+            }
+
+            /* GRID  */
+
+            .gridContainer {
+                display: grid;
+                
+                /*grid-template-columns: 100px 100px 100px; estamos definindo 3 colunas com cada uma medindo 100px */ 
+                /*grid-template-rows: 100px 100px;  /* estamos definindo 2 linhas com cada uma medindo 100px */ 
+                grid-template-columns: repeat(3, 50px); /* Esta linha é a mesma coisa que a linha 37 */
+                grid-template-rows: repeat(2, 65px);  /* Esta linha é a mesma coisa que a linha 38 */
+                
+                /*grid-row-gap: 10px; /* Cria um espaçamento entre as linhas */
+                /*grid-column-gap: 10px; /* Cria um espaçamento entre as colunas */
+                grid-gap: 20px 30px /* Forma resumida de escrever o codigo acima (row, column) */
+
+
+            }
+
+            .gridContainer2 {
+                margin-top: 40px;
+
+                display: grid;
+                width: 100%;
+
+                grid-template-columns: repeat(3, 1fr); /* 1fr pega o espaço que esta sobrando e dividi entre os 3 elementos */ 
+                grid-template-rows: repeat(2, 1fr);  /* 1fr pega o espaço que esta sobrando e dividi entre as 2 linhas */
+                grid-gap: 20px 30px;
+            }
+
+            .gridContainer3 {
+                margin-top: 40px;
+
+                display: grid;
+                width: fit-content;
+
+                grid-template-columns: repeat(3, 1fr) 100px; 
+                grid-template-rows: repeat(2, 100px);  
+                grid-gap: 30px 10px;
+            }
+
+            .gridContainer3 .gridItem:nth-child(1){
+                background: yellowgreen;
+
+                /* Posicionando de celulas dentro da GRID */
+                grid-row-start: 1;
+                grid-row-end: 2;
+
+                grid-column-start: 2;
+                grid-column-end: -1; /* -1 -> representa a ultima linha */
+
+                grid-row: 1 / 2; /* Resultado é exatamente o mesmo das linhas acima */
+                grid-column: 2 / -1;  /* Resultado é exatamente o mesmo das linhas acima */
+            }
+            
+            .gridContainer4 {
+                margin-top: 40px;
+
+                display: grid;
+                width: fit-content;
+
+                grid-template-columns: repeat(3, 1fr) 100px; 
+                grid-template-rows: repeat(2, 100px) 100px;  
+                grid-gap: 30px 10px;
+            }
+
+            .gridContainer4 .gridItem:nth-child(1){
+                background: teal;
+
+                grid-row: 1 / 2; 
+                grid-column: 2 / -1;  
+            }
+
+             .gridContainer4 .gridItem:nth-child(2){
+                 grid-row: 1 / span 2; /* começa no 1 e expande mais 2 */
+             }
+
+             .gridContainer4 .gridItem:nth-child(6){
+                grid-column: 1 / -1; /* começa no 1 e expande até o final */
+             }
+
+        </style>
+    </head>
+    <body>
+        <h2>Grid Layout</h2>
+        
+        
+        <div class="gridContainer">
+            <div class="gridItem">1</div>
+            <div class="gridItem">2</div>
+            <div class="gridItem">3</div>
+            <div class="gridItem">4</div>
+            <div class="gridItem">5</div>
+            <div class="gridItem">6</div>
+        </div>
+
+                
+        <div class="gridContainer2">
+            <div class="gridItem">1</div>
+            <div class="gridItem">2</div>
+            <div class="gridItem">3</div>
+            <div class="gridItem">4</div>
+            <div class="gridItem">5</div>
+            <div class="gridItem">6</div>
+        </div>
+        
+        <div class="gridContainer3">
+            <div class="gridItem">1</div>
+            <div class="gridItem">2</div>
+            <div class="gridItem">3</div>
+            <div class="gridItem">4</div>
+            <div class="gridItem">5</div>
+            <div class="gridItem">6</div>
+        </div>
+        
+        <div class="gridContainer4">
+            <div class="gridItem">1</div>
+            <div class="gridItem">2</div>
+            <div class="gridItem">3</div>
+            <div class="gridItem">4</div>
+            <div class="gridItem">5</div>
+            <div class="gridItem">6</div>
+        </div>
+
+    </body>
+</html>
