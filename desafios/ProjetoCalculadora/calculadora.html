@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <title>Projeto Calculadora</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando"> 
+        <meta name="description" content="lista de documentos"> 
+        <meta name="keywords" content="html5, tecnologia"> 
+        <link para arquivos externos>
+
+        <style>
+
+            body {
+                font-family: sans-serif;
+            }
+            
+            #calculator {
+                display: grid;
+                width: 270px;
+                background-image: 
+                    linear-gradient(60deg, rgb(184, 184, 184), transparent),
+                    linear-gradient(to top, rgb(105, 105, 105), transparent);
+                margin: auto;
+                padding: 30px;
+                border-radius: 20px;
+
+                grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+                grid-template-rows: 85px;
+                grid-auto-rows: 50px;
+                grid-gap: 10px;
+
+                box-shadow: 3px 3px 10px rgb(82, 82, 82);
+
+                
+            }
+
+            #display {
+                grid-column: 1 / -1;
+                margin-bottom: 30px;
+                background: linear-gradient(rgb(148, 148, 148), rgb(209, 209, 209));
+                font-size: 3em;
+                border-left: 3px solid white;
+                border-top: 2px solid white;
+                box-sizing: border-box;
+
+                text-align: right;
+                padding-right: 10px;
+            }
+
+            button {
+                background-image: 
+                    linear-gradient(60deg, rgb(184, 184, 184), transparent),
+                    linear-gradient(to top, rgb(105, 105, 105), transparent);
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            
+            button:hover {
+                background-image:
+                    linear-gradient(to top, rgb(105, 105, 105), transparent),
+                    linear-gradient(60deg, rgb(184, 184, 184), transparent);
+            }
+
+            .mais, .zero {
+                background-image: 
+                    linear-gradient(60deg, rgb(59, 56, 56), transparent),
+                    linear-gradient(to top, rgb(80, 75, 75), transparent);
+                border-radius: 8px;
+            }
+
+            .mais:hover, .zero:hover {
+                background-image: 
+                    linear-gradient(to top, rgb(44, 44, 44), transparent),
+                    linear-gradient(60deg, rgb(37, 37, 37), transparent);
+            }
+
+            .mais {
+                grid-row: 5 / span 2;
+                grid-column: 4 / 4;
+            }
+
+            .zero {
+                grid-column: col-start 1 / col-end 2;
+            }
+
+        </style>
+    </head>
+
+    <body> 
+        <div id="calculator">
+            <div id="display">0</div>
+
+            <button>AC</button> <button>%</button> <button>X</button> <button>/</button> 
+            <button>7</button> <button>8</button> <button>9</button> <button>=</button>
+            <button>4</button> <button>5</button> <button>6</button> <button>-</button> 
+            <button>1</button> <button>2</button> <button>3</button> <button class="mais">+</button>
+            <button class="zero">0</button> <button>,</button>
+        </div>
+    </body>
+
+</html>

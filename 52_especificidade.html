@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Especificidade</title>
+    <meta charset="utf-8">
+
+    <style>
+        /* ESPECIFICIDADE 
+        
+            A classe é mais especifica do que o elemento direto.
+            E o ID é mais especifica do que a propria classe.
+
+            #unico p > #unico > p.destaque > .destaque = p[lang] = p:hover > p::first-letter > p > *
+
+
+            Quando temos empate, o css definido é o que foi definido por ultimo.
+        
+            !important: sobescreve todas as demais classes.
+                ganha até do style inline.
+
+                (devemos ter muito cuidado ao utiliza-lo)
+        */
+
+        p {
+            color: green /*!important; */
+        }
+
+        .destaque {
+            color: red;
+        }
+
+        #unico {
+            color: blue;
+        }
+
+        p.destaque {
+            /* Fica mais especifico do que somente o apelido (classe)  */
+            color: orange;
+        }
+
+        p[lang] {
+            color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Meu CSS não funciona</h1>
+
+    <a href="http://"></a>
+
+    <p>Do you wanna know why I use a knife? Guns are too quick. You can't savor all the... little
+        emotions. You see, in
+        their last moments, people show you who they really are. So in a way, I knew your friends better than you ever
+        did. Would you like to know which of them were cowards?</p>
+
+    <p class="destaque" id="unico">Do you wanna know why I use a knife? Guns are too quick. You can't savor all the...
+        little emotions. You see, in
+        their last moments, people show you who they really are. So in a way, I knew your friends better than you ever
+        did. Would you like to know which of them were cowards?</p>
+
+    <p class="destaque">Do you wanna know why I use a knife? Guns are too quick. You can't savor all the... little
+        emotions. You see, in
+        their last moments, people show you who they really are. So in a way, I knew your friends better than you ever
+        did. Would you like to know which of them were cowards?</p>
+
+    <p lang="pt-br" class="destaque">Do you wanna know why I use a knife? Guns are too quick. You can't savor all the... little
+        emotions. You see, in
+        their last moments, people show you who they really are. So in a way, I knew your friends better than you ever
+        did. Would you like to know which of them were cowards?</p>
+
+
+</body>
+
+</html>

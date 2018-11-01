@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Especificidade 2</title>
+    <meta charset="utf-8">
+
+    <style>
+
+        .jumbotron {
+            background: rgba(0, 0, 0, .5)
+        }
+
+        .jumbotron__text{
+            color: white;
+        }
+
+        .jumbotron__title {
+            color: red;
+        }
+
+        /* QUEREMOS TODOS OS NOSSOS PARAGRAFOS VERMELHOS */
+
+        p {
+            color: red;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>Meu CSS não funciona</h1>
+
+    <div class="jumbotron">
+        <h2 class="jumbotron__title">subtitulo</h2>
+        <p class="jumbotron__text">paragrafo</p>
+        <p class="jumbotron__text">paragrafos</p>
+    </div>
+
+    <p style="color: blue">com estilo inline</p>
+
+    <p lang="pt-br" class="destaque">Testando atributos</p>
+
+    <p class="destaque">
+        Do you wanna know why I use a knife? Guns are too quick. You can't savor all the... little emotions. You see,
+        in their last moments, people show you who they really are. So in a way, I knew your friends better than you
+        ever did. Would you like to know which of them were cowards?
+    </p>
+
+</body>
+
+</html>

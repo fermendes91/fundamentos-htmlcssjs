@@ -1,0 +1,83 @@
+<!doctype html>
+<!-- doctype informa ao agente de usuario a versão do html que deve ser renderizada-->
+<html lang="pt-br">
+    <head>
+        <title>GRID Row Nomeada</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando">
+        <meta name="description" content="descrição bacanuda">
+        <meta name="keywords" content="html5, tecnologia">
+        
+        <style>
+            .gridContainer{
+                width: 90%;
+                background: #ccc;
+                margin: 30px auto;
+            }
+
+            .gridItem{
+                background-color: orange;
+                padding: 15px;
+                font-family: sans-serif;
+            }
+
+            /* GRID */
+            
+            .gridContainer {
+                display: grid;
+                /* Nomeação para grid rows */
+                grid-template-rows: [header-start] 100px [header-end nav-start] 50px [nav-end main-start] 1fr [main-end footer-start]  50px [footer-end];
+                /* Nomeação para grid columns */
+                /* grid-template-columns: [col1-start] 1fr [col1-end col2-start] 1fr [col2-end col3-start] 1fr [col3-end]; */
+                
+                /* Forma de usar nomeclatura usando repeat */
+                grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+
+                grid-gap: 20px; 
+                
+            }
+
+            .header {
+                grid-row: header; /* se ambos tem o mesmo nome -start -end, podemos simplificar somente por header. na linha 44 poderiamos fazer a mesma coisa com nav */
+                /* grid-column: col1-start / col3-end; */
+                grid-column: col-start 1 / col-end 3; /* Usando a formado do grid-template-columns com repeat */
+            }
+
+            .nav {
+                grid-row: nav-start / nav-end;
+                grid-column: col-start 1 / col-end 3;
+            }
+
+            .aside {
+                grid-row: main-start / footer-end;
+                grid-column: col-start 3 / col-end 3;
+            }
+
+            .main {
+                grid-column: col-start 1 / col-end 2;
+                min-height: 300px;
+            }
+
+            .footer {
+                grid-column: col-start 1 / span 3;
+                grid-row: footer; 
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>Grid Layout</h2>
+                
+        <div class="gridContainer">
+            <header class="header gridItem">header</header>
+            <nav class="nav gridItem">nav</nav>
+            <aside class="aside gridItem">aside</aside>
+            <main class="main gridItem">
+                main
+            </main>
+            <footer class="footer gridItem ">footer</footer>
+        </div>
+        
+        
+    </body>
+</html>
