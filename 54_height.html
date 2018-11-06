@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Height</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+        /* 
+            O Height passará a funcionar quando os elementos filhos passarem a conhecer a altura do
+            elemento pai.
+        */
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%; /* não funciona pois ainda precisamos definir o tamanho do HTML */
+        }
+
+        #externa {
+            background: yellow;
+            width: 80%;
+            height: 80%;
+            height: 90vh; /* 90% da altura da viewport, evita o uso de height para definir o tamanho de cada elemento */
+        }
+
+        #interna {
+            width: 50%;
+            height: 50%;
+            background: orange;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Height</h1>
+
+    <div id="externa">
+        Externa
+        <div id="interna">
+            Interna
+        </div>
+    </div>
+
+</body>
+
+</html>

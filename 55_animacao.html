@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="pt-br">
+    <head>
+        <title>Animação CSS</title>
+        <meta charset="utf-8">
+        <meta name="author" content="Daniel">
+        <meta name="description" content="descrição bacanuda">
+        <meta name="keywords" content="html5, tecnologia">
+    
+        <style>
+            /*  animation: {name} {time} {timing-function} {iteration-count} {delay}  */
+
+            @keyframes anda {
+                0% {
+                    transform: translateX(0);
+                    background: yellow;
+                }
+
+                100% {
+                    transform: translateX(700px);
+                    background: blue;
+                }
+            }
+
+            #anima-time div {
+                width: 200px;
+                height: 75px;
+                border: 3px solid red;
+            }
+
+            #anima-time div:nth-child(1){
+                animation: anda 2s;
+                animation-name: anda;
+                animation-duration: 3s;
+                animation-timing-function: ease-in;
+                
+            }
+
+            #anima-time div:nth-child(2){
+                animation-name: anda;
+                animation-duration: 2s;
+                animation-iteration-count: 4; /* infinite */
+                animation-direction: alternate;
+
+                animation: anda 2s ease-in-out infinite alternate;
+            }
+
+            #anima-time div:nth-child(3){
+                animation-name: anda;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+
+                animation-delay: 2s;
+            }
+
+            #anima-time div:nth-child(4){
+                background: red;
+
+                animation-name: anda;
+                animation-duration: 2s;
+                animation-iteration-count: 2; /* infinite */
+                animation-direction: alternate;
+                animation-delay: 1s;
+
+                animation-fill-mode: backwards; /* antes de iniciar atribui o css definido no animation */
+                animation-fill-mode: forwards; /* termina com as propriedades definidas no 0% do anda */
+            }
+
+            #anima-time div:nth-child(5){
+                background: red;
+
+                animation-name: anda;
+                animation-duration: 2s;
+                animation-iteration-count: 2; /* infinite */
+                animation-direction: alternate;
+                animation-delay: 1s;
+                animation-fill-mode: both;
+            
+                animation-play-state: running;
+            }
+
+            #anima-time div:nth-child(5):hover{
+                animation-play-state: paused;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Animação</h1>
+        
+        <div id="anima-time">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </body>
+</html>
