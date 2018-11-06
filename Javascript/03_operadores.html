@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Operadores Aritmeticos</title>
+    
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+        <h1>Lógica de Programação Javascript</h1>
+        <h2>Operadores Aritmeticos</h2>
+
+        <script>
+            var n1 = Number(prompt('Informe um número qualquer'));
+            var n2 = Number(prompt('Informe um número qualquer'));
+
+            /* PRECEDENCIA DE OPERADORES ARITMETICOS 
+                *
+                /
+                +
+                -
+            */
+            var media = (n1 + n2) / 2;
+
+            alert('A média é igual a: ' + media);
+
+            /* MODULO -> Retorna o resto da divisao */
+            var modulo = 10 % 3;
+            alert(' O resto de 10 / 3 é igual a: ' + modulo);
+
+            /* EXPONENCIAÇÃO */
+            var exponente = 2 ** 8;
+            alert(' A exponenciação de 2 por 8 é igual a: ' + exponente);
+        </script>
+    </body>
+</html>

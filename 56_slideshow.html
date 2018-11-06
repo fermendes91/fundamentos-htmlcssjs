@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>Animation SlideShow</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="description" content="lista de documentos">
+    <meta name="keywords" content="html5, tecnologia">
+
+    <meta name="viewport" content="width=device-width">
+    <style>
+
+        @keyframes slide {
+            0%, 22%, 100% {
+                transform: translateY(0);
+            }
+
+            25%, 47% {
+                transform: translateY(-65vh);
+            }
+
+            50%, 72%{
+                transform: translateY(-130vh);
+            }
+
+            75%, 97% {
+                transform: translateY(-195vh);
+            }
+        }
+
+        body {
+            font-family: sans-serif;
+            color: white;
+            background: #272626;
+            margin: 0;
+        }
+
+        #slide-externo {
+            width: 80vw;
+            height: 65vh;
+            border: 10px solid white;
+            box-shadow: 0 0 10px black;
+            margin-left: 10vw;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        #slide-interno {
+            width: 100%;
+            animation: slide 10s;
+            animation-iteration-count: infinite;
+            animation-timing-function: cubic-bezier(.27, -0.73, .59, 1.77);
+            will-change: transform; /* Prepara o browser para fazer a animação, quando carrega a pagina já armazena processamento para executar */
+        }
+
+        #slide-interno img {
+            display: block;
+            height: 65vh;
+            width: 100%;
+            object-fit: cover; /* funciona parecido com o background-size, mas funciona com imagens, não distorce tanto as imagens */
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Animation SlideShow</h1>
+
+    <div id="slide-externo">
+        <div id="slide-interno">
+            <img src="imagens/slides/slide1.jpg" alt="paisagem 1">
+            <img src="imagens/slides/slide2.jpg" alt="paisagem 2">
+            <img src="imagens/slides/slide3.jpg" alt="dog 1">
+            <img src="imagens/slides/slide4.jpg" alt="dog 2">
+        </div>
+    </div>
+
+</body>
+
+</html>

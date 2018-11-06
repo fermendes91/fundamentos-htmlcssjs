@@ -2,7 +2,7 @@
 
 <html lang="pt-br">
     <head>
-        <title>Animação CSS</title>
+        <title>Animação Multipla CSS</title>
         <meta charset="utf-8">
         <meta name="author" content="Daniel">
         <meta name="description" content="descrição bacanuda">
@@ -15,6 +15,18 @@
                 0% {
                     transform: translateX(0);
                     background: yellow;
+                }
+
+                25%, 75% {
+                    height: 120px;
+                }
+
+                50% {
+                    background: violet;
+                }
+
+                80% {
+                    background: tomato;
                 }
 
                 100% {
@@ -89,7 +101,7 @@
         </style>
     </head>
     <body>
-        <h1>Animação</h1>
+        <h1>Animação Multipla</h1>
         
         <div id="anima-time">
             <div>1</div>
