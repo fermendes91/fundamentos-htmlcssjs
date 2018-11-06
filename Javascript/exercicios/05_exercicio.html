@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 05</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Redução de Código</h2>
+
+    <script>
+        var nJogador1 = parseInt(prompt('numero do jogador 1'));
+        var nJogador2 = parseInt(prompt('numero do jogador 2'));
+        
+        var numeroSorte = parseInt(Math.random() * 2); 
+
+        if (nJogador1 === nJogador2) {
+            alert('voces empataram');
+        } else {
+            console.log(numeroSorte);
+            if( (numeroSorte === 0 && nJogador1 < nJogador2) || (numeroSorte === 1 && nJogador1 > nJogador2)){
+                alert('ganhou o jogador 1');
+            }else {
+                alert('ganhou o jogador 2');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
