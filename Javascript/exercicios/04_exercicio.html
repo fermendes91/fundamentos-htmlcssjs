@@ -1,0 +1,49 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 04</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente as aulas 05 - 07</h2>
+
+    <script>
+        var nomeAluno = prompt('Informe o nome do aluno e a matricula separados por -');
+        
+        var matricula = nomeAluno.split('-')[1];
+        nomeAluno = nomeAluno.split('-')[0];
+        
+        var opcao = Number(prompt('Selecione \n 1 - Informe Media Aluno \n 2 - Mostra Nome Aluno \n 3 - Mostra Matricula Aluno'));
+
+        switch (opcao) {
+            case 1: {
+                var nota1 = Number(prompt('Jogador 1: Informe um número qualquer'));
+                var nota2 = Number(prompt('Jogador 2: Informe um número qualquer'));
+                
+                alert('A media foi: ' + ((nota1 + nota2) / 2));
+                break;
+            }
+            case 2: {
+                alert('O nome do aluno é: ' + nomeAluno);
+                break;
+            }
+            case 3: {
+                alert('A matricula do aluno é: ' + matricula);
+                break;
+            }
+            default: {
+                alert('Tente novamente, Lembre-se selecione 1, 2 ou 3');
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 03</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente as aulas 04 - 05</h2>
+
+    <script>
+        var numero1 = Number(prompt('Jogador 1: Informe um número qualquer'));
+        var numero2 = Number(prompt('Jogador 2: Informe20 um número qualquer'));
+
+        if (numero1 === numero2) {
+            alert('empate');
+        } else {
+            // var numeroSorte = Number(prompt('Escolha um valor aleatorio entre 0 e 1'));
+            
+            var numeroSorte = parseInt(Math.random() * 2); // Por padrão o random retorna um valor de 0 até quase 1 (0.999999999999);
+            console.log('O numero da sorte foi: ' + numeroSorte);
+
+            if (numeroSorte == 0) {
+                if (numero1 < numero2) {
+                    alert('O jogador 1 foi o vencedor ');
+                } else {
+                    alert('O jogador 2 foi o vencedor ');
+                }
+            } else {
+                if (numero1 > numero2) {
+                    alert('O jogador 1 foi o vencedor ');
+                } else {
+                    alert('O jogador 2 foi o vencedor ');
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
