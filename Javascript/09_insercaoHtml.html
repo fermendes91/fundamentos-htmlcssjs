@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Conteudo HTML (Intro)</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Inserção de Conteudo HTML (Introdutorio)</h2>
+
+    <button onclick="mostrarTabuada()">Criar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
+    <div id="output"></div>
+
+    <script>
+
+        /* document -> Acessar conteudo HTML via Javascript. 
+           querySelector -> Seleção de algum elemento HTML.
+        */
+        var output = document.querySelector('#output'); 
+
+        // var msg = '';
+        // for(var i = 0; i < 1001; i++){
+        //     msg += 'o valor de i é: ' + i + '<br>';
+        // }
+
+        /* innerHTML -> Insere um valor na referencia do elemento 
+                obs: este processo é muito custoso, vale montar a mensagem e usar o comando innerHTML 1x só para evitar chamadas repetitivas.
+        */
+        output.innerHTML = 'texto Inserido por javascript';
+        output.innerHTML = msg;
+
+        function mostrarTabuada(firstAccess) {
+
+            if(firstAccess){
+                numero = firstAccess
+            }else{
+                var numero = Number(prompt('Selecione um número para mostrar a Tabuada'));
+            }
+
+            if(!isNaN(numero)){
+                limparTabuada();
+
+                var tabuada = '';
+                for(var i = 1; i <= 100; i++) {
+                    tabuada += numero + ' x ' + i + ' = ' + (numero * i) + ' <br>'; 
+                    if( !(i % 10) ) {
+                       tabuada += '<hr>';
+                    }
+                }
+
+                document.querySelector('#output').innerHTML = tabuada; 
+            }else{
+                alert('Informe um número valido como: 3, 5, 5.3, 2.0');
+                mostrarTabuada();
+            }
+        }
+        
+        mostrarTabuada(2);
+
+        function limparTabuada() {
+            document.querySelector('#output').innerHTML = ''; 
+        }
+    </script>
+</body>
+
+</html>

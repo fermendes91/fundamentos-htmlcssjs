@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 08</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 09</h2>
+
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">x</button>
+    <button onclick="dividir()">/</button>
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var numero1 = Number(prompt('Informe um número qualquer'));
+
+        escrever();
+
+        function escrever() {
+            output.innerHTML = numero1;
+        }
+
+        function somar() {
+            var numero2 = Number(prompt('Informe um número qualquer para somar do número: ' + numero2));
+            if (isNumber(numero2)) {
+                output.innerHTML = 'A soma entre ' + numero1 + ' e ' + numero2 + ' é igual a: ' + (numero1 + numero2);
+                numero1 += numero2;
+            } else {
+                somar();
+            }
+        }
+
+        function subtrair() {
+            var numero2 = Number(prompt('Informe um número qualquer para subtrair do número: ' + numero2));
+            if (isNumber(numero2)) {
+                output.innerHTML = 'A subtração entre ' + numero1 + ' e ' + numero2 + ' é igual a: ' + (numero1 - numero2);
+                numero1 -= numero2;
+            } else {
+                subtrair();
+            }
+        }
+
+        function multiplicar() {
+            var numero2 = Number(prompt('Informe um número qualquer para multiplicar do número: ' + numero1));
+            if (isNumber(numero2)) {
+                output.innerHTML = 'A multiplicação entre ' + numero1 + ' e ' + numero2 + ' é igual a: ' + (numero1 * numero2);
+                numero1 *= numero2;
+            } else {
+                multiplicar();
+            }
+        }
+
+        function dividir() {
+            var numero2 = Number(prompt('Informe um número qualquer para dividir pelo número: ' + numero1));
+
+            if (isNumber(numero2)) {
+                output.innerHTML = 'A divisão entre ' + numero1 + ' e ' + numero2 + ' é igual a: ' + (numero1 / numero2);
+                numero1 /= numero2;
+            } else {
+                dividir();
+            }
+        }
+
+        function isNumber(n) {
+            output.innerHTML = '';
+            if (isNaN(n)) {
+                alert('O número digitado é invalido, por favor insira um número valido. 5, 3, 7, 4.2');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
