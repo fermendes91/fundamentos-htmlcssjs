@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 06</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula de repetição 08</h2>
+
+    <script>
+        // for(var i = 1004; i < 2017; i++){            
+        //     if( !(i % 4) ){
+        //         document.write(i + ', ');
+        //     }
+        // }
+        
+        /* Ano bissexto oficial */
+        var ano = 1004;
+        while(ano <= 2018){
+
+            //Os anos bissextos são múltiplos de 4, não múltiplos de 100 (1900 não é bissexto) e múltiplos de 400 (2000 é bissexto). 
+            if( (ano % 100 || !(ano % 400))){
+                document.write(ano + '<br>');
+            }
+
+            ano += 4;
+        }
+    </script>
+</body>
+
+</html>

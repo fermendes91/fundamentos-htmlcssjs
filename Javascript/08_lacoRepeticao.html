@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Laço de Repetição</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Laço de Repetição</h2>
+
+    <script>
+        var numero = Number(prompt('Informe um número para realizar a tabuada'));
+
+        document.write('Tabuada do ' + numero + '<br><br>'); /* Somente a nivel de aprendizado, não é usado profissionalmente */
+
+        //tabuada até 1000
+        for(var i = 1; i <= 100; i++) {
+            document.write( numero + ' x ' + i + ' = ' + (numero * i) + ' <br>'); 
+            if( !(i % 10) ) {
+                document.write('<hr>');
+            }
+        }
+
+        // var indice = 1;
+        // while(indice <= 1000) {
+        //     document.write( numero + ' x ' + indice + ' = ' + (numero * indice) + ' <br>'); 
+        
+        //     (numero * indice) + ' <br> ';
+
+        //     indice++;
+        // }
+
+
+        // do while -> Obriga que pelo menos o codigo seja executado uma vez.
+        do {
+            var teste = 0;
+            teste++;
+        } while(false);
+        document.write('<br> <br> <h2>Teste foi executado pelo menos 1x </h2>' + teste); 
+
+    </script>
+</body>
+
+</html>
