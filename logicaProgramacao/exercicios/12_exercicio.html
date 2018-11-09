@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 12</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 13</h2>
+
+    <div id="output"></div>
+
+    <script>    
+        var dias = new Array(); /* Dias da semana */
+        dias.push('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
+
+        var diaSemana = new Date().getDay(); // retorna o dia da semana;
+
+        console.log('Bem-Vindo, hoje é ' + dias[diaSemana]);
+
+        /* EXERCICIO 2  -> mostrar a soma dos números pares */
+
+        // var numeros = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        var numeros = new Array(25, 30, 45, 26, 0, 12, 78, 64);
+        
+        var resultados = somaNumerosPares(numeros);
+
+        function somaNumerosPares(numeros){
+            var soma = 0;
+            var numerosPares = [];
+            for(var i = 0; i < numeros.length; i++){
+                if(numeros[i] % 2 === 0){
+                    numerosPares.push(numeros[i]);
+                    soma += numeros[i];
+                }
+            }
+            return new Array(numerosPares, soma); 
+        }
+
+        alert('A soma dos números pares: ' + resultados[0] + ' \né igual a: ' + resultados[1]);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 13</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 14</h2>
+
+    <div id="output"></div>
+
+    <script>    
+        var pessoa = '';
+
+        pessoa = new Object();
+
+        pessoa.nome = 'Fernando';
+        pessoa.idade = 33;
+        pessoa.profissao = 'Desenvolvedor'
+
+        pessoa.aniversario = function() {
+            this.idade++;
+            console.log('Parabens pore realizar mais um aniversario: FELIZ: ' + this.idade + ' anos!!!!');
+        }
+
+        var msg = 'nome: ' + pessoa.nome + '<br>'; 
+        msg += 'idade: ' + pessoa.idade + '<br>'; 
+        msg += 'profissao: ' + pessoa.profissao + '<br>'; 
+
+        console.log(msg);
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Arrays</title>
+    
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+        <h1>Lógica de Programação Javascript</h1>
+        <h2>Conjunto de Dados -- Arrays -- </h2>
+
+        <div id="output"></div>
+
+        <script> 
+            var pessoas = new Array();
+            pessoas[0] = 'Fernando';
+            pessoas[1] = 'Thaysa';
+            pessoas[2] = 'Leandro';
+            pessoas[3] = 'Vivian';
+
+            var produtos = new Array();
+            produtos.push('caneta');
+            produtos.push('lapis');
+            produtos.push('caderno', 'folhas', 'borracha', 'livro');
+
+            var carros = new Array('Corsa', 'Celta', 'Santana', 'Sandero');
+
+            /* Iteração sob Arrays */
+            var output = document.querySelector('#output');            
+            
+            output.innerHTML = produtos;
+
+            var msg = '<br><br>';
+            for(var i = 0; i < produtos.length ; i++) {
+                msg += 'produto ' + (i+1) + ': ' + produtos[i] + '<br>';
+            }
+
+            output.innerHTML += msg;
+        </script>
+    </body>
+</html>

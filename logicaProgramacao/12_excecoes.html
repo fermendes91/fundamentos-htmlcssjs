@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Tratamento Exceções</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Tratamento Exceções</h2>
+
+    <button onclick="mostrarArea()">Mostrar Area</button>
+
+    <script>    
+        /* isNaN -> retorna se o numero passado como parametro pode ser convertido para número então '2' é false. */
+        
+        function mostrarArea() {
+            var largura = Number(prompt('Digite a Largura'));
+            var altura = Number(prompt('Digite a Altura'));
+
+            if( isNaN(largura) || isNaN(altura)) {
+                throw new Error('largura ou altura devem ser valores númericos');
+            }
+
+            alert('area total: ' + largura + ' x ' +  altura + ": " + (largura * altura) + 'm²');
+        }
+    </script>
+</body>
+
+</html>

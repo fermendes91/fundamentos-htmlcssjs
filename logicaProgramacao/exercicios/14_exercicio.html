@@ -1,0 +1,80 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 14</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 15</h2>
+
+    <button onclick="adicionarContato()">Adicionar Contato</button>
+    <button onclick="removerContato()">Remover Contato</button>
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+
+        var contatos = [{
+            nome: 'Fernando',
+            email: 'fernando@email.com'
+        },
+        {
+            nome: 'Thaysa',
+            email: 'thaysa@email.com'
+        },
+        {
+            nome: 'Gumercindo',
+            email: 'gumercindo@email.com'
+        }];
+
+        mostrarContatos();
+        function mostrarContatos() {
+            var msg = '';
+
+            contatos.forEach(contato => {
+                msg += '<h2>Nome:' + contato.nome + '</h2>';
+                msg += '<p> E-mail: ' + contato.email + '</p><hr>'
+            });
+
+
+            if (!contatos.length) {
+                msg = '<h2>Não há contatos a serem exibidos</h2>';
+            }
+
+            output.innerHTML = msg;
+        }
+
+
+        function adicionarContato() {
+            var contato = {};
+
+            contato.nome = prompt('Informe o nome do contato');
+            contato.email = prompt('Informe o e-mail do contato');
+
+            contatos.push(contato);
+
+            mostrarContatos();
+        }
+
+        function removerContato() {
+            var nome = prompt('Insira o nome do contato a ser removido');
+
+            contatos = contatos.filter((contato) => {
+                return contato.nome !== nome;
+            });
+
+            mostrarContatos();
+
+        }
+
+    </script>
+</body>
+
+</html>

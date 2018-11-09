@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Objetos e Arrays</title>
+    
+        <meta charset="utf-8">
+        <meta name="author" content="Fernando">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body>
+        <h1>Lógica de Programação Javascript</h1>
+        <h2>Conjunto de Dados -- Objetos e Arrays-- </h2>
+
+        <div id="output"></div>
+
+        <script> 
+            var produtos = [{
+                nome: 'caneta',
+                preco: '3.7'
+            }, 
+            {
+                nome: 'lapis',
+                preco: '2.2'
+            },
+            {
+                nome: 'borracha',
+                preco: '1.9'
+            }];
+
+            var msg = '';
+
+            produtos.forEach(produto => {
+                msg += '<h2>Produto:' + produto.nome + '</h2>';
+                msg += '<p> Preço: ' + produto.preco + '</p><hr>'
+            });
+
+            output = document.querySelector('#output').innerHTML = msg;
+        </script>
+    </body>
+</html>

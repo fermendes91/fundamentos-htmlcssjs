@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 11</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 12</h2>
+
+    <button onclick="mostrarArea(largura, altura)">Mostrar Area</button>
+
+    <div id="output"></div>
+
+    <script>    
+        /* isNaN -> retorna se o numero passado como parametro pode ser convertido para número então '2' é false. */
+        var largura = 0;
+        var altura = 0;
+        var output = document.querySelector('#output');
+        
+        mostrarArea();
+
+        function mostrarArea() {
+            largura = Number(prompt('Digite a Largura'));
+            altura = Number(prompt('Digite a Altura'));
+            var calculo = 0;
+            try{
+                calculo = calcularArea(largura, altura);
+                output.innerHTML = ('area total: ' + largura + ' x ' +  altura + ": " + calculo + 'm²');
+            }catch(e) {
+                console.log('Erro na leitura dos dados');
+            }
+
+            /*
+                ... se necessario poderia continuar com a execução
+            */
+        }
+
+        function calcularArea(largura, altura) {
+            verifyMetrics(largura, altura);
+
+            return largura * altura;
+        }
+
+        function verifyMetrics(largura, altura) {
+            if( isNaN(largura) || isNaN(altura)) {
+                output.innerHTML = '';
+                alert('Error: Os valores informados devem ser númericos como: 5, 2, 6, 1.4');
+                throw new Error('largura ou altura devem ser valores númericos, Insira os dados novamente.');
+            }
+        }
+    </script>
+</body>
+
+</html>

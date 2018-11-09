@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Exercicio 10</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Exercicio referente a aula 10 e 11</h2>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">x</button>
+    <button onclick="calcular('/')">/</button>
+    <div id="output"></div>
+
+    <script>
+        var output = document.querySelector('#output');
+        var ultimoCalculo = 0;
+     
+        function escrever(mensagem) {
+            output.innerHTML = mensagem;
+
+            /* 
+                output.textContent => retorna o conteudo que esta dentro do output.
+            
+            */
+        }
+
+        function calcular(operador) {
+            if(ultimoCalculo) {
+                n1 = null;
+                var n2 = Number(prompt('Informe um outro número para efetuar a operação: ' ));
+
+                if ( isNumber(ultimoCalculo) && isNumber(n2)) {
+                    return executarCalculo(operador, ultimoCalculo, n2);
+                } else {
+                    calcular();
+                }
+            }else{
+                var n1 = Number(prompt('Informe um número para efetuar a operação: '));
+                var n2 = Number(prompt('Informe um outro número para efetuar a operação: ' ));
+            
+                if ( isNumber(n1) && isNumber(n2)) {
+                    return executarCalculo(operador, n1, n2);
+                } else {
+                    calcular();
+                }
+            }
+        }
+
+        function executarCalculo(operador, n1, n2) {
+            var calculo =  eval(n1 + operador + n2);
+            output.innerHTML = 'O calculo entre ' + n1 + ' e ' + n2 + ' é igual a: ' + calculo;
+            ultimoCalculo = calculo;
+            
+            return calculo;
+        }
+
+        function isNumber(n) {
+            output.innerHTML = '';
+            if (isNaN(n)) {
+                alert('O número digitado é invalido, por favor insira um número valido. 5, 3, 7, 4.2');
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>Função Params</title>
+
+    <meta charset="utf-8">
+    <meta name="author" content="Fernando">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <h1>Lógica de Programação Javascript</h1>
+    <h2>Função com parametros</h2>
+
+    <button onclick="mostrarArea(largura, altura)">Mostrar Area</button>
+
+    <script>    
+        var largura = Number(prompt('Digite a Largura'));
+        var altura = Number(prompt('Digite a Altura'));
+
+        function mostrarArea(larg, alt) {
+            alert('area total: ' + larg + ' x ' +  alt + ": " + (larg * alt) + 'm²');
+        }
+    </script>
+</body>
+
+</html>
