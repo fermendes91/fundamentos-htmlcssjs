@@ -66,9 +66,15 @@
         function removerContato() {
             var nome = prompt('Insira o nome do contato a ser removido');
 
+            var tamanhoLista = contatos.length;
+
             contatos = contatos.filter((contato) => {
-                return contato.nome !== nome;
+                return !(contato.nome.indexOf(nome) >= 0);
             });
+
+            if(contatos.length === tamanhoLista) {
+                alert('Nenhum contato encontrado para ser removido.');
+            }
 
             mostrarContatos();
 

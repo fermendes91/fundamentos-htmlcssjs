@@ -9,15 +9,33 @@
         <meta name="description" content="lista de documentos"> 
         <meta name="keywords" content="html5, tecnologia">
 
-        <link href="CSS/33_print.css" media="print" rel="stylesheet"> <!-- media utilizada para impressao, css especifico -->
-
+        <!-- arquivo deletado. poderá ser recriado de volta com o style comentado da linha 28 ate a 38.
+            <link href="CSS/33_print.css" media="print" rel="stylesheet"> media utilizada para impressao, css especifico -->
         <style>     
             body {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 18px;
                 color: red;
                 background: #ddd;
-            }    
+            }
+        
+            a:after {
+                content: '( 'attr(href)' )'; 
+                display: inline-block;
+                margin: 0 10px;
+            } 
+
+            /* body {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: blue;
+                font-size: 16px;
+            }
+
+            a:after {
+                content: '( 'attr(href)' )';  O atributo href será incluido aqui 
+                display: inline-block;
+                margin: 0 10px;
+            } */
         </style>
     </head>
 

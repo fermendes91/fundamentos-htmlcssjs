@@ -1,0 +1,100 @@
+<!doctype html>
+
+<!--
+    Nasceu para ser uma lingaguem para criar paginas mais dinamicas,
+    para manipular elementos numa pagina web.
+
+    Foi criado em 1996 pela equipe da netscape, teve poucas versões no decorrer de sua vida.
+    Final dos anos 90 (1999 pra ser exato), passou a se chamar linguagem ECMA, e se tornou uma implementação dessa linguagem. 
+    
+    EcmaScript é uma linguagem basica para desenvolver outras linguagens (javaScript, JSscript, Action Script).
+    Podendo essas outras linguagens adicionar mais funcionalidades.
+
+     ~~> javascript não é linguagem COMPILADA e sim INTERPRETADA.
+
+    SISTEMA LEXICO DA LINGUAGEM
+
+        ~> Case-sensitive        
+        ~> Comentarios
+        ~> Declarações            
+        ~> Literais
+        ~> Escape
+        ~> Variaveis e Constantes   
+        ~> Null, Undefined, NaN, Infinity
+        ~> Objeto Global (Window, Global, this);
+
+-->
+
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Intro Javascript</title>
+        <!-- <script src="qualquer.js"></script> -->
+    
+        <script>
+
+            /* CASE SENSITIVE */
+            var nome = 'Fernando';
+            // console.log(Nome) -> Não funciona porque é case sensitve;
+            alert(nome);
+
+            /* COMENTARIOS */
+            // var codigo = 1 --> comentario de linha
+            /* Comentario de bloco de codigo */
+
+            /* DECLARAÇÕES */
+            var produto = 'caneta'; 
+            var valores, valores2 = 10;
+
+            /* LITERAIS */
+            var produto = 'caneta'; //Literal de String
+            var valor = 20; // Literal numerico
+            var ehVerdade = true; // Literal booleano
+            var lista = ['1', 2, false, true]; // Literal de array
+            var pessoaObj = { // Literal de objeto
+                nome: 'Fernando',
+                idade: 30
+            }; 
+
+            /* CARACTER DE ESCAPE -> Barra invertida (\) */
+            var frase = "O 'HTML' é divertido" + 'O "HTML" é maneiro' + "O \"HTML\" é maneiro";
+
+            /* VARIAVEIS E CONSTANTES*/
+            var nome = 'Fernando'; // escopo geral
+            let nome2 = 'Thaysa'; // escopo especifico
+            const nome3 = 'Mendes'; // valor imutavel
+
+            /* NULL, UNDEFINED, NAN, INFINITY */
+            var undef; // isto vai retornar undefined (variavel sem valor nenhum);
+            var nul = null // a diferença entre null e undefined é que o null é algo forçado pelo usuario para dizer que uma variavel é nula.
+            var notAnumber = 2 * a; //vai retornar NaN (Not a Number), não é possivel converter str em numero.
+            
+            var num1 = 2e3; /* Coloca 3 zeros a direita, vai ficar 2000 */
+            var num2 = 2e-3 /* Coloca 3 zeros a esquerda vai ficar 000.2 */
+            var num3 = 2e308 /* Número grande demais, vai retornar Infinity */
+
+            
+            /* Objeto global  (WINDOW, GLOBAL, THIS) */
+            window.alert('window alert');
+
+            // global -> Objeto raiz no NODE.js como se fosse o window.
+
+            // this -> Quem representa o escopo atual.
+            this.alert('this alert'); // -> nesse contexto o this representa o objeto window.
+
+
+            // DEPURAÇÃO
+
+            console.log('Mostra a mensagem direto no console do navegador acessado por (F12) ');
+            debugger; // breakpoint. Para o codigo no momento da execução para analise.
+
+        </script>
+    
+    </head>
+
+    <body>
+        
+    </body>
+
+</html>

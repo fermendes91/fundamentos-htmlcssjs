@@ -1,0 +1,167 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Funções Javascript</title>
+
+    <h1>Funções JS</h1>
+    <script>
+
+
+
+
+        // MANEIRA LITERAL DE CRIAR FUNÇÕES
+        function somar(n1, n2) { //Função sem nome é possivel.
+            // corpo da função
+
+            //pode retornar valores;
+            return n1 + n2;
+        }
+
+        var soma = somar(10, 13);
+
+        console.log('Soma foi igual a: ' + soma);
+
+        /* FUNÇÕES DE PRIMEIRA CLASSE -> podemos trabalhar com funções como se fossem objetos js. */
+        somar.propriedade = 'propriedade da funcao'; /* podemos tratar uma função como qualquer objeto javascript */
+        console.log(somar.propriedade);
+        var teste = function () { /* MANEIRA DE CRIAR UMA FUNÇÃO ANONIMA (sem nome)  --> Precisa colocar o ; no final*/
+            console.log('teste');
+        };
+        teste();
+
+        /* FUNÇÕES PODEM SER PASSADAS COMO PARAMETROS DE FUNÇÃO */
+
+        var funcaoComoParametro = function (f) {
+            f();
+        }
+
+        funcaoComoParametro(function () {
+            console.log('Função passada como parametro');
+        });
+
+
+
+
+
+        /* NO ES5 (EcmaScript 5) SÃO AS FUNÇÕES UNICAS QUE CRIAM ESCOPOS */
+        console.log('-------------------------------');
+
+        /* Escopo global */
+        var x = 2;
+
+        function mostraX() {
+            /* Escopo da function */
+            var x = 10;
+            var y = 20;
+            console.log('mostra X dentro function: ' + x); //10
+            console.log('mostra y dentro function: ' + y); //20
+        }
+        // apesar das VAR's terem o mesmo nome, elas não se conflitam, porem o escopo mais interno será usado no escopo mais externo.
+        // note que as 2 estão com o var setado, caso a linha 49 não tivesse o var, a linha 56 iria imprimri 10, já que o valor foi mudado.
+
+        mostraX();
+
+        console.log('Mostra x fora function: ' + x); // 2
+        try{
+            console.log('Mostra y fora function: ' + y); // undefined
+        }catch(e){
+            console.error('Y existe somente no escopo da função, na parte externa não: ' + e);
+        }
+
+
+
+        /* PODEM SER AUTOEXECUTAVEIS 
+        
+            TOMAR CUIDADO COM VARIAVEIS DE ESCOPO GLOBAL.
+            Se tivermos variaveis com o mesmo nome de escopo global em 2 arquivos js diferentes, 
+            podemos e VAMOS causar problemas inesperados (pois uma variavel vai sobescrever a outra), 
+            EVITE!! criar variaveis VAR  no escopo global. 
+            
+            Utilize mais dentro de funções que o escopo fica mais fechado.
+
+            (UMA BOA PRATICA É COLOCAR SEMPRE TODO O CODIGO DENTRO DE UMA FUNÇÃO)
+
+            function init() {
+                var isValid = false;
+                ...
+            }
+            init();
+
+            não utilize o metodo acima e sim o baixo (METODO AUTO INVOCAVEL), no metodo acima podemos ter um outro arquivo .js
+            com o mesmo nome de função init(). o ideal é usarmos uma função auto invocavel.;
+        */
+
+        // METODO AUTO INVOCAVEL (IFEE -> IMMEDIATELY-INVOKED FUNCTION EXPRESSION)
+        (function () {
+            'use strict'; // MUDA A CHAVE DE INTERPRETAÇÃO DO JAVASCRIPT. ( boa pratica sempre usar dentro das nossas proprias funções)
+                                // NÂO PERMITINDO POR EXEMPLO A CRIAÇAÕ DE VARIVEIS SEM A PALAVRA RESERVADA VAR  
+
+            /* aqui podemos colocar todo o codigo da nossa pagina , evitando criar variaveis de escopo global e dar conflitos,
+                com outros arquivos .js que utilizem o mesmo nome de variavel num escopo global tambem.
+            */
+            var isValid = false;
+
+            // poderiamos também... criar a variavel isValid sem a palavra var,
+            // neste caso a variavel voltaria a ser global, exemplo conforme linha abaixo;
+
+            try {
+                exemploGlobal = true;
+            }catch(e){
+                console.error('Como estamos usando o USE STRICT, o JS não permite criar varivel sem VAR: ' + e);
+            }
+
+            function somar() {
+                var n1 = 52;
+                var n2 = 65;
+                return n1 + n2;
+            }
+
+            console.log('A soma foi igual a: ' + somar());
+
+
+            /* PODEMOS TER ACESSO A TODOS OS ARGUMENTOS DA NOSSA FUNÇÃO */
+
+            function somarArguments() {
+                console.log(arguments);
+                
+                var result = 0;
+                var x = 0;
+
+                while(arguments[x]) {
+                    console.log(arguments[x]);
+                    result += arguments[x];
+                    x++;
+                }
+                return result;
+            }
+
+            console.log('A soma dos argumentos passados foi igual a: ' + somarArguments(10, 20, 30, 40, 50));
+
+
+        })();
+
+        try {
+            console.log(isValid); //undefined
+        }catch(e) {
+            console.error(e);
+        }
+
+        try{
+            console.log(' !!!exemplo de variavel global dentro de uma function: ' + exemploGlobal);
+        }catch(e){
+            console.error('Vai dar erro por causa do   USE STRICT ');
+        }
+        
+    
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

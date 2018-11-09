@@ -1,0 +1,43 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 01</title>
+
+    <h1>Exercicio referente a aula 02_funcoes.html</h1>
+    <script>
+        (function() {
+            function calcularMedia() {
+                var argumentos = [];
+                
+                if(arguments.length) {
+                    for(var i = 0; i < arguments.length ; i++){
+                        argumentos.push(arguments[i]);
+                    }
+    
+                    var valoresSomados = 0;
+    
+                    console.log(argumentos);
+                    valoresSomados = argumentos.reduce(function (n1, n2){
+                        return n1 + n2;
+                    });
+    
+                    return (valoresSomados / argumentos.length);
+                }else{
+                    console.error('Não foram passados parametros para essa função');
+                }
+            }
+
+            console.log(calcularMedia(1, 1, 2, 3, 5));
+        })();
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
