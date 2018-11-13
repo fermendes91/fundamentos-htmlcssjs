@@ -34,6 +34,13 @@
             <p>Boas Vindas: </p>
             <button onclick="escreve()">Printa Nome</button>
         </div>
+        
+        <hr>
+
+        <h2>Problema 4</h2>
+        <div id="problema4">
+            <input type="text" id="txtNomeDesabilitado">
+        </div>
     </main>
 
     <script>
@@ -70,6 +77,22 @@
                 Ao ser inserido na tela. deve estar em negrito.
 
             */
+
+            //function escreve();
+
+
+        /* 
+            Problema 4 -
+            Temos duas variaeis chamadas nome e sobrenome com valores definidios. Precisamos
+            mostrar estas variaveis concatenadas num input type="text" e deixar este input desabilitado.
+        */
+                
+        var nome1 = 'Fernando';
+        var sobrenome = 'Mendes';
+
+        var inputNomeDisabled = document.querySelector('#problema4 input');
+        inputNomeDisabled.value = nome + ' ' + sobrenome;
+        inputNomeDisabled.disabled = true;
 
         })();
 
