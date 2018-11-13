@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Funções Javascript Exer.</title>
+
+    <h1>Funções JS - Exercicio</h1>
+    <h2>Objetivo -> Desenvolver um calculador de media, <br>
+        indepedente do número de parametros passados a função.</h2>
+    <script>
+
+        (function () {
+
+            function calcularMedia() {
+                var total = 0;
+                var qtd = arguments.length;
+                
+                var x = 0;
+
+                while(typeof arguments[x] === 'number') { // a media pode ser 0, e 0 é false.
+                    total += arguments[x];
+                    x++
+                }
+
+                return total / qtd;
+            }
+
+            var media = calcularMedia ( 2, 3, 4);
+            var media2 = calcularMedia (2, 3, 10, 6);
+
+            console.log('media: ' + media + '\nmedia2: ' + media2);
+
+        })();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
