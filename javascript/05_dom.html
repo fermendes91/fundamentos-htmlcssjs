@@ -1,0 +1,63 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <h1>Document</h1>
+
+    <main class="cmain" id="idmain">
+        <h2>SubTitulo H2</h2>
+        <p id="pmain">
+            Lorem ipsum olor sit amet, consectetur adipiscing elit.
+        </p>
+    </main>
+
+    <section class="csection" id="idsection">
+        <h3>SubTitulo H3</h3>
+        <p class="paragrafos"> Lorem ipsum olor sit amet, consectetur adipiscing elit.</p>
+        <p class="paragrafos"> Lorem ipsum olor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
+    <script>
+        (function () {
+            'use strict'
+
+            /* AO TRABALHARMOS COM DOM ( ACESSAR CONTEUDO HTML VIA JAVASCRIPT) 
+                precisamos garantir que o conteudo HTML já tenha sido renderizado,
+                por isso colocamos as declarações sempre a baixo do body, tendo em vista,
+                que o browser faz a leitura da página de baixo pra cima.
+
+                para que a manipulação so aconteça depois do body ser lido
+            */
+
+            // Acessar via JS o mundo HTML. ( DOM ) 
+
+            //getElementById retorna um unico elemento.
+            var pmain = document.getElementById('pmain');
+            pmain.textContent = 'Texto Alterado via JAVASCRIPT';
+
+            // getElementsByClassName -> retorna uma coleção de objetos, sendo necessario passar o indice para recuperar o objeto especifico.
+            var paragrafos = document.getElementsByClassName('paragrafos');
+
+            paragrafos.textContent = 'Alterado o Texto dos paragrafos';
+
+            // getElementsByTagName -> retorna uma coleção de objetos, passando a tag 
+            var sections = document.getElementsByTagName('section');
+
+            // querySelector (retorna somente um ), querySelectorAll (retorna uma lista ) -> retorna uma coleção de objetos, da mesma forma como escrevemos no CSS.
+            var elements = document.querySelector('#idsection .paragrafos');
+            console.log(elements);
+
+
+        })();
+    </script>
+</body>
+
+</html>

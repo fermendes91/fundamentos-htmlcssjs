@@ -15,22 +15,32 @@
     </h2>
     <script>
         (function () {
-            'use strict' //uma das funcionalidades é não deixar criar variavel sem a palavra VAR.
-            calculaIMC();
+            'use strict'
 
-            function calculaIMC() {
+            var altura = 1.72;
+            var peso = 85;
+
+            calculaIMC(altura, peso, imprimiClassificacao);
+
+            function calculaIMC(altura, peso, callback) {
                 try {
                     var imc = 0;
-                    var altura = Number(prompt('Informe a sua altura'));
-                    var peso = Number(prompt('Informe o seu peso'));
 
-                    if(altura && peso) {
+                    if( !isNaN(altura) && !isNaN(peso)) {
                         imc = (peso / (altura^2));
 
-                        alert(imprimiClassificacao(imc));
+                        if(callback && typeof callback === 'function') {
+                            alert(imprimiClassificacao(imc));
+                        } else {
+                            return imc;
+                        }
                     }else {
-                        alert('Falha ao recuperar valores, tente novamente');
-                        calculaIMC();
+                        alert('Falha ao recuperar valores, execute novamente');
+                        altura = Number(prompt('Informe a sua altura'));
+                        peso = Number(prompt('Informe o seu peso'));
+                        var calculo = calculaIMC(altura, peso);
+                    
+                        imprimiClassificacao(calculo);
                     }
 
                     return imc;

@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <h1>Document</h1>
+
+    <main class="cmain" id="idmain">
+        <h2>Problema 1</h2>
+        <div id="problema1">
+            <p>Boas Vindas: </p>
+        </div>
+
+        <hr>
+
+        <h2>Problema 2</h2>
+        <div id="problema2">
+            <p>Boas Vindas: </p>
+            <p>Boas Vindas: </p>
+        </div>
+        
+        <hr>
+
+        <h2>Problema 3</h2>
+        <div id="problema3">
+            <input type="text" id="txtNome">
+            <p>Boas Vindas: </p>
+            <button onclick="escreve()">Printa Nome</button>
+        </div>
+    </main>
+
+    <script>
+
+        var nome = 'Teste111';
+        (function () {
+            'use strict'
+            
+            /* 
+                Problema 1 -
+                Mostrar na tela uma div com mensagem de Boas Vindas: {Nome},
+                o nome deve ser digitado pelo prompt.
+            */
+            
+            nome = prompt('Informe o seu nome !!');
+            document.querySelector('#problema1 p').textContent += nome;
+
+            /* 
+                Problema 2 - 
+                Mostrar na tela div com uma mensagem de Boas Vindas: {Nome},
+                o nome deve ser digitado pelo prompt.
+                Ao ser inserido na tela. deve estar em negrito.
+            */
+
+            // O Text Content é texto puro então a tag< <b> será setada como escrita.
+            // O InnerHTML, converte as tags para html, tornando assim a palavra em negrita como desejamos.
+            document.querySelectorAll('#problema2 p')[0].textContent += '<b>' + nome + '</b>';
+            document.querySelectorAll('#problema2 p')[1].innerHTML +=  '<b>' + nome + '</b>';
+
+            /* 
+                Problema 3 - 
+                Mostrar na tela div com uma mensagem de Boas Vindas: {Nome},
+                o nome deve ser digitado pelo INPUT.
+                Ao ser inserido na tela. deve estar em negrito.
+
+            */
+
+        })();
+
+        function escreve() {
+            var nome2;
+            var inputNome = document.querySelector('#txtNome');
+            nome2 = inputNome.value;
+
+            document.querySelector('#problema3 b') ? document.querySelector('#problema3 b').remove() : '';
+            document.querySelector('#problema3 p').innerHTML +=  '<b>' + nome2 + '</b>';
+        }
+
+    </script>
+</body>
+
+</html>
