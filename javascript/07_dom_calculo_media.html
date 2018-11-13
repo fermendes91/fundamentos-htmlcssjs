@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+		
+        <link href="../media/css/bootstrap/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="../media/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+		
+		<script src="utils/utils.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+        </div>
+        
+        
+        <section>
+        	<div class="container">
+	        
+		      	<h2>Média dos alunos</h2>
+				<table class="table js-tabela">
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Nota 1</th>
+							<th>Nota 2</th>
+							<th>Nota 3</th>
+							<th>Nota 4</th>
+							<th>Média</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="aluno" >
+							<td class="aluno-nome">Gertrude</td>
+							<td class="aluno-n1">10</td>
+							<td class="aluno-n2">8.5</td>
+							<td class="aluno-n3">9</td>
+							<td class="aluno-n4">7.5</td>	
+							<td class="aluno-m"></td>
+						</tr>
+
+						<tr class="aluno" >
+							<td class="aluno-nome">Rey</td>
+							<td class="aluno-n1">5</td>
+							<td class="aluno-n2">8.5</td>
+							<td class="aluno-n3">6.5</td>
+							<td class="aluno-n4">7.5</td>
+							<td class="aluno-m"></td>
+						</tr>
+
+						<tr class="aluno" >
+							<td class="aluno-nome">Jessilda</td>
+							<td class="aluno-n1">8</td>
+							<td class="aluno-n2">8.5</td>
+							<td class="aluno-n3">7</td>
+							<td class="aluno-n4">7.5</td>
+							<td class="aluno-m"></td>
+						</tr>
+
+						<tr class="aluno">
+							<td class="aluno-nome">Lindóia</td>
+							<td class="aluno-n1">6.5</td>
+							<td class="aluno-n2">8.5</td>
+							<td class="aluno-n3">10</td>
+							<td class="aluno-n4">7.5</td>
+							<td class="aluno-m"></td>
+						</tr>
+						<tr class="aluno" >
+							<td class="aluno-nome">Creysson</td>
+							<td class="aluno-n1">10</td>
+							<td class="aluno-n2">9.5</td>
+							<td class="aluno-n3">10</td>
+							<td class="aluno-n4">8.5</td>
+							<td class="aluno-m"></td>
+						</tr>
+						<tr class="aluno" >
+							<td class="aluno-nome">Fernando</td>
+							<td class="aluno-n1">10</td>
+							<td class="aluno-n2">4.5</td>
+							<td class="aluno-n3">8</td>
+							<td class="aluno-n4">7.5</td>
+							<td class="aluno-m"></td>
+						</tr>
+					</tbody>
+				</table>
+	        	
+        	</div>	
+        </section>
+
+
+		<!--
+			Vamos criar um loop que percorra as linhas de uma tablea de alunos, encontre as quatro notas(n1, n2, n3 e n4) 
+			e mostre na ultima coluna dessa tabela a média correspondente de cada aluno;
+		-->
+        <script>
+            
+            (function(){
+                'use strict'
+				
+				var $alunos = document.querySelectorAll('.aluno');
+
+				$alunos.forEach(function(aluno) {
+					var nota1 = Number(aluno.querySelector('.aluno-n1').textContent);
+					var nota2 = Number(aluno.querySelector('.aluno-n2').textContent);
+					var nota3 = Number(aluno.querySelector('.aluno-n3').textContent);
+					var nota4 = Number(aluno.querySelector('.aluno-n4').textContent);
+
+					var media = calcularMedia(nota1, nota2, nota3, nota4); // metodo definido na pasta utils/utils.js
+
+					aluno.querySelector('.aluno-m').textContent = media;
+
+				});
+                
+            })()
+            
+        </script>
+        
+    </body>
+</html>
