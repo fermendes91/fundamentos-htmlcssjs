@@ -90,9 +90,10 @@
         var nome1 = 'Fernando';
         var sobrenome = 'Mendes';
 
-        var inputNomeDisabled = document.querySelector('#problema4 input');
-        inputNomeDisabled.value = nome + ' ' + sobrenome;
-        inputNomeDisabled.disabled = true;
+        // sempre que vamos trabalhar com uma propriedade por boas praticas é normal utilizarmos o $ previamente ao nome da variavel.
+        var $inputNome = document.querySelector('#problema4 input');
+        $inputNome.value = nome + ' ' + sobrenome;
+        $inputNome.disabled = true;
 
         })();
 
@@ -103,6 +104,8 @@
             document.querySelector('#problema3 b') ? document.querySelector('#problema3 b').remove() : '';
             document.querySelector('#problema3 p').innerHTML +=  '<b>' + nome + '</b>';
         }
+
+        
 
     </script>
 </body>
