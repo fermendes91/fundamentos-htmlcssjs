@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 03</title>
+
+    <h1>Exercicio referente a aula 07 e 08  de objetos </h1>
+    <h2>
+        Temos três objetos. Cada objeto tem duas propriedades: nome e sobrenome.
+        Precisamos mostrar no console o nome completo de cada um deles.
+    </h2>
+    <script>
+        (function (window) {
+            'use strict'
+
+            function Pessoa(nome, sobrenome) {
+                this.nome = nome;
+                this.sobrenome = sobrenome;
+                this.nomeCompleto = function() {
+                    return this.nome + ' ' + this.sobrenome;
+                }
+            }
+
+            var pessoa1 = new Pessoa('Fernando', 'Mendes');
+            var pessoa2 = new Pessoa('Thaysa', 'Maciel');
+            var pessoa3 = new Pessoa('Eduardo', 'Ribeiro');
+
+            var pessoas = [pessoa1, pessoa2, pessoa3];
+
+            pessoas.forEach(function (p){
+                console.log(p.nomeCompleto());
+            });
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

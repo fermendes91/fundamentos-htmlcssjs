@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - DOM LEVEL 2</title>
+
+    <h1>Eventos JS - DOM LEVEL 2</h1>
+
+    <button id="btn1" onclick="clicar()">botao 1</button>
+    <button id="btn2" onclick="clicar()">botao 2</button>
+    <button id="btn3" >botao 3</button>
+
+    <div class="container">
+        <h1>Propagação de Eventos</h1>
+
+        <div id="d1" style="background: red; padding: 25px">
+            texto dentro da div
+            <span style="background: yellow; ">texto dentro da span</span>
+        </div>
+    </div>
+    <script>
+
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+        function clicar() {
+            console.log('clicou');
+        }
+
+        // podemos atrelar dois eventos no mesmo elemento html.
+        btn3.addEventListener('click', function(){
+            console.log('Clicou com DOM Level 2');
+        });
+
+        btn3.addEventListener('click', function(){
+            console.log('Clicou com DOM Level 2 com outro evento');
+        });
+
+
+
+        /* PROPAGAÇAÕA DE EVENTOS -> Capacidade de um evento se propagar por todo o DOM */
+
+        var $d1 = document.querySelector('#d1');
+        var $d1Span = document.querySelector('#d1 span');
+
+        $d1.addEventListener('click', function() {
+            console.log('click no $d1');
+        });
+
+        // Ao clicar no span teremos o efeito de bubbling (propagação), como o evento se propaga, ao clicarmos no elemento mais externo ele se propaga 
+        // para os elementos mais externos.
+        $d1Span.addEventListener('click', function(e) {  // por convenção no universo JS as pessoas costumam usar somente o {e} como parametro;
+            console.log('click no $d1Span');
+
+            e.stopPropagation(); // não permite o metodo se propagar para os elementos externos (pais);
+
+        });
+
+        // Como a propagação acontece do elemento mais interno pro mais externo, podemos inverter a ordem utilizando: 
+        $d1Span.addEventListener('click', function() {
+            console.log('click no $d1Span');
+        }, true); // elemento para inverter a ordem de propagação ( agora fica do mais externo pro mais interno a propagação)  ( RARISSIMO DE SER USADO );
+
+
+
+        /* OBJETO EVENT
+                Objeto passado como parametro para função que foi atrelada nos fornecendo várias informações adicionais
+                sobre o evento em si. Este objeto varia de acordo com o tipo de evento.
+        */
+       $d1.addEventListener('click', function(evt) {
+           console.log(evt);
+
+           console.log('evt.currentTarget'); // elemento a qual foi atrelado o evento.
+           console.log(evt.currentTarget); // elemento a qual foi atrelado o evento.
+           console.log('evt.target'); // quem disparou o evento.
+           console.log(evt.target); // quem disparou o evento.
+           console.log('this'); // dono do evento... quem chamou o evento no caso ($d1);
+           console.log(this); // dono do evento... quem chamou o evento no caso ($d1);
+       });
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

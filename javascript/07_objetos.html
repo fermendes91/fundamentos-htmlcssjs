@@ -13,75 +13,96 @@
     <h1>Objeto Nativo Javascript</h1>
 
     <script>
-        (function () {
-            'use strict'
+        // como o javascript consegue pegar a propriedade de um tipo primitivo ?
+        var str = 'String de teste';
+        var strTamanho = str.length;
 
-            // como o javascript consegue pegar a propriedade de um tipo primitivo ?
-            var str = 'String de teste';
-            var strTamanho = str.length;
+        // Internamente quando fazemos str.length o javascript converte num objeto String, e pega o valor que requisitamos
+        // e joga essa variavel temporaria fora.
 
-            // Internamente quando fazemos str.length o javascript converte num objeto String, e pega o valor que requisitamos
-            // e joga essa variavel temporaria fora.
+        str = new String('Fernando Mendes');
+        var numero = new Number (1000);
+        var booleano = new Boolean(true);
+        var arr = new Array(1, 2, 3, 4, 5);
+        var obj = new Object({nome: 'Fernando', sobrenome: 'Mendes'});
+        
+        console.log(str.length);
+        console.log(numero.toFixed(2));
+        console.log(booleano.valueOf());
+        console.log(arr.concat(6, 7, 8, 9, 10));
 
-            str = new String('Fernando Mendes');
-            var numero = new Number (1000);
-            var booleano = new Boolean(true);
-            var arr = new Array(1, 2, 3, 4, 5);
-            var obj = new Object({nome: 'Fernando', sobrenome: 'Mendes'});
-            
-            console.log(str.length);
-            console.log(numero.toFixed(2));
-            console.log(booleano.valueOf());
-            console.log(arr.concat(6, 7, 8, 9, 10));
+        /* CRIANDO OBJETOS DE MANEIRA LITERAL -> mais utilizada (padrão) */
 
-            // CRIANDO OBJETOS DE MANEIRA LITERAL -> mais utilizada (padrão)
-
-            var objeto = {};
-            var array = [];
+        var objeto = {};
+        var array = [];
 
 
-            // CONSTRUTORES ( new ) -> responsaveis por criar a instancia de um objeto.
+        /* CONSTRUTORES ( new ) -> responsaveis por criar a instancia de um objeto. */
 
-            var data = new Date();
-            data.getDay(); // -> retorna o dia da semana, sendo 0 domingo e 6 sabado.
-
-
-            /* VALOR X REFERENCIA
-                Objetos em javascript a REFERENCIA é guardada. ( guarda espaço na memoria )
-                com tipos primitivos os VALORES são guardados. 
-
-                ARRAY -> é um tipo de objeto 
-            */
-
-            var x = 10;
-            var y = 5;
-            x = y;
-
-            y = 7;
-
-            console.log('valor de X: ' + x);
-            console.log('valor de Y: ' + y);
-            // como tipo primitivo guarda VALROES , então x será 5 e y será 7.
-
-            var z = [0];
-            
-            var w = z;
-
-            z.push(3);
-            w.push(6);
-
-            console.log(z);
-            console.log(w);
-            // os dois arrays serão identicos, pois guardam a REFERENCIA de memoria, o que alterarmos em 1 será alterado em outro
-            // pois estamos alterando a mesma referencia de memoria.
-
-            ''
+        var data = new Date();
+        data.getDay(); // -> retorna o dia da semana, sendo 0 domingo e 6 sabado.
 
 
-            
+        /* VALOR X REFERENCIA
+            Objetos em javascript a REFERENCIA é guardada. ( guarda espaço na memoria )
+            com tipos primitivos os VALORES são guardados. 
+
+            ARRAY -> é um tipo de objeto 
+        */
+
+        var x = 10;
+        var y = 5;
+        x = y;
+
+        y = 7;
+
+        console.log('valor de X: ' + x);
+        console.log('valor de Y: ' + y);
+        // como tipo primitivo guarda VALROES , então x será 5 e y será 7.
+
+        var z = [0];
+        
+        var w = z;
+
+        z.push(3);
+        w.push(6);
+
+        console.log(z);
+        console.log(w);
+        // os dois arrays serão identicos, pois guardam a REFERENCIA de memoria, o que alterarmos em 1 será alterado em outro
+        // pois estamos alterando a mesma referencia de memoria.
 
 
-        })();
+        /* FUNÇÃO ATRELADAS A PROPRIEDADE DOS METODOS */
+
+        var cor = '';
+        var caneta1 = {
+            cor: 'red',
+            mudarCor: function(cor) {
+                this.cor = cor;
+            },
+            mudarCor2: mudaCor
+        }
+
+        var caneta2 = {
+            cor: 'yellow',
+            mudarCor: function(cor) {
+                this.cor = cor;
+            },
+            mudarCor2: mudaCor
+        }
+
+        // dependendo de quem chama a função, o valor de THIS pode ser alterado.
+        // o THIS é dinamico
+
+        function mudaCor(cor) {
+            console.log('THIS é igual a: ');
+            console.log(this);
+            this.cor = cor;
+        }
+
+        caneta2.mudarCor2();
+        mudaCor('yellow');
 
     </script>
 </body>

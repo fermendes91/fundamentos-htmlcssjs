@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Objeto Construtor</title>
+
+</head>
+
+<body>
+
+    <h1>Objeto Construtor Javascript</h1>
+
+    <script>
+
+        (function () {
+            'use strict'
+            // funções que são RESPONSAVEIS por CRIAR INSTANCIAS de objetos devem começar com letra maisucula
+            window.Pessoa = function(nome, cpf, telefone, carros) {
+                this.nome = nome;
+                this.cpf = cpf || '999.999.999-99'; // se não for passado nada como parametro, o valor setado sera 999...
+                this.telefone = telefone;
+                this.carros = carros; 
+                this.limpaCarros = function() {
+                    this.carros = [];
+                }
+            }
+            
+            window.Carro = function(nome, marca, ano) {
+                this.nome = nome;
+                this.marca = marca;
+                this.ano = ano || 1991; // mesma logica do cpf na function Pessoa;
+            }
+    
+            var carros = [new Carro('Santana', 'Volkswagen'),new Carro('Celta', 'Chevrolet', 1995),new Carro('FLANC', 'Ferrari', 2010)];
+            var pessoa = new Pessoa('Fernando', '07194220946', '41998010601', carros);
+            var pessoa2 = new Pessoa('Gomes', null, '419874112233', carros);
+    
+            console.log(pessoa);
+            console.log(pessoa2);
+    
+    
+            //  O PROBLEMA DE NÃO UTILIZAR O OPERADOR NEW.
+            try {
+                var pessoa3 = Pessoa('Thaysa', '111.111.111-11', '4188551122');
+            }catch(e) {
+                console.error('Devido ao uso do "use strict" não é possivel criar instacia de um objeto sem new.\n ' + e);
+            }
+            // neste cenario todos as propriedades vai pro escopo window. 
+            // podemos resolver isso utilizando IIFE com 'use strict'
+            // atribuuindo a variavel window as funções construtores, para podermos ter acesso.
+        })();
+</script>
+
+</body>
+
+</html>

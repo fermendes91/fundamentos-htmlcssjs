@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos</title>
+
+    <h1>Eventos JS</h1>
+    <p class="dom0">Click-me DOM 0</p>
+    <p class="dom1">Click-me DOM 2</p>
+
+    <button id="btn1" onclick="clicar()">DOM LEVEL 2</button>
+    <button id="btn2">DOM LEVEL 0</button>
+
+    <script>
+        /* 
+            - Um evento é uma ação executada por algo ou alguém (usuario ou browser)
+            - Um disparador de evento é o elemento HTML que originou aquele evento
+
+            - Alguns eventos ocorrem de maneira padrão pelo browser (abrir link, pagina, submeter um form...)
+            - EVENT HANDLER ->  é a função a ser executada quando ocorre o evento. (click, mouseover, mouseout, keyup, submit, load...)       
+        */
+
+        // DOM LEVEL 2     <p class="dom1" onclick="funcao()">
+        var p2 = document.querySelector('.dom1');
+        p2.addEventListener('click', function () {
+            console.log('DOM LEVEL 2   ->   ME UTILIZE, NUNCA DOM 0 xD xD xD xD xD');
+            // MANEIRA NOVA e que vamos utilizar;
+        });
+
+
+        // ------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        // DOM level 0     <p class="dom0" onclick="funcao()">
+        var p1 = document.querySelector('.dom0');
+        p1.onclick = pClicado; // maneira antiga não podia passar os parenteses, senão a função era invocada diretamente sem o click
+        function pClicado() {
+            console.log('Eca dom 0 que nojento... estou deprecado =\\ ');
+            //...
+        }
+
+        /* PROBLEMAS EM USAR O DOM 0 */
+
+        var btn2 = document.querySelector('#btn2');
+
+        // esta function não vai funcionar no DOM LEVEL 0, se colocarmos () na função, ao rodar o html a função será chamada automaticamente,
+        // e undefined sera atribuido ao botao, então ao clicarmos no botao não acontecera nada... para que funcione devemos retirar o () do nome do metodo.
+        btn2.onclick = clicar();
+
+        function clicar() {
+            console.log('Clicou');
+        }
+        
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
