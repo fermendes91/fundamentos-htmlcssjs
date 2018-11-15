@@ -1,0 +1,51 @@
+a<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 02</title>
+
+    <h1>Exercicio referente a aula 02_funcoes.html</h1>
+    <h2>
+        Desafio, percorra todos os paragrafos de uma pagina e 
+
+        altere o conteudo de cada um deles para "Este site foi hackeado por: {Seu Nome}"
+    </h2>
+
+    <main>
+        <h1>Main</h1>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+    </main>
+    <script>
+        (function () {
+            'use strict' //uma das funcionalidades é não deixar criar variavel sem a palavra VAR.
+
+            var $paragraphs = document.querySelectorAll('p');
+
+            $paragraphs.forEach(function($p) {
+                $p.textContent = 'Este site foi heackeado por Fernando Mendes'
+            })
+        })();
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

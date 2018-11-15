@@ -28,6 +28,7 @@
 							<th>Nota 2</th>
 							<th>Nota 3</th>
 							<th>Nota 4</th>
+							<th>Nota 5</th>
 							<th>Média</th>
 						</tr>
 					</thead>
@@ -38,6 +39,7 @@
 							<td class="aluno-n2">8.5</td>
 							<td class="aluno-n3">9</td>
 							<td class="aluno-n4">7.5</td>	
+							<td class="aluno-n5">10</td>	
 							<td class="aluno-m"></td>
 						</tr>
 
@@ -47,6 +49,7 @@
 							<td class="aluno-n2">8.5</td>
 							<td class="aluno-n3">6.5</td>
 							<td class="aluno-n4">7.5</td>
+							<td class="aluno-n5">9.5</td>
 							<td class="aluno-m"></td>
 						</tr>
 
@@ -56,6 +59,7 @@
 							<td class="aluno-n2">8.5</td>
 							<td class="aluno-n3">7</td>
 							<td class="aluno-n4">7.5</td>
+							<td class="aluno-n5">5.5</td>
 							<td class="aluno-m"></td>
 						</tr>
 
@@ -65,6 +69,7 @@
 							<td class="aluno-n2">8.5</td>
 							<td class="aluno-n3">10</td>
 							<td class="aluno-n4">7.5</td>
+							<td class="aluno-n5">10.5</td>
 							<td class="aluno-m"></td>
 						</tr>
 						<tr class="aluno" >
@@ -73,6 +78,7 @@
 							<td class="aluno-n2">9.5</td>
 							<td class="aluno-n3">10</td>
 							<td class="aluno-n4">8.5</td>
+							<td class="aluno-n4">20.5</td>
 							<td class="aluno-m"></td>
 						</tr>
 						<tr class="aluno" >
@@ -81,6 +87,7 @@
 							<td class="aluno-n2">4.5</td>
 							<td class="aluno-n3">8</td>
 							<td class="aluno-n4">7.5</td>
+							<td class="aluno-n5">100</td>
 							<td class="aluno-m"></td>
 						</tr>
 					</tbody>
@@ -102,12 +109,24 @@
 				var $alunos = document.querySelectorAll('.aluno');
 
 				$alunos.forEach(function(aluno) {
-					var nota1 = Number(aluno.querySelector('.aluno-n1').textContent);
-					var nota2 = Number(aluno.querySelector('.aluno-n2').textContent);
-					var nota3 = Number(aluno.querySelector('.aluno-n3').textContent);
-					var nota4 = Number(aluno.querySelector('.aluno-n4').textContent);
+					// var nota1 = Number(aluno.querySelector('.aluno-n1').textContent);
+					// var nota2 = Number(aluno.querySelector('.aluno-n2').textContent);
+					// var nota3 = Number(aluno.querySelector('.aluno-n3').textContent);
+					// var nota4 = Number(aluno.querySelector('.aluno-n4').textContent);
+					
+					var notas = [];
+					
+					var $notas = aluno.querySelectorAll('td');
+					$notas.forEach(function (nota, index) {
+						if((index != 0) && !(index === $notas.length-1)) {
+							notas.push(Number(nota.textContent));
+						}
+					});
+					
 
-					var media = calcularMedia(nota1, nota2, nota3, nota4); // metodo definido na pasta utils/utils.js
+					//var media = calcularMedia(notas); // metodo definido na pasta utils/utils.js
+					
+					var media = calcularMedia.apply(this, notas); // as notas se transformam em argumentos usando o apply.
 
 					aluno.querySelector('.aluno-m').textContent = media;
 
