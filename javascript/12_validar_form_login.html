@@ -1,0 +1,86 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - Validar Formulario</title>
+
+    <div class="container">
+        <h1>Validar Formulario Login</h1>
+
+        <form id="form1" action="#">
+            <label for="txtUser">Usuario</label>
+            <input type="text" id="txtUser" name="user"><br>
+
+            <label for="txtPass">Senha</label>
+            <input type="password" id="txtPass" name="pass"><br>
+
+            <button id="btnLogar" type="button">Logar</button>
+        </form><hr>
+
+        <h2>Formulario 2 ( vai ser validado pelo submit do formulario) <br>
+            pode ser disparado com a tecla entender </h2>
+        <form id="form2" action="#" method="POST"> <!-- POST não passa as variaveis pelo link HTML -->
+            <label for="txtUser2">Usuario</label>
+            <input type="text" id="txtUser2" name="user2"><br>
+
+            <label for="txtPass2">Senha</label>
+            <input type="password" id="txtPass2" name="pass2"><br>
+
+            <button id="btnLogar2" type="submit">Logar</button>
+        </form>
+        <hr>
+    </div>
+
+    <script>
+
+        (function () {
+            'use strict'
+
+            var $txtUser = document.getElementById('txtUser');
+            var $txtPass = document.getElementById('txtPass');
+            var $btnLogar = document.getElementById('btnLogar');
+
+            // VALIDANDO NO CLICK NO BOTAO;
+            $btnLogar.addEventListener('click', function(e) {
+
+                if(!($txtUser.value.trim()) || !($txtPass.value.trim())){
+                    console.error('Usuario e Senha devem ser preenchidos obrigatoriamente');
+                    alert('Usuario e Senha devem ser preenchidos obrigatoriamente');
+                }
+            });
+
+
+            // VALIDANDO NO SUBMIT DO FORMULARIO; (formulario é enviado ao dar enter);
+
+            var $form2 = document.getElementById('form2');
+            var $txtUser2 = document.getElementById('txtUser2');
+            var $txtPass2 = document.getElementById('txtPass2');
+            var $btnLogar2 = document.getElementById('btnLogar2');
+
+            // VALIDANDO PELO FORMULARIO.
+            $form2.addEventListener('submit', function(e) {
+                
+                if(!($txtUser2.value.trim()) || !($txtPass2.value.trim())){
+                    console.error('Usuario e Senha devem ser preenchidos obrigatoriamente');
+                    alert('Usuario e Senha devem ser preenchidos obrigatoriamente');
+
+                    // IMPEDE O ENVIO DO FORMULARIO
+                    e.preventDefault(); // previni o comportamento padrão.
+                }
+            });
+
+            
+            
+        })();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-<!doctype html>
+a<!doctype html>
 
 <html>
 
@@ -6,59 +6,39 @@
     <meta charset="utf-8">
     <title>Exercicio 02</title>
 
-    <h1>Exercicio referente a aula 02_funcoes.html até a aula 07 de funções</h1>
-    <h2>Crie uma função que retorne o indice de massa corporal <br>
-        Crie outra função que receba este indice e retorne uma string informando <br>
-        sua classificação.
+    <h1>Exercicio referente a aula 02_funcoes.html</h1>
+    <h2>
+        Desafio, percorra todos os paragrafos de uma pagina e 
 
-        IMC = peso / altura²
+        altere o conteudo de cada um deles para "Este site foi hackeado por: {Seu Nome}"
     </h2>
+
+    <main>
+        <h1>Main</h1>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+        <p>materia qualaquer de um site para ser alterado</p>
+    </main>
     <script>
         (function () {
             'use strict' //uma das funcionalidades é não deixar criar variavel sem a palavra VAR.
-            calculaIMC();
 
-            function calculaIMC() {
-                try {
-                    var imc = 0;
-                    var altura = Number(prompt('Informe a sua altura'));
-                    var peso = Number(prompt('Informe o seu peso'));
+            var $paragraphs = document.querySelectorAll('p');
 
-                    if(altura && peso) {
-                        imc = (peso / (altura^2));
-
-                        alert(imprimiClassificacao(imc));
-                    }else {
-                        alert('Falha ao recuperar valores, tente novamente');
-                        calculaIMC();
-                    }
-
-                    return imc;
-                }catch(e) {
-                    console.error('ERRO nos valores solicitados, ' + e);
-                }
-            }
-
-            function imprimiClassificacao(imc) {
-
-                if(imc <= 16.9){
-                    return 'Muito abaixo do peso: ' + imc.toFixed(2) + ' kg/m²';
-                } else if (imc > 17 && imc <= 18.4 ){
-                    return 'Abaixo do peso: ' + imc.toFixed(2) + ' kg/m²';
-                } else if (imc > 18.5 && imc <= 24.9 ){
-                    return 'Peso normal: ' + imc.toFixed(2) + ' kg/m²';
-                } else if(imc > 25 && imc <= 29.9) {
-                    return 'Acima do Peso: '+ imc.toFixed(2) + ' kg/m²';
-                } else if (imc > 30 && imc <= 34.9 ){
-                    return 'Obesidade de Grau I: ' + imc.toFixed(2) + ' kg/m²';
-                } else if (imc > 35 && imc <= 40 ){
-                    return 'Obesidade de Grau II: ' + imc.toFixed(2) + ' kg/m²';
-                } else {
-                    return 'Obesidade de Grau III: ' + imc.toFixed(2) + ' kg/m²';
-                }
-
-            }
-
+            $paragraphs.forEach(function($p) {
+                $p.textContent = 'Este site foi heackeado por Fernando Mendes'
+            })
         })();
     </script>
 

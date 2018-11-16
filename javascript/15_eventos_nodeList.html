@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - NodeList</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Eventos numa NodeList</h1>
+
+        <h2>
+            Atrelar eventos de click numa coleção de botões que ao ser clicado,
+            mostra no console o textContent do proprio button.
+        </h2>
+
+        <button>botao 1</button>
+        <button>botao 2</button>
+        <button>botao 3</button>
+        <button>botao 4</button>
+        <button>botao 5</button>
+
+    </div> 
+
+</body>
+
+<script>
+
+    (function () {
+        'use strict'
+
+        var $btns = document.querySelectorAll('button');
+
+        $btns.forEach(function($btn) {
+            $btn.addEventListener('click', btnClicado);
+        });
+
+        function btnClicado() {
+            console.log(this.textContent);
+        }
+
+    })();
+
+</script>
+
+</html>

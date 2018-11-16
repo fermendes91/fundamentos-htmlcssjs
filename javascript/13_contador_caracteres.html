@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - Contador Caracteres</title>
+
+    <textarea id="msg" cols="50" rows="15" maxlength="100"></textarea>
+    <p style="display:none">
+        Restam 
+        <span id="contadorCaracteres"></span>
+         caracteres
+    </p>
+
+    <script>
+        
+        (function (){
+            'use strict'            
+            
+            var $inputMsg = document.getElementById('msg');
+            var $contadorCaracteres = document.getElementById('contadorCaracteres');
+
+            $contadorCaracteres.textContent = $inputMsg.maxLength;
+            /* eventos relacionados ao teclado
+                keypress -> (so funciona quando selecionamos algum caracter ou numerico)
+                keydown -> (funciona para qualquer tecla do teclado) .
+                keyup -> funciona como o keydown mas ao soltar a tecla pressionada
+            */
+
+            // O evento keyup é um dos mais utilizados, porem o evento não faz o listener de textos colados dentro do input.
+            // a melhor saida neste caso é usar o evento INPUT
+            $inputMsg.addEventListener('keyup', function(e){
+                // ...
+            });
+
+
+            // PROCURE SEMPRE USAR ESTE EVENDO PARA CAPTURAR TECLAS DO TECLADO.
+            $inputMsg.addEventListener('input', function(e) {
+                $contadorCaracteres.textContent = this.maxLength - this.value.length;
+            });
+
+
+            /* PROGRESSIVE ENHANCEMENT. ( MELHORIACONTINUA ) HTML > CSS > JS
+                    é ume metodologia que deve garantir o funcionamento do nosso site independente
+                    se o javascript esta funcionando ou não, imagine que da problema em uma biblioteca, ou
+                    por alguma razão nosso javascript não foi carregado. O HTML + CSS DEVEM continuar
+                    funcionando.
+
+                    No nosso caso se o JS falhar, ficara mostrando na tela embaixo do textarea
+                    Restam __ caracteres, deixando a tela esquisita (feia), para tratarmos isso devemos
+                    deixar o campo invisivel e somente mostra-lo se o js for carregado.
+            */
+
+             // console.log(32432432) -> descomente essa linha para a pagina dar erro e nao aparecer a msg de forma estranha.
+           document.querySelector('p').style.display = 'block'; 
+
+           // $element.STYLE -> O style mexe somente inline no elemento selecionado.
+
+
+        })();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

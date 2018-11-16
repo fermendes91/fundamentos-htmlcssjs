@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - Termos e Condições</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Validar Termos e Condições</h1>
+
+        <h2>Desabilitar e habilitar o botao de envio de form dependendo dos termos e condições</h2>
+
+        <form id="form" action="#">
+            <textarea cols="50" rows="10" readonly>Contrato de Termos e Condições. 1.1 (Serviço)</textarea>
+            <label>
+                <input type="checkbox" id="chkTerms" checked>
+                Li e Aceito os Termos e Condições
+            </label> <br>
+
+            <button id="btnLogar" type="submit">Logar</button>
+        </form>
+        <hr>
+
+    </div>
+</body>
+
+<script>
+
+    (function () {
+        'use strict'
+
+        var $form = document.getElementById('form');
+        var $chkTerms = document.getElementById('chkTerms');
+        var $btnLogar = document.getElementById('btnLogar');
+
+        verificaDesabilitarBtnLogar();
+
+        $form.addEventListener('submit', function (e) {
+            console.log('enviou o formulario');
+        })
+
+        $chkTerms.addEventListener('change', function (e) {
+            verificaDesabilitarBtnLogar();
+        })
+
+        function verificaDesabilitarBtnLogar() {
+            $btnLogar.disabled = !$chkTerms.checked;
+        }
+
+    })();
+
+</script>
+
+</html>

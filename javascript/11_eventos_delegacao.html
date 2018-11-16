@@ -1,0 +1,88 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - Delegação</title>
+
+    <div class="container">
+        <h1>
+            Delegação de Eventos
+            <ul id="lista">
+                <li>lista 1</li>
+                <li>lista 2</li>
+                <li>lista 3</li>
+            </ul>
+
+            <ul id="ulDelegada"> 
+                <li>lista 1</li>
+                <li>lista 2</li>
+                <li>lista 3</li>
+            </ul>
+        </h1>
+    </div>
+
+    <script>
+
+        (function () {
+            'use strict'
+
+            var $ul = document.querySelector('#lista');
+
+            var $lis = document.querySelectorAll('#lista li');
+
+            try {
+                // para atribuir um eventListener para cada li, o correto é percorrermos um loop, conforme linha 39;
+                $lis.addEventListener('click', function (e) {
+                    console.log('clicou na li');
+                });
+            } catch (error) {
+                console.log('Não é possivel atribuir um eventListener numa lista, somente num objeto html especifico');
+                console.error(error);
+            }
+
+            $lis.forEach($li => {
+                $li.addEventListener('click', function (e) {
+                    console.log('clicou na \'li\' ');
+                });
+            });
+
+            // podemos também ao inves de percorrer li por li, colocar o event listener na ul que contempla essas li's
+            // e VERIFICAR QUAL O ELEMENTO QUE DISPAROU O EVENTO;
+            
+            var $ul2 = document.querySelector('#ulDelegada');
+
+            var $lis = $ul2.querySelectorAll('li');
+
+
+            // DELEGAÇÃO -> Tecnica que consiste em atrelar o evento a um elemento mais alto e verificar
+            // quem foi o elemento clicado.
+            $ul2.addEventListener('click', function(e) {
+                e.stopPropagation();
+                console.log('this');
+                console.log(this);
+                console.log('e.currentTarget');
+                console.log(e.currentTarget);
+                console.log('e.target'); // objeto que disparou o evento
+                console.log(e.target);
+
+                console.log(e.target.nodeName); // retorna o nome do objeto no html. (nodeName)
+            
+                if(e.target.nodeName === 'LI') {
+                    console.log('-------------- CLICOU NA LI xD --------------');
+                }
+            });
+
+
+        })();
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

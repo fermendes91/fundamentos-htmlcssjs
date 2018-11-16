@@ -4,35 +4,62 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Exercicio 03</title>
+    <title>Exercicio 02</title>
 
-    <h1>Exercicio referente a aula 07 e 08  de objetos </h1>
-    <h2>
-        Temos três objetos. Cada objeto tem duas propriedades: nome e sobrenome.
-        Precisamos mostrar no console o nome completo de cada um deles.
+    <h1>Exercicio referente a aula 02_funcoes.html até a aula 07 de funções</h1>
+    <h2>Crie uma função que retorne o indice de massa corporal <br>
+        Crie outra função que receba este indice e retorne uma string informando <br>
+        sua classificação.
+
+        IMC = peso / altura²
     </h2>
     <script>
-        (function (window) {
-            'use strict'
+        (function () {
+            'use strict' //uma das funcionalidades é não deixar criar variavel sem a palavra VAR.
+            calculaIMC();
 
-            function Pessoa(nome, sobrenome) {
-                this.nome = nome;
-                this.sobrenome = sobrenome;
-                this.nomeCompleto = function() {
-                    return this.nome + ' ' + this.sobrenome;
+            function calculaIMC() {
+                try {
+                    var imc = 0;
+                    var altura = Number(prompt('Informe a sua altura'));
+                    var peso = Number(prompt('Informe o seu peso'));
+
+                    if(altura && peso) {
+                        imc = (peso / (altura^2));
+
+                        alert(imprimiClassificacao(imc));
+                    }else {
+                        alert('Falha ao recuperar valores, tente novamente');
+                        calculaIMC();
+                    }
+
+                    return imc;
+                }catch(e) {
+                    console.error('ERRO nos valores solicitados, ' + e);
                 }
             }
 
-            var pessoa1 = new Pessoa('Fernando', 'Mendes');
-            var pessoa2 = new Pessoa('Thaysa', 'Maciel');
-            var pessoa3 = new Pessoa('Eduardo', 'Ribeiro');
+            function imprimiClassificacao(imc) {
 
-            var pessoas = [pessoa1, pessoa2, pessoa3];
+                if(imc <= 16.9){
+                    return 'Muito abaixo do peso: ' + imc.toFixed(2) + ' kg/m²';
+                } else if (imc > 17 && imc <= 18.4 ){
+                    return 'Abaixo do peso: ' + imc.toFixed(2) + ' kg/m²';
+                } else if (imc > 18.5 && imc <= 24.9 ){
+                    return 'Peso normal: ' + imc.toFixed(2) + ' kg/m²';
+                } else if(imc > 25 && imc <= 29.9) {
+                    return 'Acima do Peso: '+ imc.toFixed(2) + ' kg/m²';
+                } else if (imc > 30 && imc <= 34.9 ){
+                    return 'Obesidade de Grau I: ' + imc.toFixed(2) + ' kg/m²';
+                } else if (imc > 35 && imc <= 40 ){
+                    return 'Obesidade de Grau II: ' + imc.toFixed(2) + ' kg/m²';
+                } else {
+                    return 'Obesidade de Grau III: ' + imc.toFixed(2) + ' kg/m²';
+                }
 
-            pessoas.forEach(function (p){
-                console.log(p.nomeCompleto());
-            });
-        })(window);
+            }
+
+        })();
     </script>
 
 </head>
