@@ -1,0 +1,202 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 08</title>
+
+    
+    <script>
+        (function (window) {
+            'use strict'
+
+            window.addEventListener('load', init ); // só executa depois da pagina ser carregada.
+
+            function init() {
+
+                var $ps = document.querySelectorAll('p');
+    
+                $ps.forEach((p) => {
+                    var numeroLimite = 200;
+                    if (p.textContent.length > numeroLimite) {
+                        debugger;
+                        p.innerHTML = p.textContent.substring(0, numeroLimite) + '...';
+                    }
+                });
+            }
+
+        })(window);
+    </script>
+
+
+    <h1>Exercicio referente a aula 17 de Strings </h1>
+    <h2>
+        Selecionar todos os paragrafos de uma pagina e, se o texto tiver mais do que 200 caracteres mostrar somente os duzentos primeiros seguidos de reticencias.
+    </h2>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipiscinger euismod, dictumst mauris consequat montes conubia
+        praesent sollicitudin pellentesque nec, imperdiet sociosqu litora est in scelerisque ac. Quis pharetra
+        condimentum accumsan gravida potenti habitant leo dignissim aliquet facilisi sem, lorem suspendisse neque
+        euismod purus ut aliquam adipiscing finibus mi ullamcorper metus, cursus nisl sapien libero himenaeos morbi
+        porttitor convallis mollis congue.</p>
+
+    <p>Etiam mollis laoreet feugiat imperdiet varius montes, primis fermentum non dolor pretium fringilla diam, lacinia
+        elit phasellus nascetur curae. Habitasse conubia lorem aliquet diam magnis fusce justo lacus rhoncus, primis
+        feugiat laoreet eget neque sapien nibh vehicsque metus felis auctor orci molestie ligula, aptent
+        sollicitudin pulvinar tortor ante proin semper consectetur egestas placerat, lobortis praesent senectus nisl
+        varius sem lacus elit vel.</p>
+
+    <p>Aliquam nulla erat lectus malesuada purus dictumst aliquet, hendrerit tellus libero ac ornare turpis blandit,
+        leo vehicula varius conubia nisi proin. Erat donec facilisis tristique libero parturient quisque nascetur
+        justo, placerat odio neque fermentum aliquet eu eros in torquent, morbi ipsum laoreet venenatis vivamus
+        condimentum a. Montes maecenas pretium scelerisque nascetur curae eu torquent leo dui orci tristique arcu
+        sagittis, in netus vulputate ac elementum nullam porta elit cras nunc venenatis tempor.</p>
+
+    <p>Id lacus duis cubilia suspendisse urna praesent nec sociosqu dis, per commodo potenti penatibus sodales habitant
+        parturient integer himenaeos leo,bulum pellentesque at pretium.</p>
+
+    <p>Quam tempus litora sodales congue nascetur duis enim consectetur mi malesuada, cubilia sagittis rutrum tortor
+        praesent massa dui placerat consequat, sem lacinia taciti suscipit lacus pellentesque magna felis lobortis.
+        Nostra nunc maecenas aliquam nisl et hen. Lacinia duis mauris dui aenean ullamcorper fermentum tincidunt
+        vel phasellus euismod, consequat interdum cras sem magna fringilla magnis auctor nulla, eleifend fusce ut nisi
+        lobortis cursus convallis tempor class.</p>
+
+    <p>Sed leo non nullam senectus dictum forta ullamcorper. Lorem integer parturient scelerisque tempus
+        laoreet quisque porttitor, interdum fusce ante eleifend neque vehicula et, ipsum netus sit tortor nullam
+        platea.</p>
+
+    <p>Vel vivamus vulpc nam feugiat duis sollicitudin, nisl ornare ullamcorper bibendum sit
+        etiam sagittis, class eleifend in et montes massa.</p>
+
+    <p>Iaculis nibh natoque sem sociosqu nullam tempor taciti per eleifend aliquam, magnis felis curabitur conubia
+        proin aenean hendrerit venenatis luctus convallis, suspendisse dis diam tristique enim cubilia adipiscing
+        himenaeos ante. Neque libero donec ullamcorper consectetur accumsan eleifend dis, maecenas feugiat vehicula
+        fermentum placerat congue, viverra himenaeos ante sociosqu aliquet non. Vestibulum accumsan nibh semper velit
+        lacinia efficitur natoque neque, aptent eget vulputate tristique curabitur vel. Natoque ultricies pharetra
+        congue hac tempus urna sollicitudin consectetur consequat proin euismod diam, potenti habitant platea efficitur
+        parturient fringilla litora quis varius elit. Curabitur leo phasellus tempor id consequat nisl ex ipsum, amet
+        enim congue odio venenatis hendrerit facilisis metus, magnis imperdiet efficitur rutrum lacinia mauris aenean.
+        Blandit cras fringilla mauris velit cursus mollis sapien, bibendum posuere iaculis adipiscing conubia.
+        Consectetur libero vel justo conubia pretium feugiat urna elit molestie, metus in lacinia purus enim vestibulum
+        neque lacus pellentesque velit, porta ac egestas habitasse lobortis maecenas nascetur ipsum. Dictumst porttitor
+        dolor quisque tempus lacus lobortis ornare, egestas nascetur aliquam enim curabitur ipsum fermentum, nisi felis
+        sociosqu nostra tortor eros.</p>
+
+    <p>Molestie dui tincidunt habitasse magnis euismod sodales sem non nostra morbi urna, feugiat laoreet orci id
+        commodo lorem erat nulla curae odio, cubilia torquent ex conubia vestibulum donec fermentum platea tempor hac.
+        Vivamus nunc a enim nostra tempor consequat turpis sed facilisi rutrum venenatis imperdiet, malesuada congue
+        torquent suscipit mollis quis dis porta platea pretium phasellus. Mi ornare cras viverra ut lobortis
+        scelerisque curae placerat blandit dis cubilia, libero pretium magna mollis per vitae nullam litora maecenas.
+        Neque mollis magna egestas imperdiet aenean, congue sed luctus metus tellus enim, senectus pellentesque dapibus
+        litora.</p>
+
+    <p>Dolor ullamcorper mi aptent congue lacus curabitur varius feugiat, nascetur dictumst sed leo faucibus molestie.</p>
+
+    <p>Elementum dictum lectus finibus aliquam pellentesque dis pulvinar himenaeos bibendum, vitae viverra quisque ex
+        non gravida vulputate efficitur. Imperdiet ex morbi duis ante magna justo leo, vitae parturient donec porttitor
+        arcu malesuada potenti blandit, dolor quis aliquam nec venenatis pretium. Cubilia tincidunt velit senectus quam
+        erat netus vehicula morbi habitant tortor faucibus primis, suspendisse dictumst convallis eget ipsum laoreet a
+        tempus vulputate porttitor. Iaculis dignissim magna suscipit lacinia pretium arcu potenti, vitae mi sem
+        porttitor quisque nullam pellentesque eget, in vestibulum lorem libero duis vel. Turpis lorem neque eget
+        aliquam phasellus parturient rhoncus dui, et fermentum porta interdum consequat magna id consectetur, orci mi
+        vehicula tempor tempus condimentum dis. Maecenas phasellus praesent venenatis sodales sagittis urna, eget
+        rutrum natoque tincidunt fringilla leo, tellus fusce massa taciti netus. Dictum facilisi ultrices integer
+        dictumst sit montes dignissim cubilia varius, fusce hac pulvinar velit viverra tellus felis urna, lacus eros
+        eget himenaeos gravida massa pellentesque pharetra. Platea ligula in non ornare dui cursus netus adipiscing,
+        maximus cras odio donec integer hac diam metus, at vivamus dictumst pretium gravida ridiculus hendrerit. Platea
+        fermentum ac donec parturient magnis non tincidunt vehicula, feugiat proin magna tellus eget in aenean, aliquet
+        cursus congue pretium eu dis eros.</p>
+
+    <p>Sapien fringilla montes massa consectetur ut adipiscing libero primis, pulvinar curabitur torquent justo lorem
+        dapibus cursus, netus porttitor platea laoreet euismod per nulla. Nisl nisi sapien hac ornare at donec auctor
+        lorem, viverra quisque feugiat consequat parturient tortor. Hendrerit neque morbi dictum odio eu praesent
+        integer, dis suspendisse senectus nisl fringilla iaculis, cursus rhoncus scelerisque sagittis vehicula justo.
+        .</p>
+
+    <p>Ultrices at varius aenean maximus ut, ligula eleifend quisque metus, turpis nisi id venenatis. Justo interdum
+        pharetra congue laoreet fringilla dis ornare hac ex vehicula molestie, eget eleifend varius netus conubia
+        tempor arcu felis auctor. Vitae id tristique eros nullam quisque dapibus praesent vel pretium laoreet dolor,
+        porttitor nec sapien euismod nostra accumsan tempor consectetur cursus. Rhoncus sit mauris feugiat urna fusce
+        tempus sed lacus fringilla, maecenas luctus sodales sociosqu torquent ex aenean eros ut a, nisi est phasellus
+        nullam pretium libero ridiculus vulputate. Maecenas pellentesque accumsan tempor facilisis lorem iaculis etiam,
+        aliquam ornare donec eget non condimentum parturient hac, quis proin convallis arcu finibus at. Dolor hendrerit
+        convallis senectus curabitur habitant velit diam sagittis nibh, gravida non sem a maximus quam vulputate
+        laoreet massa, penatibus turpis ante torquent semper tortor ipsum vehicula. Cras mauris leo aliquet ex praesent
+        platea elementum dis, tempor eget ante ridiculus litora ornare montes massa nisi, primis eu donec aptent
+        tristique interdum vehicula.</p>
+
+    <p>Vitae porttitor praesent nullam leo pulvinar pharetra aliquam turpis donec tristique sem proin, orci lacinia
+        netus magna suscipit nascetur nulla cras nisi feugiat cursus. Velit dapibus cursus vestibulum luctus
+        consectetur dis, pellentesque est finibus ante vulputate varius, blandit arcu aenean torquent porta. Quam
+        imperdiet suspendisse curae maximus taciti dictum aliquet eget non ullamcorper ut, integer et luctus ornare
+        congue hendrerit facilisis odio praesent. Purus sodales donec morbi hendrerit scelerisque curae libero ac nisi
+        lobortis, et habitant finibus iaculis auctor dapibus nec ridiculus primis tempus, nostra maximus erat semper
+        accumsan hac ex dictum suscipit. Vivamus lacus tristique parturient hendrerit pulvinar blandit venenatis,
+        ultricies vitae suspendisse orci sem pharetra ullamcorper, non tellus consectetur montes efficitur erat. Libero
+        nibh nostra phasellus condimentum vestibulum dis pretium, sagittis tortor efficitur lectus semper conubia
+        aliquet aliquam, congue curabitur vivamus taciti posuere penatibus. Felis nullam etiam primis gravida integer
+        vitae dignissim vestibulum, tincidunt hac nostra neque eget blandit nec lacus massa, vehicula platea amet ut
+        placerat pharetra mauris. Parturient etiam bibendum proin commodo duis porttitor odio lacus penatibus, sed
+        nullam posuere litora habitant venenatis placerat dolor lorem himenaeos, fringilla nam lacinia urna arcu massa
+        est faucibus. Maximus porttitor nec lacus eget justo penatibus tempor placerat fusce, quis sociosqu cras auctor
+        eu pulvinar conubia vitae dis ridiculus, per vestibulum ullamcorper eros erat id dui tellus. Ridiculus varius
+        cras vitae a placerat ex lacinia ipsum, suscipit gravida nostra elit potenti convallis amet posuere efficitur,
+        ligula auctor eros odio mollis montes sapien. Lacinia blandit et tempor posuere elit phasellus nascetur varius,
+        feugiat commodo auctor cras tortor nam himenaeos, dignissim nibh velit aptent vitae semper quisque.</p>
+
+    <p>Velit eu magna orci cubilia fusce metus condimentum congue, platea ultricies malesuada suspendisse nulla
+        ultrices dis felis suscipit, porta posuere mauris lorem praesent blandit semper. Suspendisse sagittis proin
+        nulla ligula eu dis maximus consectetur quisque pretium gravida magna sociosqu leo, posuere consequat iaculis
+        mollis blandit aenean nam himenaeos cubilia maecenas lacinia nibh ex. Nulla nam platea class urna non placerat
+        nisl vitae nullam, felis pulvinar ac fusce est tempus luctus ut, consectetur auctor per habitant fermentum
+        accumsan vel imperdiet. Dolor sit quis imperdiet accumsan purus metus, donec vitae blandit neque conubia nec
+        interdum, ac nam per primis habitasse. Suscipit curabitur venenatis id vel ultricies facilisi dolor, dapibus
+        auctor libero cursus nam nullam per nostra, pulvinar hac viverra interdum eu molestie. Taciti vestibulum leo
+        finibus eros facilisis sollicitudin ligula porta, senectus ridiculus quisque orci libero sagittis elit.</p>
+
+    <p>Facilisis tempor penatibus </p>
+
+    <p>Consequat enim litora sollicitudin auctor ultricies molestie ridiculus nisl, cras elementum donec velit ex arcu
+        pretium class, netus luctus blandit bibendum interdum lobortis venenatis. Auctor habitasse et nunc nibh ac nec
+        tellus amet luctus cras neque, lobortis non nostra ultricies suspendisse cursus nulla urna dictum tristique.
+        Gravida efficitur pulvinar tristique aliquet sem feugiat netus hendrerit aptent habitasse, ac facilisi eu lorem
+        curabitur tempor elit suscipit tortor integer sodales, leo ligula tincidunt ex adipiscing per torquent rhoncus
+        ornare. Adipiscing elit varius quis elementum diam egestas duis sodales nec porta dictum condimentum, habitant
+        tristique lectus nulla lorem sapien imperdiet gravida hendrerit sociosqu consequat. Malesuada aenean id duis
+        cras eu mi sapien velit sollicitudin adipiscing euismod, tincidunt aptent nec luctus hendrerit tempus gravida
+        consectetur neque metus. Sem pharetra mauris class urna nibh primis, eget quam tristique pulvinar praesent
+        eleifend, molestie sed vitae nunc congue. Porttitor dolor laoreet blandit taciti proin eget felis, curae mauris
+        aliquet nascetur sollicitudin senectus. Adipiscing arcu eros quis consequat pharetra vehicula per, curabitur
+        sodales magna dictumst primis fermentum, luctus diam tempus varius tristique dignissim.</p>
+
+    <p>Duis arcu elementum vehicula integer adipiscing gravida, accumsan primis purus nunc ridiculus sodales cursus, in
+        nisi pretium venenatis rhoncus. Efficitur ultricies sapien lectus.</p>
+
+    <p>In facilisi eu lacinia himenaeos montes sollicitudin potenti euismod, nisi magna litora tempus sagittis nibh
+        magnis dis purus, taciti fermentum mi maecenas sociosqu rutrum nisl. Ultricies vel varius sem suspendisse diam
+        sociosqu nunc phasellus pulvinar et, commodo aliquam sodales placerat posuere facilisis mollis ridiculus felis
+        sit, viverra finibus urna class curae potenti egestas ante per. Et bibendum rutrum hac integer morbi malesuada
+        urna sed, etiam aliquet blandit torquent natoque dapibus placerat, eleifend varius cubilia per curae venenatis
+        faucibus. Duis sit sapien nunc himenaeos vivamus elit habitasse malesuada eros mi, molestie netus lacus conubia
+        potenti platea sollicitudin montes sed senectus, tincidunt auctor diam finibus primis eu scelerisque imperdiet
+        urna. Commodo sed lacus integer a montes nec imperdiet class dui sem conubia, orci sodales molestie etiam
+        scelerisque placerat ultricies nisi tellus laoreet fringilla, nibh habitasse egestas lectus habitant hendrerit
+        morbi diam phasellus varius. Vulputate ex tristique sem lectus conubia justo placerat in sed lobortis, etiam
+        semper auctor pulvinar molestie turpis habitant eu venenatis. Odio etiam habitasse habitant fusce per ornare
+        mauris tellus euismod, phasellus nascetur laoreet consectetur efficitur interdum adipiscing magnis sed,
+        scelerisque hac nisl taciti dolor mollis varius purus. Pretium morbi vivamus justo amet ac iaculis tempor fusce
+        tristique vestibulum, at congue curae purus sollicitudin libero velit nullam feugiat. Consectetur ultrices eget
+        duis eleifend dictum aenean, elementum nibh platea iaculis mauris fusce montes, est lorem vehicula molestie
+        ornare. Elit habitasse nunc netus egestas libero lorem, ipsum interdum sem ultrices vel, mollis magnis class
+        sollicitudin justo.</p>
+
+    <p>Ullamcorper vulputate facilisis tempus integer urna </p>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

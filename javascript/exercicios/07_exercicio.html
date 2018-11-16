@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 07</title>
+
+    <h1>Exercicio referente a aula 17 de Strings </h1>
+    <h2>
+        Criar uma função que recebe um nome completo e retorna este nome formatado,
+        seguindo o Exemplo: 'Fernando Mendes Junior' será transformado em: 'Junior, Fernando Mendes'
+    </h2>
+    <script>
+        (function (window) {
+            'use strict'
+
+            var nomeCompleto = prompt('Informe seu nome completo. ');
+
+            function formatarNome(nomeCompleto) {
+                var nomeFormatado;
+                var nomes = nomeCompleto.trim().split(' ');
+                
+                if(nomes.length > 1){
+                    var ultimoNome = nomes[nomes.length-1] + ', ';
+                    
+                    nomeFormatado = ultimoNome;
+                    
+                    nomes.forEach((nome, index) => {
+                        if(index != nomes.length - 1) {
+                            nomeFormatado += nome + ' ';
+                        }
+                    });
+
+                    return nomeFormatado;
+
+                }else{
+                    return nomeCompleto;
+                }
+
+            }
+
+            var nome = formatarNome(nomeCompleto);
+            console.log(nome);
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

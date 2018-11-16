@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Eventos - NodeList</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script>
+
+    (function () {
+        'use strict'
+        
+        
+        // LENGTH - retorna a quantidade de caracteres
+        var len = 'meu texto qualquer';
+        console.log('length: ' + len.length); 
+
+        // Troca uma string por outra (somente do primeiro local encontrado). -> REGEX para alterar em todos os lugares.
+        var rplc = 'texto para ser modificado por algo';
+        rplc = rplc.replace('e', 'E');
+        rplc = rplc.replace(/a/g, 'A');
+        console.log('\nreplace: '+rplc);
+
+        // indexOf, devolve a primeira posição de uma determinada string dentro do texto.
+        // lastIndexOf, devolve a ultima posiçao. 
+        var indexOF = 'Posição de um caracter :P';
+        console.log('\nindexOf: '+indexOF.indexOf('um')); 
+        console.log('lastIndexOf: '+indexOF.lastIndexOf('ter')) 
+
+        // Pega o pedaço de uma string, de um indice ate o outro, (o indice 1 é considerado, o indice2 não.)
+        var sliice = 'Slice serve para corta rum pedaço do texto';
+        sliice = sliice.slice(5, 20); 
+        console.log('\nslice: '+sliice);
+
+        // substring -> mesma coisa que o Slice, e consegue fazer a inversão automatica de valores.
+        var SUBstring = 'Slice serve para corta rum pedaço do texto';
+        console.log('\nsubstring: '+SUBstring.substring(20, 5));
+
+        // split -> retorna um array, quebrando a string baseado no parametro passado;
+        var Split = 'Splitado;Dividido;Loucura;Cortou;Array'
+        console.log('\nsplit: ');
+        console.log(Split.split(';'));
+
+        // toLowerCase -> Deixa todas as letras minusculas
+        // toUpperCase -> Deixa todas as letras maisculas
+        var lowerCase = 'FERNANDO MENDES';
+        var upperCase = 'fernando mendes';
+        console.log('\ntoLowerCase: ' + lowerCase.toLowerCase());
+        console.log('toUpperCase: ' + upperCase.toUpperCase());
+
+
+    })();
+
+</script>
+
+</html>

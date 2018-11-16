@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Numericos</title>
+
+    <h1>Numericos</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+            
+            var n = new Number('10');
+            console.log(n);
+
+            // propriedade estatica. ( ela é uma propriedade do proprio construtor);
+            console.log('\nMAX_VALUE'+Number.MAX_VALUE); // propriedades do construtor e não das intancias dos constutores.
+            console.log('MIN_VALUE'+Number.MAX_VALUE);
+            // 2e+3 = 2 * 10 * 10 * 10;
+            
+            var fixed = 12345.6789;
+            console.log('\nfixed: '+fixed.toFixed(2)); // retorna um numero com 2 casas decimais. 12345.68; 
+
+            var precision = 12345;
+            console.log('\nprecision: ' + precision.toPrecision(8)) // retorna quantos digitos o número deve ter, contemplando com 0 os números faltantes
+
+
+            var numberToString = 12345;
+            console.log('\nstring: ' + numberToString.toString()); // converte número para string.
+
+            // utilizando toString, podemos converter os numeros para outras bases decimais como hexa, binario...
+            console.log('binario: ' + numberToString.toString(2));
+            console.log('hexadecimal: ' + numberToString.toString(16));
+
+            // exponecial -> retorna a notação cientifica de um numero
+            var numberExponencial = 2000;
+            console.log('\nexponencial: ' + numberExponencial.toExponential());
+            numberExponencial = 1234567.899
+            console.log('\nexponencial: ' + numberExponencial.toExponential(4));
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

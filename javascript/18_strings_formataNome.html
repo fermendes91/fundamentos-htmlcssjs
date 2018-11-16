@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Formata Nome</title>
+
+    <h1>Formata Nome</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var nomeCompleto = prompt('Informe seu nome completo. ');
+
+            function formatarNome(nomeCompleto) {
+                var posicaoUltimoEspaco = nomeCompleto.lastIndexOf(' ');
+                if(posicaoUltimoEspaco < 0) {
+                    return nomeCompleto;
+                } 
+
+                var ultimoNome = nomeCompleto.slice(posicaoUltimoEspaco);
+                var nomesRestantes = nomeCompleto.slice(0, posicaoUltimoEspaco);
+
+                return (ultimoNome + ', ' + nomesRestantes).trim();
+            };
+
+            var nome = formatarNome(nomeCompleto);
+            console.log(nome);
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

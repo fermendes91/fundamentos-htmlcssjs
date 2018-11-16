@@ -68,7 +68,7 @@
 
         $ul.addEventListener('click', function(e) {
             if(e.target.nodeName === 'LI') {
-                //toogleDone(e.target);
+                //toggleDone(e.target);
                 removeTask(e.target);
             }
         });
@@ -97,7 +97,7 @@
             $txtTask.focus();
         }
 
-        function toogleDone($li) {
+        function toggleDone($li) {
             $li.classList.toggle('done'); // este metodo insere um classe se não exitir no DOM, e remove caso já exista.
         }
 
