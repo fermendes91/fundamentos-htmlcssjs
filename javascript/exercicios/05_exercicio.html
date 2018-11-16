@@ -18,18 +18,18 @@
         <h2>
             Fazer uma pequena lista de tarefas onde o usuario pode acrescentar um novo item (li)
             na lista(ul) através de um input e um botão. Esta lista deve estar preenchida previamente com
-            três itens quaisquer. Acrescentar eventos  de click em cada (li) para marcar como feito.
+            três itens quaisquer. Acrescentar eventos de click em cada (li) para marcar como feito.
         </h2>
 
         <div class="row">
             <div class="col-12">
                 <input type="text" id="txtInsertTask" placeholder="Insira uma tarefa">
-                <button id="btnInsertTask" type="button" class="btn btn-primary" onclick="insertTask()">Inserir Nova Task</button>
-                <button id="btnRemoveTask" type="button" class="btn btn-default" onclick="removeTasks()">Remover Task</button>
+                <button id="btnInsertTask" type="button" class="btn btn-primary">Inserir Nova Task</button>
+                <button id="btnRemoveTask" type="button" class="btn btn-default">Remover Task</button>
             </div>
         </div>
         <div class="col-12">
-            <ul id="taskList" >
+            <ul id="taskList">
                 <li>Levar Criança na Escola</li>
                 <li>Fazer Compras</li>
                 <li>Buscar Criança na Escola</li>
@@ -37,7 +37,7 @@
             </ul>
         </div>
 
-    </div> 
+    </div>
 
 </body>
 
@@ -50,63 +50,73 @@
         var $tasks = $taskList.querySelectorAll('#taskList li');
         var $txtInsertTask = document.querySelector('#txtInsertTask');
         var $btnInsertTask = document.querySelector('#btnInsertTask');
+        var $btnRemoveTask = document.querySelector('#btnRemoveTask');
 
         function disableBtnInsert(status) {
             $btnInsertTask.disabled = status;
         }
-        
+
         disableBtnInsert(true);
 
-        $txtInsertTask.addEventListener('input', function(e){
-            disableBtnInsert($txtInsertTask.value.trim().length == 0);
-        })
-
-        window.insertTask = function(){
+        function insertTask() {
             var description = $txtInsertTask.value;
-            if(description && description.trim()){
+            if (description && description.trim()) {
                 var li = document.createElement('li');
-    
+
                 li.appendChild(document.createTextNode(description));
                 $taskList.appendChild(li);
             }
-            
+
             disableBtnInsert(true);
             $txtInsertTask.value = '';
             $txtInsertTask.focus();
 
         }
 
-        window.removeTasks = function(){
+        function removeTasks() {
             var description = prompt('Informe o nome da task a ser deletada');
-            
+
             var taskList = Array.from($taskList.querySelectorAll('li'));
             var tasks = Array.from($taskList.querySelectorAll('li'));
 
-            var selectedTasks = tasks.filter(function($task) {
+            var selectedTasks = tasks.filter(function ($task) {
                 return $task.textContent === description;
             });
-            
-            selectedTasks.forEach(function(selected) {
+
+            selectedTasks.forEach(function (selected) {
                 $taskList.removeChild(selected);
             });
 
-            
         }
 
-    
-    window.markAsChecked = function(e) {
-            console.log(e.target.nodeName);
-            
-            if(e.target.nodeName === 'LI' && e.target.style.background !== 'lightgreen') {
+        $btnRemoveTask.addEventListener('click', removeTasks);
+
+        window.markAsChecked = function (e) {
+            if (e.target.nodeName === 'LI' && e.target.style.background !== 'lightgreen') {
                 e.target.style.background = 'lightgreen';
-            } else if (e.target.nodeName === 'LI'){
+            } else if (e.target.nodeName === 'LI') {
                 e.target.style.background = 'none';
             }
 
         }
 
         $taskList.addEventListener('click', markAsChecked)
-        
+
+        $btnInsertTask.addEventListener('click', insertTask);
+
+        // EVENTO PARA QUANDO O ENTER FOR CLICADO, A TAREFA SER INSERIDA NA LISTA.
+        $txtInsertTask.addEventListener('keyup', function (e) {
+            console.log(e.keyCode); // devolve o codigo numerico da tecla do teclado
+
+            var txtLength = $txtInsertTask.value.trim().length;
+
+            disableBtnInsert(txtLength == 0);
+            if (txtLength > 0 && e.keyCode == 13) { //13 é o codigo da tecla ENTER
+                insertTask();
+            }
+        })
+
+
     })(window);
 
 </script>

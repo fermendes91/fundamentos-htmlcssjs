@@ -10,6 +10,15 @@
     <link href="../media/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 
+<style>
+
+    .done {
+        text-decoration: line-through;
+        color: #555;
+    }
+
+</style>
+
 <body>
 
     <div class="container">
@@ -18,11 +27,11 @@
         <h2>
             Fazer uma pequena lista de tarefas onde o usuario pode acrescentar um novo item (li)
             na lista(ul) através de um input e um botão. Esta lista deve estar preenchida previamente com
-            três itens quaisquer. Acrescentar eventos  de click em cada (li) para marcar como feito.
+            três itens quaisquer. Acrescentar eventos de click em cada (li) para marcar como feito.
         </h2>
 
-        <input type="text" id="txtTask"><br>
-        <button>Cadastrar tarefa</button>
+        <input type="text" id="txtTask">
+        <button id="btn">Cadastrar tarefa</button>
 
         <ul>
             <li>Estudar Javascript - DOM</li>
@@ -30,9 +39,7 @@
             <li>Jogar Video-Game</li>
         </ul>
 
-        
-
-    </div> 
+    </div>
 
 </body>
 
@@ -40,6 +47,60 @@
 
     (function () {
         'use strict'
+
+        var $ul = document.querySelector('ul');
+        var $lis = $ul.querySelectorAll('li');
+        var $txtTask = document.querySelector('#txtTask');
+        var $btn = document.querySelector('#btn');
+
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function (e) { // vai ser inserido quando clicarmos na tecla ENTER do teclado.
+            if (e.keyCode == 13) {
+                addTask();
+            }
+        })
+
+        //dependendo da quantidade pode ser prejudicial. porque um eventListener ocupa lugar na memoria.
+        // $lis.forEach($li => {
+        //   addEvent($li);
+        // });
+
+        $ul.addEventListener('click', function(e) {
+            if(e.target.nodeName === 'LI') {
+                //toogleDone(e.target);
+                removeTask(e.target);
+            }
+        });
+
+        function removeTask(li) {
+
+            if(confirm('Deseja realmente excluir a tarefa: \n' + li.textContent + ' ?')) {
+                console.log(li.parentNode);
+
+                li.parentNode.removeChild(li);
+            };
+
+        }
+        
+
+        function addTask() {
+
+            var li = document.createElement('li'); // cria um novo documento no DOM;
+            var text = document.createTextNode( $txtTask.value); // texto que será inserido dentro da nossa li
+
+            li.appendChild(text); // pega a li e insere um texto dentro da tela.
+            
+            $ul.appendChild(li); // Insere a nova li criada dentro da nosso child;
+
+            $txtTask.value = '';
+            $txtTask.focus();
+        }
+
+        function toogleDone($li) {
+            $li.classList.toggle('done'); // este metodo insere um classe se não exitir no DOM, e remove caso já exista.
+        }
+
 
     })();
 
