@@ -40,3 +40,13 @@ function calcularMediaToFixed() {
 
     return (total / qtd).toFixed(2);
 }
+
+
+function sortear(value) {
+    if(typeof value === 'number'){
+        var random = Math.random() * value;
+        return Math.floor(random);
+    } else {
+        return Math.random();
+    }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Math</title>
+
+    <h1>Math</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+            
+            //Math possuem metodos ESTATICOS afim de realizarmos operações matematicas.
+
+            console.log('Math.min -- Retorna o menor numero de uma sequencia númerica.   (2, 5, 8, 1, 10)');
+            var min = Math.min(2, 5, 8, 1, 10);
+            console.log(min)
+
+            console.log('\nMath.min -- Retorna o menor numero de uma sequencia númerica ([[2, 5, 8, 1, 10, 13, 22, 10, 11])');
+            var arrayio = [2, 5, 8, 1, 10, 13, 22, 10, 11];
+            var max = Math.max(...arrayio);
+            console.log(max);
+
+            console.log('\nMath.round -- arrendonda um numero (sempre vai arredondar pro mais proximo)  (55.5) ---- (55.49)');
+            var roundUp = Math.round(55.50);
+            var roundDown = Math.round(55.49);
+            console.log(roundUp + '  ---- ' + roundDown);
+
+            console.log('\nMath.floor -- sempre fará o arredondamento para baixo. (55.99)');
+            var floor = Math.floor(55.99);
+            console.log(floor);
+            
+            console.log('\nMath.ceil -- sempre fará o arredondamento para cima. (30.11)');
+            var ceil = Math.ceil(30.11);
+            console.log(ceil);
+
+            console.log('\nMath.pow -- fara a exponenciação. (2, 3)')
+            var pow = Math.pow(2, 3);
+            console.log(pow);
+
+            console.log('\nMath.sqrt -- mostra a raiz quadrada. (25) ---- (49) ');
+            var sqrt25 = Math.sqrt(25);
+            var sqrt49 = Math.sqrt(49);
+            console.log(sqrt25 + ' ---- ', sqrt49);
+
+            console.log('\nMath.cbrt -- retorna a raiz cubica');
+            var cbrt = Math.cbrt(8);
+            console.log('Raiz cubica de 8... 2*2*2 ' + cbrt);
+
+            console.log('\nMath.random -- retorna um numero aleatorio de 0 até 0.99999...')
+            var random = Math.random();
+            var random100 = Math.random() * 100;
+            console.log('Aleatorio Padrão: ' + random + ' Aleatorio de 0 a 100: ' + random100);
+
+
+            // PROPRIEDADES.
+
+            console.log('\n Math.PI(): ' + Math.PI()); // retorna o número Pi.
+
+
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
