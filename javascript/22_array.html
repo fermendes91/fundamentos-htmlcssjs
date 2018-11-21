@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Array</title>
+
+    <h1>Array</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var arr = [1, 2, 3, 4, 5 , 'Fernando', 'Mendes', true, {nome: 'Teste', valor: 1000.50}]
+
+            // SLICE -> retorna um array a partir de um indice inicial até um indice final, o indice inicial é removido enquanto o final é incluso no retorno também.
+            var arrSlice = arr.slice(4, 7); // se não passar o segundo parametro, vai do 4 até o final.
+            console.log('\nSLICE index 4 até o 7: \n[' + arrSlice + ']'); 
+            console.log('ARRAY ORIGINAL[' + arr + ']'); 
+
+            // SPLICE -> retorna um array sendo possivel incluir, remover itens no meio da operação.
+            var arrSplice = arr.splice(5, 0, 'Aercio'); // posicao inicial, posicao final, demais parametros são itens a serem adicionados na posição a qual foi alterada.
+            console.log('\nSPLICE index 5, 0 (não remove itens), \'Aercio\' parametro de adição de conteudo\n [' + arrSplice + ']');
+            console.log('ARRAY ORIGINAL [' + arr + ']');
+
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
