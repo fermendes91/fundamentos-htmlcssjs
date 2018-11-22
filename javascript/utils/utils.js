@@ -7,7 +7,7 @@ function calcularMedia() {
     if(typeof arguments[x] === 'object') {
         qtd = arguments[x].length;
         total = arguments[x].reduce(function (n1, n2){
-            return n1+ n2;
+            return n1 + n2;
         })
     }else {
         while(typeof arguments[x] === 'number') { // a media pode ser 0, e 0 é false.
@@ -17,6 +17,28 @@ function calcularMedia() {
     }
 
     return total / qtd;
+}
+
+function isApproved() {
+    if(typeof arguments[0] === 'object') {
+        var notas = Array.from(arguments[0]);
+
+        var temZero = notas.some(function(nota) {
+            return nota === 0;
+        })
+
+        if(temZero) {
+            return 'REPROVADO, o aluno contem pelo menos uma nota zero.';
+        } 
+
+        var media = calcularMedia(arguments[0]);
+        if (media >= 7 ) {
+            return 'APROVADO COM MEDIA: ' + media;
+        } else {
+            return 'REPROVADO COM MEDIA: ' + media;
+        }
+    }
+    return 'tipo de dados invalidos, informe novamente';
 }
 
 function calcularMediaToFixed() {
@@ -40,7 +62,6 @@ function calcularMediaToFixed() {
 
     return (total / qtd).toFixed(2);
 }
-
 
 function sortear(value) {
     if(typeof value === 'number'){
