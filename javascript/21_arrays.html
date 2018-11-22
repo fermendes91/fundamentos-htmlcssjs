@@ -54,8 +54,8 @@
             console.log('\nMultiplica o elemento pelo indice: [' + arrMap + ']');
 
             // CONCAT -> Serve para fazer a função de 2 arrays (podemos passar também valores separados por virgula);
-            var arr1 = [1, 2, 3]; var arr2= ['Fernando','Mendes', 'Jr']
-            console.log('\nA mescla entre: [' +  arr1 + '] e [' + arr2 + '] é: \n[' + arr1.concat(arr2, 'Hello World!') + ']');
+            var arr1 = [1, 2, 3]; var arr2 = ['Fernando', 'Mendes', 'Jr']
+            console.log('\nA mescla entre: [' + arr1 + '] e [' + arr2 + '] é: \n[' + arr1.concat(arr2, 'Hello World!') + ']');
 
 
             // JOIN -> Serve para transformar um array numa String. (join e toString é a mesma coisa.) porem o join pode colocar um caracter separador
@@ -73,13 +73,13 @@
             console.log('\nFoi inserido um novo item no primeiro indice do Array: \n [' + arr + ']');
 
             // REDUCE -> Serve para pegar um array e retornar um unico valor.
-            var somaArray = filtrados.reduce(function(anterior, atual, indice, arrFiltrados) {
-                return anterior + atual; 
+            var somaArray = filtrados.reduce(function (anterior, atual, indice, arrFiltrados) {
+                return anterior + atual;
             }, 1); // este parametro 1... é o valor inicial.
             console.log('\nA soma dos valores do Array: \n[' + filtrados + '] \né igual a: ' + somaArray);
 
             // REDUCERIGHT -> Serve para pegar um array e retornar um unico valor de forma invertida: 
-            var reduceRight = ['A', 'B', 'D', 'E', 'F'].reduceRight(function(a, b) {
+            var reduceRight = ['A', 'B', 'D', 'E', 'F'].reduceRight(function (a, b) {
                 return a + b;
             });
             console.log('\nReduceRight retorna os valores invertidos: \n' + reduceRight);
@@ -87,8 +87,20 @@
             // REVERSE -> Serve para inverter a ordem de um array. Continua sendo um array e não retornando um valor unico.
             var reversed = arr.reverse();
             console.log('\nArray Principal invertida: ' + reversed);
-            
 
+            // SLICE -> retorna um array a partir de um indice inicial até um indice final, o indice inicial é removido enquanto o final é incluso no retorno também.
+            var arrSlice = arr.slice(4, 7); // se não passar o segundo parametro, vai do 4 até o final.
+            console.log('\nSLICE index 4 até o 7: \n[' + arrSlice + ']');
+            console.log('ARRAY ORIGINAL[' + arr + ']');
+
+            // SPLICE -> retorna os indices removidos , com o splice também é possivel incluir, remover itens no meio da operação.
+            // ALTERA O ARRAY ORIGINAL.
+            var arrSplice = arr.splice(5, 0, 'Aercio'); // posicao inicial, quantos elementos serão removidos a partir do indice inicial, demais parametros serão incluidos.
+            console.log('SPLICE -> Como não removemos nenhum item o array de retorno será vazio: ' + arrSplice);
+            console.log('ARRAY ORIGINAL [' + arr + ']');
+            arrSplice = arr.splice(9, 1); // a partir da posição 9, remove 1 elemento.
+            console.log('O retorno será o item removido: ' + arrSplice);
+            console.log('ARRAY ORIGINAL [' + arr + ']');
 
 
 
