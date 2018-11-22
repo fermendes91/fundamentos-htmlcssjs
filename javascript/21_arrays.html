@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Array</title>
+
+    <h1>Array</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var arr = new Array(999, 2, 3, 'Fernando', 10, 20, 7, 13, 21, '20', 233, 76, 33, 'Desenv', true, false, 32, 'Java');
+            console.log(arr);
+
+            // tamanho
+            console.log('\nTamanho da lista: ' + arr.length);
+
+            // EVERY -> neste caso estamos utilizando o every para verificarmos se todos os itens são do tipo numerico
+            var somenteNumeros = arr.every(function (element, index, object) {
+                return typeof element === 'number';
+            });
+            console.log('\nTodos os itens são do tipo númerico ? ' + somenteNumeros ? 'Sim' : 'Não');
+
+            // SOME ->  neste caso estamos utilizando o some para verificarmos se ALGUM elemento é do tipo númerico.
+            var algumNumerico = arr.every(function (element, index, object) {
+                return typeof element === 'number';
+            });
+            console.log('\Algum dos itens é do tipo númerico ? ' + algumNumerico ? 'Sim' : 'Não');
+
+            // FILTER -> pega o array e retorna um outro array que satisfaça alguma condição
+            var filtrados = arr.filter(function (element, index, object) {
+                return typeof element === 'number';
+            });
+            console.log('\nMe retorne somente os numericos da lista: \n[' + filtrados + ']');
+
+            // FOREACH -> simplemesmente um loop sem uma variavel incrementadora
+            arr.forEach(function (element, index, object) {
+                // ... itera por todos os arrays.
+            });
+
+            // INDEXOF -> Retorna a posição do elemento que passarmos (o primeiro que encontrar)
+            console.log('\nA posição da palavra \'Desenv\' é no index: ' + arr.indexOf('Desenv'));
+
+            // LASTINDEXOF -> Retorna a posição do elemento que passarmos (o ultimo que encontrar)
+            console.log('\nA ultima posição do número \'7\' é no index: ' + arr.indexOf(7));
+
+            // MAP -> Faz a iteração sobre cada elemento, e faz algum tipo de alteração, e retorna na mesma posição.
+            var arrMap = filtrados.map(function (el, i, arr) {
+                return el * i;
+            });
+            console.log('\nMultiplica o elemento pelo indice: [' + arrMap + ']');
+
+            // CONCAT -> Serve para fazer a função de 2 arrays (podemos passar também valores separados por virgula);
+            var arr1 = [1, 2, 3]; var arr2= ['Fernando','Mendes', 'Jr']
+            console.log('\nA mescla entre: [' +  arr1 + '] e [' + arr2 + '] é: \n[' + arr1.concat(arr2, 'Hello World!') + ']');
+
+
+            // JOIN -> Serve para transformar um array numa String. (join e toString é a mesma coisa.) porem o join pode colocar um caracter separador
+            var arrString = arr.join(' -- ');
+            console.log('\nConverteu a Array Primeira: ' + arrString);
+
+            // POP, PUSH, SHIFT, UNSHIFT; ( METODOS DESTRUTIVOS -> ALTERAM A ARRAY ORIGINAL)
+            arr.push('Novo Item Inserido UHUL!:');
+            console.log('\nFoi inserido um novo item no ultimo indice do Array: \n [' + arr + ']');
+            var pop = arr.pop(); //Remove o ultimo indice do array e devolve pra quem chamou;
+            console.log('\nFoi removido o ultimo indice do array: \n' + pop);
+            var shift = arr.shift(); //Remove o primeiro indice do array e devolve pra quem chamou;
+            console.log('\nFoi removido o primeiro indice do array: \n' + shift);
+            arr.unshift('Primeiro'); // Acrescenta um item no array no indice 1;
+            console.log('\nFoi inserido um novo item no primeiro indice do Array: \n [' + arr + ']');
+
+            // REDUCE -> Serve para pegar um array e retornar um unico valor.
+            var somaArray = filtrados.reduce(function(anterior, atual, indice, arrFiltrados) {
+                return anterior + atual; 
+            }, 1); // este parametro 1... é o valor inicial.
+            console.log('\nA soma dos valores do Array: \n[' + filtrados + '] \né igual a: ' + somaArray);
+
+            // REDUCERIGHT -> Serve para pegar um array e retornar um unico valor de forma invertida: 
+            var reduceRight = ['A', 'B', 'D', 'E', 'F'].reduceRight(function(a, b) {
+                return a + b;
+            });
+            console.log('\nReduceRight retorna os valores invertidos: \n' + reduceRight);
+
+            // REVERSE -> Serve para inverter a ordem de um array. Continua sendo um array e não retornando um valor unico.
+            var reversed = arr.reverse();
+            console.log('\nArray Principal invertida: ' + reversed);
+            
+
+
+
+
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

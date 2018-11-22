@@ -6,17 +6,27 @@
     <meta charset="utf-8">
     <title>Exercicio 11</title>
 
-    <h1>Math</h1>
-    <h2>
-        Desenvolver uma pagina que mude a imagem de fundo sempre que a pagina é recarregada (randomico).
-        Será que é uma boa utilizarmos a função recem-criada ?
-    </h2>
-
-    <script src="../utils/utils.js"></script>
+    <script src="../../utils/utils.js"></script>
 
     <script>
         (function (window) {
             'use strict'
+
+            window.addEventListener('load', init);
+
+            function init() {
+                prepareStyleSheet();
+            }
+
+            function prepareStyleSheet() {
+                var n = sortear(5) + 1;
+                var sheet = document.creates
+
+                document.querySelector('body').style.background = 'url(' + n + '.jpg)';
+                document.querySelector('body').style.backgroundReepeat = 'no-repeat';
+                document.querySelector('body').style.backgroundPosition = 'left bottom';
+                document.querySelector('body').style.backgroundSize = 'cover auto';
+            }
 
         })(window);
     </script>
@@ -25,8 +35,22 @@
 
 <body>
 
-   
+    <h1>Imagem de Fundo Randomica</h1>
+    <h2>
+        Desenvolver uma pagina que mude a imagem de fundo sempre que a pagina é recarregada (randomico).
+        Será que é uma boa utilizarmos a função recem-criada ?
+    </h2>
 
 </body>
+
+<style>
+        body {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+        }
+    </style>
+
+
 
 </html>
