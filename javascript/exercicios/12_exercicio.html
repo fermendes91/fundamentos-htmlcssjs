@@ -1,0 +1,153 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 12</title>
+
+    <h1>ARRAY</h1>
+    <h2>
+        Seleconar todos os paragrafos da página e, se tiver mais de 10 palavras,
+        mostrar as primeiras 10 seguido de reticencias.
+    </h2>
+
+    <script src="../utils/utils.js"></script>
+
+</head>
+
+<body>
+
+    <div id="meuConteudo">
+        <p>You should use your full name. I like that name, Robin.</p>
+
+        <p>Bruce Wayne, eccentric billionaire.</p>
+
+        <p>You wanna know how I got them? So I had a wife. She was beautiful, like you, who tells me I worry too much, who
+            tells me I ought to smile more, who gambles and gets in deep with the sharks. Hey. One day they carve her face.
+            And we have no money for surgeries. She can't take it. I just wanna see her smile again. I just want her to
+            know that I don't care about the scars. So, I do this to myself. And you know what? She can't stand the sight
+            of me. She leaves. Now I see the funny side. Now I'm always smiling.</p>
+    
+        <p>Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?</p>
+    
+        <p>It was a dog. It was a big dog.</p>
+    
+        <p>A little the worse for wear, I'm afraid.</p>
+    
+        <p>Bats frighten me. It's time my enemies shared my dread.</p>
+    
+        <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I
+            can be incorruptible, I can be everlasting.</p>
+    
+        <p>I seek the means to fight injustice. To turn fear against those who prey on the fearful.</p>
+    
+        <p>You have inspired good. But you spat in the faces of Gotham's criminals. Didn't you think there might be
+            casualties? Things always get worse before they get better.</p>
+    
+        <p>You wanna know how I got these scars? My father was... a drinker, and a fiend. And one night, he goes off
+            crazier than usual. Mommy gets the kitchen knife to defend herself. He doesn't like that, not one bit. So, me
+            watching he takes the knife to her, laughing while he does it. He turns to me and he says: "Why so serious?".
+            He comes at me with the knife "Why so serious?". He sticks the blade in my mouth. "Let's put a smile on that
+            face." and... Why so serious?</p>
+    
+        <p>You have nothing, nothing to threaten me with. Nothing to do with all your strength.</p>
+    
+        <p>I got another another job. Your.</p>
+    
+        <p>Bruce... it's okay. Don't be afraid.</p>
+    </div>
+    <hr><hr>
+    <div id="conteudoProfessor">
+        <p>You should use your full name. I like that name, Robin.</p>
+        
+        <p>Bruce Wayne, eccentric billionaire.</p>
+
+        <p>You wanna know how I got them? So I had a wife. She was beautiful, like you, who tells me I worry too much, who
+            tells me I ought to smile more, who gambles and gets in deep with the sharks. Hey. One day they carve her face.
+            And we have no money for surgeries. She can't take it. I just wanna see her smile again. I just want her to
+            know that I don't care about the scars. So, I do this to myself. And you know what? She can't stand the sight
+            of me. She leaves. Now I see the funny side. Now I'm always smiling.</p>
+    
+        <p>Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?</p>
+    
+        <p>It was a dog. It was a big dog.</p>
+    
+        <p>A little the worse for wear, I'm afraid.</p>
+    
+        <p>Bats frighten me. It's time my enemies shared my dread.</p>
+    
+        <p>I can't do that as Bruce Wayne... as a man. I'm flesh and blood. I can be ignored, destroyed. But as a symbol, I
+            can be incorruptible, I can be everlasting.</p>
+    
+        <p>I seek the means to fight injustice. To turn fear against those who prey on the fearful.</p>
+    
+        <p>You have inspired good. But you spat in the faces of Gotham's criminals. Didn't you think there might be
+            casualties? Things always get worse before they get better.</p>
+    
+        <p>You wanna know how I got these scars? My father was... a drinker, and a fiend. And one night, he goes off
+            crazier than usual. Mommy gets the kitchen knife to defend herself. He doesn't like that, not one bit. So, me
+            watching he takes the knife to her, laughing while he does it. He turns to me and he says: "Why so serious?".
+            He comes at me with the knife "Why so serious?". He sticks the blade in my mouth. "Let's put a smile on that
+            face." and... Why so serious?</p>
+    
+        <p>You have nothing, nothing to threaten me with. Nothing to do with all your strength.</p>
+    
+        <p>I got another another job. Your.</p>
+    
+        <p>Bruce... it's okay. Don't be afraid.</p>    
+    </div>
+ 
+    <script>
+        (function (window) {
+            'use strict'
+            
+            /** MEU DESENVOLVIMENTO */
+            var allParagraphs = document.querySelectorAll('#meuConteudo p');
+
+            allParagraphs.forEach( paragraph => {
+                paragraph.textContent = paragraph.textContent.replace();
+                var textWords = getWords(paragraph);
+                
+                if(textWords.length > 10) {
+                    addThreePointsToTheWord(paragraph, textWords);
+                }
+            });
+
+            function getWords(p) {
+                return p.textContent.split(' ');
+            }
+
+            function addThreePointsToTheWord(paragraph, textWords) {
+                var wordsToBeChanged = [];
+            
+                console.log(paragraph.textContent);
+
+                textWords.forEach( (word, index) => {
+                    if(index < 10) {
+                        wordsToBeChanged.push(word);
+                    }
+                });
+                
+                wordsToBeChanged.forEach(word => {
+                    console.log(word);
+                    paragraph.textContent = paragraph.textContent.replace(word, word + '...');
+                });
+
+                /** RESOLUCAO PROFESSOR*/
+
+                var paragrafos = document.querySelectorAll('#conteudoProfessor p');
+
+                
+                
+
+
+            }
+
+        })(window);
+    </script>
+
+
+</body>
+
+</html>

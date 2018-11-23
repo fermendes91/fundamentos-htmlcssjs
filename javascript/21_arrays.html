@@ -8,6 +8,8 @@
 
     <h1>Array</h1>
 
+    <script src="utils/utils.js"></script>
+
     <script>
         (function (window) {
             'use strict'
@@ -102,6 +104,31 @@
             console.log('O retorno será o item removido: ' + arrSplice);
             console.log('ARRAY ORIGINAL [' + arr + ']');
 
+
+            // SPREAD OPERATOR ( ... ) -> forma de passar parametro de forma parecida com o apply, cada argumento do array será passado como 1 parametro separado
+            console.log('\n SPREAD OPERATOR');
+            printSpreadOperator(...[10,2, 5, 7, 8]);
+
+            function printSpreadOperator() {
+                console.log(arguments);
+                console.log('ARGUMENTO NA POSIÇÃO 0 --> ' + arguments[0]);
+                console.log('ARGUMENTO NA POSIÇÃO 1 --> ' + arguments[1]);
+                console.log('ARGUMENTO NA POSIÇÃO 2 --> ' + arguments[2]);
+                console.log('ARGUMENTO NA POSIÇÃO 3 --> ' + arguments[3]);
+                
+            }
+
+            // ARROW FUNCTION -> versão siimplificada para escrever funções.
+            var arrowFunctionFilter = arr.filter( element => {
+                return element > 100;
+            });
+            console.log('\nARROW FUNCTION COM FILTROS (ELEMENTOS > 100): ' + arrowFunctionFilter);
+
+            var arrowFunctionReduce = filtrados.reduce( (n1, n2) => {
+                return n1 + n2;
+            });
+            console.log('ARROW FUNCTION COM REDUCE (soma dos elementos filtrados): ' + arrowFunctionReduce);
+            
 
 
         })(window);
