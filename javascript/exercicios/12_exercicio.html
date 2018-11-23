@@ -138,7 +138,19 @@
 
                 var paragrafos = document.querySelectorAll('#conteudoProfessor p');
 
-                
+                paragrafos.forEach(paragrafo => {
+                    paragrafo.innerHTML = formataParagrafo(paragrafo.innerHTML);
+                });
+
+                function formataParagrafo(texto) {
+                    var palavras = texto.split(' ');
+
+                    if(palavras.length > 10) {
+                        return palavras.slice(0, 10).join(' ') + '...';
+                    }
+
+                    return texto;
+                }
                 
 
 
