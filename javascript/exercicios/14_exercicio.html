@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 14</title>
+
+    <h1>DATE - Exercicio referente a aula de DATES</h1>
+    <h2>
+        Fazer uma pagina que mostra quantos dias faltam para o seu proximo aniversario ou
+        mostra mensagem de parabens.
+    </h2>
+
+    <hr>
+
+    <p id="aniversario"></p>
+    <script src="../utils/utils.js"></script>
+
+</head>
+
+<body>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var $aniversario = document.querySelector('#aniversario');
+            var birthDate = new Date(1991, 0, 2, 0, 0, 0, 0);
+            
+            var daysForBirthday = checkBirthday(birthDate);
+            $aniversario.textContent = daysForBirthday ? 'Faltam ' + daysForBirthday + ' dias para o seu aniversario !!' : 'PARABEEEEENS HOJE É SEU ANIVERSARIO' ;
+
+            function checkBirthday(birthDate) {
+                var today, bday, diff, days;
+                const _ONE_DAY = 24*60*60*1000; // horas * minutos * segundos * milisegundos.
+
+                today = new Date(); today.setHours(0); today.setMinutes(0); today.setSeconds(0); today.setMilliseconds(0);
+                bday = new Date(today.getFullYear(),birthDate.getMonth(),birthDate.getDate());
+
+                if(birthDate.getDate() === today.getDate() && birthDate.getMonth() === today.getMonth()) {
+                    return 0;
+                }
+
+                //verifico se eu já fiz aniversario, caso sim, soma 1 no ano;
+                if( today.getTime() > bday.getTime()) {
+                    bday.setFullYear(bday.getFullYear()+1);
+                }
+                diff = bday.getTime()-today.getTime();
+                days = Math.floor(diff/(_ONE_DAY));
+                return days;
+            }
+
+        })(window);
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Date</title>
+
+    <h1>Date</h1>
+
+    <script src="utils/utils.js"></script>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+
+            var dateNow = new Date();
+
+            console.log('\ndata Atual: ' + dateNow);
+
+            // getDay() -> Retorna o dia da semana sendo 0 domingo e 6 sabado. (7 DIAS);
+            console.log('\ngetDay() -> dia da Semana: \n' + dateNow.getDay());
+
+            // getDate() -> Retorna o dia do mes.
+            console.log('\getDate() -> dia do mes: \n' + dateNow.getDate());
+
+            // getMonth() -> Retorna o mes, sendo 0 janeiro e 11 dezembro. ( 12 meses);
+            console.log('\ngetMonth() -> pega o mes: \n' + dateNow.getMonth());
+
+            // getYear() -> Retorna o número de anos que passarão depois de 1900.
+            console.log('\ngetYear() -> pega o número de anos que se passaram depois de 1900: \n' + dateNow.getYear());
+
+            // getFullYear() -> Retorna o ano em que estamos realmente no caso dessa aula (2018).
+            console.log('\ngetFullYear() -> pega o ano em que estamos atualmente: \n' + dateNow.getFullYear());
+
+            // getHours():getMinutes().getMilliSeconds()-> Retorna a hora, minuto e milisecondos no momento que a variavel foi instanciada.
+            console.log('\ngetHours():getMinutes():getMilliSeconds() -> Retorna a hora, minutos e milisecundos: \n' + dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getMilliseconds())
+            
+            // getTime() -> Retorna o timestamp. (número de milisegundos passados apartir de janeiro de 1970)
+            console.log('\n(getTime() -> número de milisegundos passados apartir de janeiro de 1970): \n' + dateNow.getTime());
+            console.log('Forma de retornar a data atual com timeStamp: \n' + +new Date());
+            console.log('Colocando a data com milisegundos igual a 0: \n' + new Date(0));
+
+            // setDate() -> Setamos o dia do mes na instance da variavel.
+            console.log('\nsetDate() -> Seta o dia do mes na variavel (2): \n' + new Date(dateNow.setDate(2)));
+
+            // setMonth() -> Setamos um mes para a instancia da variavel.
+            console.log('\nSetMonth() -> Seta o mes na variavel (0 é janeiro): \n' + new Date(dateNow.setMonth(0)));
+
+            // setYear() -> Setamos um ano para a instancia da variavel.
+            console.log('\nSetYear() -> Seta o ano na variavel: \n' + new Date(dateNow.setYear(2020)));
+
+            // setHours():setMinutes:setSeconds() -> seta os horarios para a instancia da variavel;
+            dateNow.setHours(0);
+            dateNow.setMinutes(0);
+            dateNow.setSeconds(0);
+            console.log('\nsetHours():setMinutes():setSeconds() -> Seta os horarios para a variavel: (00:00:00) \n' + dateNow);
+
+            // Criar data passando parametros.
+            console.log('\nCriando data passando parametros (2015, 10, 10): \n' + new Date(2015, 10, 10));
+            console.log('Criando data passando parametros (2016, 5, 25, 22, 35, 40): \n' + new Date(2016, 5, 25, 22, 35, 40));
+            console.log('Criando data passando parametros (2017/12/02): \n' + new Date('2017/12/02'));
+
+
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

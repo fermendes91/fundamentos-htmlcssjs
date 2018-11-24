@@ -71,3 +71,18 @@ function sortear(value) {
         return Math.random();
     }
 }
+
+function formatDateBR(date) {
+    var dia = date.getDate();
+    var mes = date.getMonth();
+
+    if(dia < 10) {
+        dia = '0' + dia;
+    }
+
+    if(mes < 10) {
+        mes = '0' + mes;
+    }
+
+    return dia + '/' + mes + '/' + date.getFullYear();
+}

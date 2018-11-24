@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Exercicio 13</title>
 
-    <h1>ARRAY</h1>
+    <h1>ARRAY - Exercicio referente a aula de arrays</h1>
     <h2>
         Selecionar todos os paragrafos da pagina e adicionar uma classe
         de destaque no paragrafo que contem a palavra javascript;
@@ -14,12 +14,20 @@
 
     <script src="../utils/utils.js"></script>
 
+    <style>
+
+        .js-bold {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 
 <body>
 
     <div id="meuConteudo">
-        <p>You should use your full name. I like that name, Robin.</p>
+        <p>You should use your full name. I like that name, jAVAsCRIpT.</p>
 
         <p>Bruce Wayne, eccentric billionaire.</p>
 
@@ -31,7 +39,7 @@
     
         <p>Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?</p>
     
-        <p>It was a dog. It was a big dog.</p>
+        <p>It was a dog. It was a javascript dog.</p>
     
         <p>A little the worse for wear, I'm afraid.</p>
     
@@ -45,15 +53,15 @@
         <p>You have inspired good. But you spat in the faces of Gotham's criminals. Didn't you think there might be
             casualties? Things always get worse before they get better.</p>
     
-        <p>You wanna know how I got these scars? My father was... a drinker, and a fiend. And one night, he goes off
+        <p>You wanna know how I got these scars? My father was... a drinker, and a javascript. And one night, he goes off
             crazier than usual. Mommy gets the kitchen knife to defend herself. He doesn't like that, not one bit. So, me
             watching he takes the knife to her, laughing while he does it. He turns to me and he says: "Why so serious?".
             He comes at me with the knife "Why so serious?". He sticks the blade in my mouth. "Let's put a smile on that
             face." and... Why so serious?</p>
     
-        <p>You have nothing, nothing to threaten me with. Nothing to do with all your strength.</p>
+        <p>You have nothing, nothing to threaten me with. javascript to do with all your strength.</p>
     
-        <p>I got another another job. Your.</p>
+        <p>I got another JAVASCRIPT job. Your.</p>
     
         <p>Bruce... it's okay. Don't be afraid.</p>
     </div>
@@ -63,8 +71,17 @@
         (function (window) {
             'use strict'
             
-    
+            /**
+                Selecionar todos os paragrafos da pagina e adicionar uma classe
+                de destaque no paragrafo que contem a palavra javascript;
+            */
 
+            var $allParagraphs = document.querySelectorAll('p');
+
+            $allParagraphs.forEach(function($p) {
+                $p.textContent.toLowerCase().indexOf('javascript') > -1 ? ($p.className = 'js-bold') : '';
+            });
+    
         })(window);
     </script>
 
