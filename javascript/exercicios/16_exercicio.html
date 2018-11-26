@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 16 - Temporizador</title>
+
+    <h1>Temporizadores - Exercicio referente a aula 23_Temporizadores</h1>
+    <!-- <h2>
+        O cliente pediu para fazer um pop-up bem irritante que PULA na interface do usuario
+        depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos
+        ( mesmo que o usuario ainda estava-o lendo. Lembre-se, a ideia é que seja extremamente irritante).
+    </h2> -->
+
+    <hr>
+
+    <p id="aniversario"></p>
+    <script src="../utils/utils.js"></script>
+
+    <style>
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, .8);
+            display: none;
+        }
+
+        .banner__close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="banner">
+        <h2>Banner Irritante</h2>
+        <button class="banner__close">X</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo
+            quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi
+            provident. Excepturi, odit, velit.</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo
+            quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi
+            provident. Excepturi, odit, velit.</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo
+            quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi
+            provident. Excepturi, odit, velit.</p>
+    </div>
+
+
+
+    <script>
+        (function (window) {
+            'use strict'
+            
+            var $banner = document.querySelector('.banner');
+            var $bannerClose = document.querySelector('.banner__close');
+            var timeout = 5000;
+            var hideTimeout = null;
+            $bannerClose.addEventListener('click', hideBanner);
+
+            function showBanner() {
+                $banner.style.display = 'block';
+                hideTimeout = setTimeout(hideBanner, timeout);
+            }
+
+            function hideBanner() {
+                $banner.removeEventListener('click', hideBanner);
+                $banner.parentNode.removeChild($banner);
+
+                clearTimeout(hideTimeout);
+            }
+
+            setTimeout(showBanner, timeout);
+          
+        })(window);
+    </script>
+
+
+</body>
+
+</html>

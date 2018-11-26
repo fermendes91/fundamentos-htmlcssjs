@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Temporizadores</title>
+
+    <h1>Temporizadores</h1>
+
+    <script src="utils/utils.js"></script>
+
+    <script>
+        (function (window) {
+            'use strict'
+            
+            // Temporizadores Javscript
+            // não são nativos da ECMAScript, funciona quando roda no browser, se rodarmos no node.js direto não irá funcionar
+
+            
+            var n = 0;
+            var tempo = 2000;
+            
+            function soma1() {
+                console.log('n: ' + ++n);
+
+                // PARA FINALIZARMOS O TIMEOUT OU O INTERVAL devemos ter uma variavel para guardar o id dos mesmos.
+                if(n >= 10) {
+                    clearInterval(interval);
+                }
+            }
+
+            // Função que será executada no futuro, tempo definido na variavel tempo em milisegundos. (2000 = 2 segundos)
+            var timeout = setTimeout(soma1, tempo);
+            // Função que será executada em intervalos de tempo
+            var interval = setInterval(soma1, 1000);
+            
+            /*  JAVASCRIPT É SINGLE-THREAD ou seja só executa uma ação por vez, 
+                caso tenhamos um intervalo grande num processamento de um interval, 
+                o proximo só sera executada quando o processamento da anterior terminar.  
+            */
+          
+            
+
+
+        })(window);
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

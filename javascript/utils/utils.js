@@ -74,15 +74,10 @@ function sortear(value) {
 
 function formatDateBR(date) {
     var dia = date.getDate();
-    var mes = date.getMonth();
+    var mes = date.getMonth()+1;
 
-    if(dia < 10) {
-        dia = '0' + dia;
-    }
-
-    if(mes < 10) {
-        mes = '0' + mes;
-    }
+    dia = ('0' + dia).slice(-2);
+    mes = ('0' + mes).slice(-2);
 
     return dia + '/' + mes + '/' + date.getFullYear();
 }

@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 17 - Temporizador</title>
+
+    <h1>Temporizadores - Exercicio referente a aula 23_Temporizadores</h1>
+    <h2>
+        Mostrar Relogio, Criar uma função que retorne uma o hora atual no formato <hh:mm:ss> 
+        mostre esse texto numa div qualquer na tela. Agora execute essa função a cada 1 segundo.
+    </h2>
+
+    <hr>
+
+    <script src="../utils/utils.js"></script>
+
+    <p id="clock"></p>
+
+</head>
+
+<body>
+
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var $clock = document.querySelector('#clock');
+
+            $clock.textContent = 'hh:mm:ss'
+
+        })(window);
+    </script>
+
+
+</body>
+
+</html>
