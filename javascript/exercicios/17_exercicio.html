@@ -8,7 +8,7 @@
 
     <h1>Temporizadores - Exercicio referente a aula 23_Temporizadores</h1>
     <h2>
-        Mostrar Relogio, Criar uma função que retorne uma o hora atual no formato <hh:mm:ss> 
+        Mostrar Relogio, Criar uma função que retorne uma o hora atual no formato 'hh:mm:ss'
         mostre esse texto numa div qualquer na tela. Agora execute essa função a cada 1 segundo.
     </h2>
 
@@ -17,6 +17,7 @@
     <script src="../utils/utils.js"></script>
 
     <p id="clock"></p>
+    <p id="modernClock"></p>
 
 </head>
 
@@ -27,13 +28,62 @@
         (function (window) {
             'use strict'
 
-            var $clock = document.querySelector('#clock');
+            function startClock() {
+                var $clock = document.querySelector('#clock');
 
-            $clock.textContent = 'hh:mm:ss'
+                var hours, minutes, seconds = 0;
+                var dateNow = new Date();
+                $clock.textContent = dateNow.getHours() + ':' + dateNow.getMinutes() + ':' + dateNow.getSeconds();
+
+                setInterval(() => {
+                    var clockText = $clock.textContent;
+
+                    var hour = clockText.split(':')[0];
+                    var minute = clockText.split(':')[1];
+                    var second = clockText.split(':')[2];
+
+                    if (hour === '23' && minute === '59' && second === '59') {
+                        hour = '00'; minute = '00'; second = '00';
+                    }
+
+                    if (minute == '59' && second == '59') {
+                        minute = '-1';
+                        hour = format(hour);
+                    }
+
+                    if (second === '59') {
+                        second = '-1';
+                        minute = format(minute);
+                    }
+
+                    second = format(second);
+                    $clock.textContent = hour + ':' + minute + ':' + second;
+
+                }, 1000);
+
+            }
+
+            function format(number) {
+                return ('0' + Number(++number)).slice(-2);
+            }
+
+            startClock();
+
+            // FORMA MAIS SIMPLES DE FAZER O CODIGO ACIMA;
+            function formatHour(date) {
+                return formatDecimals(date.getHours()) + ':' + formatDecimals(date.getMinutes()) + ':' + formatDecimals(date.getSeconds());
+            }
+
+            function formatDecimals(number) {
+                return ('0' + number).slice(-2);
+            }
+
+            setInterval(() => {
+                document.querySelector('#modernClock').textContent = formatHour(new Date());
+            }, 1000);
 
         })(window);
     </script>
-
 
 </body>
 
