@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Exercicio 18 - Temporizador</title>
+
+    <h1>Temporizadores - Exercicio referente a aula 23_Temporizadores</h1>
+    <h2>
+
+    </h2>
+
+    <hr>
+
+    <script src="../utils/utils.js"></script>
+
+    <input type="text" id="cronometer" readonly>
+    <button id="start" onclick="startCronometer()">Start</button>
+    <button id="stop" onclick="stopCronometer()" disabled>Stop</button>
+    <button id="reset" onclick="resetCronometer()" disabled>Reset</button>
+
+</head>
+
+<body>
+
+    <script>
+        (function (window) {
+            'use strict'
+
+            var cronometerInterval = null;
+            var $cronometer = document.querySelector('#cronometer');
+            
+            window.startCronometer = function startCronometer() {
+
+                if(!$cronometer.value) {
+                    $cronometer.value = '00:00:00';
+                }
+
+                var hours, minutes, seconds = 0;
+                document.querySelector('#start').disabled = true;
+                document.querySelector('#stop').disabled = false;
+                document.querySelector('#reset').disabled = false;
+
+                cronometerInterval = setInterval(() => {
+                    var cronometerText = $cronometer.value;
+
+                    var hour = cronometerText.split(':')[0];
+                    var minute = cronometerText.split(':')[1];
+                    var second = cronometerText.split(':')[2];
+
+                    if (minute == '59' && second == '59') {
+                        minute = '-1';
+                        hour = format(hour);
+                    }
+
+                    if (second === '59') {
+                        second = '-1';
+                        minute = format(minute);
+                    }
+
+                    second = format(second);
+                    $cronometer.value = hour + ':' + minute + ':' + second;
+
+                }, 1000);
+
+            }
+
+            window.stopCronometer = function stopCronometer() {
+                document.querySelector('#start').disabled = false;
+                document.querySelector('#stop').disabled = true;
+                clearInterval(cronometerInterval);
+            }
+
+            window.resetCronometer = function resetCronometer() {
+                document.querySelector('#start').disabled = false;
+                document.querySelector('#stop').disabled = true;
+                document.querySelector('#reset').disabled = true;
+                clearInterval(cronometerInterval);
+                $cronometer.value = '';
+            }
+
+            function format(number) {
+                return ('0' + Number(++number)).slice(-2);
+            }
+
+        })(window);
+    </script>
+
+</body>
+
+</html>
