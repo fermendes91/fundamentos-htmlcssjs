@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Estilização e Controle de Fluxo</title>
+
+    <h1>Estilização e Controle de Fluxo</h1>
+
+    <script src="utils/utils.js"></script>
+
+    <style>
+        .teste {
+            box-sizing: border-box;
+            padding: 20px 0 0 10px;
+            width: 300px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="teste" style="color: white">
+        Um texto qualquer;
+    </div>
+
+    <p>Meu nome é Ferdnand Wolf. RDR2 s2 </p>
+    <br>
+    <p>Meu nome é Dan McGreaf. RDR2 s2 </p>
+
+    <div class="teste2">
+        Qualquer texto padrão
+    </div>
+    <script>
+        (function (window) {
+            'use strict'
+
+            var $divTest = document.querySelector('.teste');
+
+            // a propriedade style, so retorna os elementos que foram definidos de forma inline
+            var color = $divTest.style.color;
+            console.log('color: ' + color);
+            
+            // não funciona para as propriedades que foram definidas na classe.
+            var backgroundColor = $divTest.style.backgroundColor;
+            console.log('backgroundColor: ' + backgroundColor)
+
+            // para retornar todos os atributos css computados de um elemento devemos usar:
+            console.log('\nComputado - backgroundColor: ' + getComputedStyle($divTest).backgroundColor);
+
+
+            /* RECUPERANDO POSIÇÃO DE ELEMENTOS. 
+                offsetHeight, offsetWidth (propriedades que retornam o tamanho do elemento)
+                offsetLeft, offsetTop (propriedades em relação ao documento)
+            */
+            var $p = document.querySelector('p');
+            console.log('\naltura e largura: ' + $p.offsetHeight, $p.offsetWidth);
+            console.log('positionTop e positionLeft: ' + $p.offsetTop, $p.offsetLeft);
+            
+            var $teste2 = document.querySelector('.teste2');
+            console.log('positionTop e positionLeft: ' + $teste2.offsetTop, $teste2.offsetLeft);
+            
+            // retorna informações relativas ao elemento no espaço da VIEWPORT e não em relação ao documento.
+            console.log('\n' + 'getBoundingclientRect(): ');
+            console.log($teste2.getBoundingClientRect()); 
+            
+        })(window);
+    </script>
+</body>
+
+</html>
