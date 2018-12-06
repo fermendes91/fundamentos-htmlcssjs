@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Saltos</title>
+
+    <script src="utils/utils.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Saltos. Return vs break vs continue</h1>
+
+    <script>
+        (function (window) {
+            'use strict'
+   
+            function testeSaltosReturn() {
+                for (var i = 0; i < 10; i++) {
+                    console.log(i);
+                    if(i === 5) {
+                        return; // return sai da função e retorna para quem chamou essa função
+                    }
+                }
+                console.log('terminou testeSaltosContinue')
+            }
+
+            function testeSaltosBreak() {
+                for (var i = 0; i < 10; i++) {
+                    console.log(i);
+                    if(i === 5) {
+                        break; // break sai da estrutura do loop, mas não sai da estrutura da função.
+                    }
+                }
+                console.log('terminou testeSaltosBreak')
+            }
+
+            function testeSaltosContinue() {
+                for (var i = 0; i < 10; i++) {
+                    if(i === 5) {
+                        continue; // quebra a iteração atual e vai pra proxima iteração.
+                    }
+                    console.log(i);
+                }
+                console.log('terminou testeSaltosContinue')
+            }
+
+            testeSaltosReturn();
+            console.log('\n');
+            testeSaltosBreak();
+            console.log('\n');
+            testeSaltosContinue();
+            
+            console.log('\n');
+            var n = 10;
+
+            // sem colocarmos o break nos CASE, quando o case for verdade, então tudo o que esta abaixo do mesmo será executado
+            switch (n) {
+                case 0:
+                    console.log('switch 0'); 
+                case 10:
+                    console.log('switch 10'); 
+                case 20:
+                    console.log('switch 20'); 
+                case 30:
+                    console.log('switch 30'); 
+                case 40:
+                    console.log('switch 40'); 
+                default:
+                    console.log('switch default'); 
+
+
+            }
+
+        })(window);
+    </script>
+</body>
+
+</html>

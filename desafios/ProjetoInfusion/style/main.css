@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.4;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* GENERIC CLASSES */
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 1em;
+}
+
+/* HEADER SECTION */
+.header {
+    background: #fff;
+    width: 100%;
+}
+
+.logo-text {
+    text-transform: uppercase;
+    background-color: #63c6ae;
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    padding: 20px;
+    float:left;
+}
+
+.header__btnMenu {
+
+}
+
+.header__nav {
+    clear: left;
+}
+
+.header__nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav li{
+    list-style-type: none;
+    background: #242a2c;
+    text-align: center;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.header__nav a{
+    color: #586165;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    padding: 25px 0;
+    transition: .5s ease;
+}
+
+.header__nav a:hover{
+    color: #63c6ae;
+}
+
+/* HERO SECTION */
+
+.hero {
+    height: 80vh; /* 80% da view port */
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* linear-gradient para criar um triangulo na parte de baixo da imagem (centralizado) */
+    background: /* O primeiro definido fica por cima do ultimo definido */
+        linear-gradient(45deg, white 50%, transparent 50%) left calc(50% + 20px) bottom no-repeat, 
+        linear-gradient(-45deg, white 50%, transparent 50%) left calc(50% - 20px) bottom no-repeat, 
+        url(../img/01.jpg); 
+    background-size: 40px 40px, 40px 40px, cover;
+}
+
+.hero__title {
+    background-color: #63c6ae;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    padding: 30px 20px;
+    text-transform: uppercase;
+}
+
+.hero__text {
+    background-color: #242a2c;
+    margin: 5px 30px 35px;
+    color: white;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.hero__btn {
+    border: 1px solid  rgba(255, 255, 255,  .3);
+    background-color: rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    padding: 15px 25px;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* PEOPLE CARDS SECTION */
+
+.people-cards {
+    margin-top: 2.5em;
+}
+
+.people-cards__card {
+   margin-top: 2px;
+}
+
+.people-cards__card:hover {
+    outline: 5px solid #63c6ae; /* Fica depois do elemento, não alterando o tamanho do elemento como a borda */
+    outline-offset: -5px; /* faz o outline andar 5px para dentro do elemento */
+    cursor: pointer;
+}
+
+.people-cards__card:hover .people-cards__avatar img{
+    transform: translateY(-50%);
+}
+
+.people-cards__card:hover .people-cards__title, 
+.people-cards__card:hover .people-cards__text {
+    color: #63c6ae;
+}
+
+.people-cards__image {
+    width: 100%;
+}
+
+.people-cards__avatar {
+    margin: -55px auto;
+    width: 88px;
+    height: 88px;
+    overflow: hidden;
+}
+
+.people-cards__content {
+    text-align: center;
+    padding: 40px 25px 10px;
+    border-left: 1px solid #dbe1e7;
+}
+
+.people-cards__title {
+    color: #737c85;
+    font-size: 20px;
+}
+
+.people-cards__text {
+    color: #929da5;
+    font-size: 16px;
+}
+
+
