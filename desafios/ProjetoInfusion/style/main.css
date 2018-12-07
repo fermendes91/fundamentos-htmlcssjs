@@ -8,6 +8,37 @@ img {
     max-width: 100%;
 }
 
+/* BUTTON */
+
+.btn {
+    padding: 15px 40px;
+    border-radius: 4px;
+    background: red;
+    color: white;
+    text-decoration: none; 
+    font-weight: 600px;
+    font-size: 16px;
+    margin-right: 15px;
+    display: inline-block;
+    transition: background-color .5s ease;
+}
+
+.btn:hover {
+    background-color: #929da5;
+}
+
+.btn-primary {
+    background-color: #69c6ae;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #455357;
+    color: white;
+}
+
+
+
 /* GENERIC CLASSES */
 
 .container {
@@ -169,4 +200,112 @@ img {
     font-size: 16px;
 }
 
+/* CONTENT */
 
+.content {
+    background: #f8f9f9;
+    padding:    20px 0 80px;
+    border-top: 1px solid #e3e3e3;
+
+}
+
+.content h3 {
+    color: #737c85;
+    font-size: 21px;
+    padding-top: 40px;
+    font-weight: 600;
+}
+
+.content p {
+    color: #929da5;
+    font-size: 14px;
+    word-spacing: 4px;
+}
+
+/* LAST ARTICLES */
+
+.last-articles__title {
+    background-color: #63c6ae;
+    padding: 5px 0;
+}
+
+.last-articles__title h2 {
+    font-size: 24px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.last-articles__thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
+    grid-gap: 0;
+}
+
+.last-articles__thumbs img {
+    display: block;
+    width: 100%;
+}
+
+/* LAPTOD SLIDER */
+
+.laptop-slider {
+    background-color: #242a2c;
+    padding: 125px 0 100px;
+    width: 100%;
+    overflow: auto;
+}
+
+.slideshow {
+    white-space: nowrap; /* nowrap -> não existe quebra de linha, tudo ficara numa unica linha */
+}
+
+.slideshow figure{
+    display: inline-block;
+}
+
+/* QUOTE CONTAINER */
+
+.quote-container {
+    background-color: #63c6ae;
+    padding: 50px 0;
+    border-bottom: 12px solid #48b9a1;
+}
+
+.quote-slideshow h2{
+    color: white;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.quote-slideshow figcaption {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
+
+.no-js .quote-slideshow figure + figure{ /* Pegando toda figure que vem logo abaixo de outra figure. */
+    margin-top: 5em;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #242a2c;
+    padding: 50px 0 250px;
+    color: #454e51;]
+    font-size: 14px;
+}
+
+.footer__links li{
+    list-style: none;
+}
+
+.footer__links a {
+    color: #454e51;
+    display: block;
+    font-weight: 600;
+    text-decoration: none;
+}
