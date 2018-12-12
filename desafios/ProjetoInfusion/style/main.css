@@ -54,6 +54,12 @@ img {
     width: 100%;
 }
 
+.js .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .logo-text {
     text-transform: uppercase;
     background-color: #63c6ae;
@@ -69,7 +75,16 @@ img {
 }
 
 .header__btnMenu {
+    float: right;
+    margin: 1.5em 1.5em 0;
+    background: transparent;
+    border: none;
+    font-size: 18px;
 
+}
+
+.header__btnMenu .fas {
+    font-size: 1.5em;
 }
 
 .header__nav {
@@ -97,6 +112,11 @@ img {
     padding: 25px 0;
     transition: .5s ease;
     text-transform: uppercase;
+    width: 100%;
+}
+
+.js .header__nav {
+    transition: max-height 1s;
 }
 
 .header__nav a:hover{
@@ -382,10 +402,12 @@ img {
 
     .footer .container {
         display: flex;
+       
     }
 
     .fiiter .container > * { 
         margin: 1.5em;
+        justify-content: space-between;
     }
 
 
