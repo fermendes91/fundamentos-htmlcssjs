@@ -45,6 +45,7 @@ img {
     margin-right: auto;
     margin-left: auto;
     padding: 0 1em;
+    max-width: 1080px;
 }
 
 /* HEADER SECTION */
@@ -64,6 +65,7 @@ img {
     margin: 0;
     padding: 20px;
     float:left;
+    text-align: right;
 }
 
 .header__btnMenu {
@@ -94,6 +96,7 @@ img {
     display: block;
     padding: 25px 0;
     transition: .5s ease;
+    text-transform: uppercase;
 }
 
 .header__nav a:hover{
@@ -295,8 +298,13 @@ img {
 .footer {
     background-color: #242a2c;
     padding: 50px 0 250px;
-    color: #454e51;]
+    color: #454e51;
     font-size: 14px;
+}
+
+.footer__title {
+    text-transform: uppercase;
+    text-align: left;
 }
 
 .footer__links li{
@@ -308,4 +316,77 @@ img {
     display: block;
     font-weight: 600;
     text-decoration: none;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media screen and (min-width: 1024px) {
+    .header {
+        position: fixed;
+    }
+
+    .logo-text {
+        width: 25%;
+        box-sizing: border-box;
+    }
+
+    .header__btnMenu {
+        display: none;
+    }
+
+    .header__nav {
+        float: left;
+        width: 75%;
+        clear: none;
+        max-width: 800px;
+    }
+
+    .header__nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .header__nav li {
+        border-bottom: none;
+        flex-grow: 1;
+    }
+
+    .header__nav a {
+        background: white;
+    }
+
+    .people-cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 0 25px;
+    }
+
+    .people-cards__content {
+        border-right: 1px solid #dbe1e7;
+    }
+
+    .people-cards article {
+        margin-top: 0;
+    }
+
+    .content .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .last-articles__thumbs {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .footer .container {
+        display: flex;
+    }
+
+    .fiiter .container > * { 
+        margin: 1.5em;
+    }
+
+
 }
