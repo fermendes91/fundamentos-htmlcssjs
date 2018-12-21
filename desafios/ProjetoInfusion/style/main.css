@@ -58,6 +58,7 @@ img {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 .logo-text {
@@ -117,6 +118,33 @@ img {
 
 .js .header__nav {
     transition: max-height 1s;
+}
+
+.js .laptop-slider {
+    overflow: hidden;
+    color: white;
+}
+
+.js .laptop-slider .slideshow {
+    position: relative;
+    max-width: 950px;
+    margin: auto; /* centraliza */
+}
+
+.js .laptop-slider figure {
+    opacity: 0;
+    transition: 1s opacity;
+    width: 100%;
+}
+
+.js .laptop-slider figure.show {
+    opacity: 1;
+}
+
+.js .laptop-slider .prev, .js .laptop-slider .next {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
 }
 
 .header__nav a:hover{
